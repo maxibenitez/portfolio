@@ -118,21 +118,27 @@
   color: white !important;
 }
 
-.c-navigation {
+.hide-section {
+  display: none;
+}
+
+nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   height: 5rem;
   background: rgb(35, 35, 35);
+  padding: 0rem 4rem 0rem 4rem;
 }
-.c-navigation h1 {
+nav h1 {
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
+  font-weight: lighter;
   height: 90%;
   width: 20%;
 }
-.c-navigation a {
+nav a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +148,7 @@
   text-decoration: none;
   color: rgb(180, 180, 180);
 }
-.c-navigation .c-navigation__list {
+nav .c-navigation__list {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -150,21 +156,12 @@
   width: 60%;
   height: 90%;
 }
-.c-navigation .c-navigation__list .c-item {
+nav .c-navigation__list .c-item {
   width: 9rem;
   height: 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
   list-style: none;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 1rem;
-  width: 100vw;
-  height: 100vh;
 }
 
 body {
@@ -177,4 +174,21 @@ body {
 }
 body button {
   cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  padding: 2rem 4rem 2rem 4rem;
+}
+section h2 {
+  font-size: 1.3rem;
+  font-weight: lighter;
 }/*# sourceMappingURL=styles.css.map */

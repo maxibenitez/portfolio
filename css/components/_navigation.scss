@@ -1,14 +1,16 @@
-.c-navigation{
+nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
     height: 5rem;
     background: rgb(35, 35, 35);
+    padding: 0rem 4rem 0rem 4rem;
 
     h1{
         display: flex;
         align-items: center;
+        font-size: 1.2rem;
+        font-weight: lighter;
         height: 90%;
         width: 20%;
     }

@@ -8,29 +8,61 @@
   <meta name="description" content="Portfolio">
   <meta name="author" content="Maximiliano Benítez">
   <meta name="robots" content="noindex" />
-  <title>Portfolio Maximiliano Benítez</title>
+  <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
-  <nav class="c-navigation">
+  <nav>
     <h1>Portfolio</h1>
     <ul class="c-navigation__list">
-      <li class="c-item is-active">
-        <a href="">About</a>
+      <li id="li-about" class="c-item is-active" data-target-section="about">
+        <a href="#">About</a>
       </li>
-      <li class="c-item">
-        <a href="">Blog</a>
+      <li id="li-blog" class="c-item" data-target-section="blog">
+        <a href="#">Blog</a>
       </li>
-      <li class="c-item">
-        <a href="">Algorithms</a>
+      <li id="li-algorithms" class="c-item" data-target-section="algorithms">
+        <a href="#">Algorithms</a>
       </li>
-      <li class="c-item">
-        <a href="">Case Studies</a>
+      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
+        <a href="#">Case Studies</a>
       </li>
     </ul>
   </nav>
+
+  <main>
+    <section id="about" class="c-about">
+      <h2 class="c-section__header">About</h2>
+
+      <div class="c-content">
+
+      </div>
+    </section>
+    <section id="blog" class="c-blog hide-section">
+      <h2 class="c-section__header">Blog</h2>
+
+      <div class="c-content">
+
+      </div>
+    </section>
+    <section id="algorithms" class="c-algorithms hide-section">
+      <h2 class="c-section__header">Algorithms</h2>
+
+      <div class="c-content">
+
+      </div>
+    </section>
+    <section id="case__studies" class="c-case__studies hide-section">
+      <h2 class="c-section__header">Case Studies</h2>
+
+      <div class="c-content">
+
+      </div>
+    </section>
+  </main>
+
   <script src="js/script.js"></script>
 </body>
 
