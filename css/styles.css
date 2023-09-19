@@ -272,7 +272,6 @@ body {
   margin-bottom: 2rem;
 }
 .c-blog .c-header p {
-  text-align: center;
   font-size: 0.8rem;
   line-height: 2;
 }
@@ -299,6 +298,9 @@ body {
 .c-blog .c-blog__list .c-item a p {
   width: 70%;
   font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .c-case__studies {
@@ -318,7 +320,6 @@ body {
   margin-bottom: 2rem;
 }
 .c-case__studies .c-header p {
-  text-align: center;
   font-size: 0.8rem;
   line-height: 2;
 }
@@ -344,6 +345,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.c-cases {
+  padding: 1rem 0rem;
+  max-width: 60rem;
+  width: 60%;
+  height: 80%;
+}
+.c-cases h4 {
+  font-size: 1.35rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.c-cases p {
+  font-size: 0.8rem;
 }
 
 .c-home {

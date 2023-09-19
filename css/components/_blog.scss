@@ -16,7 +16,6 @@
         }
 
         p{
-            text-align: center;
             font-size: 0.8rem;
             line-height: 2;
         }
@@ -46,6 +45,9 @@
                 p{
                     width: 70%;
                     font-size: 0.8rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
             }
         }
