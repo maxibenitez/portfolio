@@ -245,17 +245,105 @@ body {
   width: 8rem;
   border: 1px solid white;
   border-radius: 1rem;
-  color: white;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .is-active a {
-  color: white !important;
+  color: black !important;
+  font-weight: bold;
 }
 
-.hide-section {
-  display: none;
+.c-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.c-blog .c-header {
+  max-width: 60rem;
+  padding-top: 2rem;
+  height: 20%;
+  border-bottom: 1px solid #ccc;
+}
+.c-blog .c-header h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.c-blog .c-header p {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 2;
+}
+.c-blog .c-blog__list {
+  padding: 1rem 0rem;
+  max-width: 60rem;
+  width: 60%;
+  height: 80%;
+}
+.c-blog .c-blog__list .c-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  margin-top: 2rem;
+}
+.c-blog .c-blog__list .c-item a {
+  width: 100%;
+  display: flex;
+}
+.c-blog .c-blog__list .c-item a h3 {
+  width: 30%;
+}
+.c-blog .c-blog__list .c-item a p {
+  width: 70%;
+  font-size: 0.8rem;
+}
+
+.c-case__studies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.c-case__studies .c-header {
+  max-width: 60rem;
+  padding-top: 2rem;
+  height: 20%;
+  border-bottom: 1px solid #ccc;
+}
+.c-case__studies .c-header h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.c-case__studies .c-header p {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 2;
+}
+.c-case__studies .c-cards {
+  max-width: 60rem;
+  width: 60%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, 20rem);
+  grid-gap: 2rem;
+  padding: 2rem 0rem;
+}
+.c-case__studies .c-cards .c-card {
+  background-color: black;
+  width: 100%;
+}
+.c-case__studies .c-cards .c-card img {
+  height: 70%;
+}
+.c-case__studies .c-cards .c-card span {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .c-home {
@@ -296,7 +384,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50%;
-  width: 50%;
+  max-width: 60rem;
 }
 .c-home .c-about h3 {
   font-size: 2rem;

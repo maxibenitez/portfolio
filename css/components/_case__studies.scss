@@ -1,0 +1,51 @@
+.c-case__studies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .c-header{
+        max-width: 60rem;
+        padding-top: 2rem;
+        height: 20%;
+        border-bottom: 1px solid #ccc;
+
+        h2{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 2;
+        }
+    }
+
+    .c-cards{
+        max-width: 60rem;
+        width: 60%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fill, 20rem);
+        grid-gap: 2rem;
+        padding: 2rem 0rem;
+
+        .c-card{
+            background-color: black;
+            width: 100%;
+
+            img{
+                height: 70%;
+            }
+
+            span{
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
