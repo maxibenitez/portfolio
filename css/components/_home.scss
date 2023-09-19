@@ -1,0 +1,54 @@
+.c-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .c-welcome{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        background-image: url(../images/welcome.jpg);
+        background-size: cover;
+        background-position: center top;
+    
+        .c-welcome_msg{         
+            background-color: black;
+            width: 30%;
+            height: 50%;
+            font-size: 2.5rem;
+    
+            h2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .c-about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width: 50%;
+
+        h3{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+}

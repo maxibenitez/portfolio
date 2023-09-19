@@ -1,12 +1,15 @@
 body{
-    background: rgb(45, 45, 45);
-    font-family: 'Roboto';
+    background: rgb(30, 30, 30);
     letter-spacing: 1px;
     color: white;
-    height: 100%;
-    width: 100%;
-
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    
     button{
         cursor: pointer;
+    }
+
+    h2{
+        height: 2rem;
     }
 }

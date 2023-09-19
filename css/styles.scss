@@ -1,8 +1,11 @@
+@import 'base/reset';
 @import 'base/icons';
 @import 'base/utilities';
 
+@import 'components/home';
 @import 'components/navigation';
+@import 'components/section';
 
 @import 'structure/body';   
-@import 'structure/html';
-@import 'structure/section';
+@import 'structure/footer';   
+@import 'structure/main';
