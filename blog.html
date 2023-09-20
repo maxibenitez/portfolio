@@ -14,8 +14,8 @@
 </head>
 
 <body>
-  <nav>
-    <h1>Portfolio Maximiliano Benítez</h1>
+  <nav class="c-nav_web">
+    <a href="index.html"><h1>Machine Learning Portfolio</h1></a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">Inicio</a>
@@ -29,43 +29,64 @@
     </ul>
   </nav>
 
-  <main>
-    <section class="c-blog">
-      <div class="c-header">
-        <h2>Blog</h2>
-        <p>En esta sección, encontrarás resúmenes de textos relacionados 
-          con libros fundamentales en este campo, exploraciones detalladas de 
-          diversos algoritmos, reflexiones sobre mis experiencias con herramientas
-          como RapidMiner y otra información valiosa relacionada con machine learning.
-        </p>
-      </div>
-      <ul class="c-blog__list">
-        <li class="c-item">
-          <a href="blog_gradient.html">
-            <h3>Descenso de Gradiente</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          </a>
-        </li>
-        <li class="c-item">
-          <a href="blog_linear_reg.html">
-            <h3>Regresión Lineal</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          </a>
-        </li>
-        <li class="c-item">
-          <a href="blog_logistic_reg.html">
-            <h3>Regresión Logística</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          </a>
-        </li>
-        <li class="c-item">
-          <a href="blog_lda.html">
-            <h3>Análisis Discriminante Lineal</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          </a>
-        </li>
-      </ul>
-    </section>
+  <nav class="c-nav_mobile">
+    <a href="index.html"><h1>ML Portfolio</h1></a>
+    <ul class="c-navigation__list">
+      <li id="li-home" class="c-item" data-target-section="home">
+        <a href="index.html">I</a>
+      </li>
+      <li id="li-blog" class="c-item is-active" data-target-section="blog">
+        <a href="blog.html">B</a>
+      </li>
+      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
+        <a href="case_studies.html">CE</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="c-blog">
+    <div class="c-header">
+      <h2>Blog</h2>
+      <p>En esta sección, encontrarás resúmenes de textos relacionados
+        con libros fundamentales en este campo, exploraciones detalladas de
+        diversos algoritmos, reflexiones sobre mis experiencias con herramientas
+        como RapidMiner y otra información valiosa relacionada con machine learning.
+      </p>
+    </div>
+
+    <ul class="c-blog__list">
+      <li class="c-item">
+        <a href="blog_gradient.html">
+          <h3>Descenso de Gradiente</h3>
+        </a>
+      </li>
+      <li class="c-item">
+        <a href="blog_linear_reg.html">
+          <h3>Regresión Lineal</h3>
+        </a>
+      </li>
+      <li class="c-item">
+        <a href="blog_logistic_reg.html">
+          <h3>Regresión Logística</h3>
+        </a>
+      </li>
+      <li class="c-item">
+        <a href="blog_lda.html">
+          <h3>Análisis Discriminante Lineal</h3>
+        </a>
+      </li>
+      <!-- duplicado -->
+      <li class="c-item">
+        <a href="blog_logistic_reg.html">
+          <h3>Regresión Logística</h3>
+        </a>
+      </li>
+      <li class="c-item">
+        <a href="blog_lda.html">
+          <h3>Análisis Discriminante Lineal</h3>
+        </a>
+      </li>
+    </ul>
   </main>
 
   <footer>

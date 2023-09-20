@@ -14,8 +14,8 @@
 </head>
 
 <body>
-  <nav>
-    <h1>Portfolio Maximiliano Benítez</h1>
+  <nav class="c-nav_web">
+    <a href="index.html"><h1>Machine Learning Portfolio</h1></a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">Inicio</a>
@@ -29,38 +29,51 @@
     </ul>
   </nav>
 
-  <main>
-    <section class="c-case__studies">
-      <div class="c-header">
-        <h2>Casos de Estudio</h2>
-        <p>En esta sección, podrás explorar aplicaciones prácticas y concretas
-          de mis conocimientos en machine learning y data science. Cada
-          caso de estudio representa desafíos reales hasta la aplicación 
-          de soluciones basadas en datos. Aquí, presentaré detalles sobre
-          cómo he abordado problemas complejos, desde el análisis inicial, la 
-          preparación de los datos, hasta la implementación de modelos y la
-          obtención de resultados significativos.
-        </p>
-      </div>
-      <div class="c-cards">
-        <a href="case_titanic.html" class="c-card">
-          <img src="../images/titanic.jpg">
-          <span>Titanic</span>
-        </a>
-        <a href="case_wine.html" class="c-card">
-          <img src="../images/wine.jpg">
-          <span>Wine</span>
-        </a>
-        <a href="case_cardiac.html" class="c-card">
-          <img src="../images/cardiac.jpg">
-          <span>Cardiac</span>
-        </a>
-        <a href="case_sports.html" class="c-card">
-          <img src="../images/sports.jpg">
-          <span>Sports</span>
-        </a>
-      </div>
-    </section>
+  <nav class="c-nav_mobile">
+    <a href="index.html"><h1>ML Portfolio</h1></a>
+    <ul class="c-navigation__list">
+      <li id="li-home" class="c-item" data-target-section="home">
+        <a href="index.html">I</a>
+      </li>
+      <li id="li-blog" class="c-item" data-target-section="blog">
+        <a href="blog.html">B</a>
+      </li>
+      <li id="li-case__studies" class="c-item is-active" data-target-section="case__studies">
+        <a href="case_studies.html">CE</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="c-case__studies">
+    <div class="c-header">
+      <h2>Casos de Estudio</h2>
+      <p>En esta sección, podrás explorar aplicaciones prácticas y concretas
+        de mis conocimientos en machine learning y data science. Cada
+        caso de estudio representa desafíos reales hasta la aplicación
+        de soluciones basadas en datos. Aquí, presentaré detalles sobre
+        cómo he abordado problemas complejos, desde el análisis inicial, la
+        preparación de los datos, hasta la implementación de modelos y la
+        obtención de resultados significativos.
+      </p>
+    </div>
+    <div class="c-cards">
+      <a href="case_titanic.html" class="c-card">
+        <img src="../images/titanic.jpg">
+        <span>Titanic Survivors</span>
+      </a>
+      <a href="case_wine.html" class="c-card">
+        <img src="../images/wine.jpg">
+        <span>Wine Classification</span>
+      </a>
+      <a href="case_cardiac.html" class="c-card">
+        <img src="../images/cardiac.jpg">
+        <span>Heart Disease</span>
+      </a>
+      <a href="case_sports.html" class="c-card">
+        <img src="../images/sports.jpg">
+        <span>Sports Prediction</span>
+      </a>
+    </div>
   </main>
 
   <footer>

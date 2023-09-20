@@ -1,49 +1,118 @@
-.c-case__studies{
+.c-case__studies {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: calc(100vh - 4rem - 5vh);
+    width: 100%;
 
-    .c-header{
+    .c-header {
         max-width: 60rem;
         padding-top: 2rem;
-        height: 20%;
+        height: auto;
+        width: calc(100% - 3rem);
         border-bottom: 1px solid #ccc;
 
-        h2{
-            font-size: 2rem;
-            margin-bottom: 2rem;
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
-        p{
-            font-size: 0.8rem;
+        p {
+            font-size: 0.7rem;
             line-height: 2;
+            margin-bottom: 1rem;
         }
     }
 
-    .c-cards{
-        max-width: 60rem;
-        width: 60%;
-        height: 80%;
+    .c-cards {
+        overflow-y: scroll;
+        width: calc(100% - 3rem);
+        height: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto-fill, 20rem);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto-fill, 15rem);
         grid-gap: 2rem;
         padding: 2rem 0rem;
 
-        .c-card{
+        .c-card {
             background-color: black;
             width: 100%;
+            min-height: 15rem;
+            max-height: 15rem;
+            border-radius: 0.5rem;
 
-            img{
+            img {
                 height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
             }
 
-            span{
+            span {
                 height: 30%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+        }
+    }
+
+    @include respond-to('md') {
+        height: calc(100vh - 3rem);
+        position: relative;
+        top: 3rem;
+        z-index: 1;
+
+        .c-header {
+            max-width: 50%;
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.7rem;
+            }
+        }
+
+        .c-cards {
+            margin-bottom: 3rem;
+            width: 50%;
+            grid-template-columns: repeat(2, 1fr);
+
+            .c-card {
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    @include respond-to('xl') {
+        .c-header {
+            width: 40%;
+
+            h2 {
+                font-size: 1.8rem;
+                margin-top: 2rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+                line-height: 2.5;
+            }
+        }
+
+        .c-cards {
+            width: 40%;
+            grid-template-rows: repeat(auto-fill, 17rem);
+
+            .c-card {
+                min-height: 17rem;
+                max-height: 17rem;
+
+                span {
+                    font-size: 1.1rem;
+                }
             }
         }
     }

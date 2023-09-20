@@ -1,0 +1,27 @@
+/*---
+    Usage:
+    @include respond-to('sm') {  ...  }
+---*/
+
+@mixin respond-to($breakpoint, $mediaType: screen) {
+    @if map-has-key($mediaTypes, $mediaType) and map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($mediaTypes, $mediaType))} and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Error in `#{$breakpoint}` or `#{$mediaType}`. " + "Available breakpoints are: #{map-keys($breakpoints)}." + "Available media types are: #{map-keys($mediaTypes)}.";
+    }
+}
+
+/*---
+    Usage:
+    @include vendor('transform', opacity .3s ease-in-out) {  ...  }
+---*/
+
+@mixin vendor($key, $value) {
+    -moz-#{$key}: $value;
+    -webkit-#{$key}: $value;
+    -o-#{$key}: $value;
+    -ms-#{$key}: $value;
+    #{$key}: $value;
+}

@@ -1,16 +1,49 @@
-.c-cases{
+.c-cases {
+    overflow-y: scroll;
     padding: 1rem 0rem;
-    max-width: 60rem;
-    width: 60%;
-    height: 80%;
+    width: calc(100% - 3rem);
+    height: calc(100vh - 4rem - 5vh);
 
-    h4{
+    h4 {
         font-size: 1.35rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+        line-height: 2;
         margin-bottom: 1.5rem;
     }
 
-    p{
-        font-size: 0.8rem;
+    @include respond-to('md') {
+        overflow-y: scroll;
+        padding: 1rem 0rem;
+        width: 50%;
+        height: 80%;
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    @include respond-to('xl') {
+        width: 40%;
+        height: 80%;
+
+        h4 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+            line-height: 2.5;
+            margin-bottom: 3rem;
+        }
     }
 }
