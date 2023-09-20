@@ -41,7 +41,38 @@
             max-height: 15rem;
             border-radius: 0.5rem;
 
-            img {
+            .titanic-image {
+                background-image: url(../images/titanic.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+
+            .wine-image {
+                background-image: url(../images/wine.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+
+            .cardiac-image {
+                background-image: url(../images/cardiac.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+
+            .sports-image {
+                background-image: url(../images/sports.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
                 height: 70%;
                 border-radius: 0.5rem 0.5rem 0 0;
             }
