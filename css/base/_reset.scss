@@ -46,10 +46,6 @@ p a {
     display: inline;
 }
 
-li {
-    list-style-type: none;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -112,14 +108,12 @@ label {
     appearance: none;
 }
 
-
 table,
 tr,
 td {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 
 svg {
     width: 100%;

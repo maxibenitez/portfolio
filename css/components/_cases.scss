@@ -6,13 +6,34 @@
 
     h4 {
         font-size: 1.35rem;
+        font-weight: bold;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+    h5{
+        font-weight: bold;
     }
 
     p {
         font-size: 0.7rem;
         line-height: 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .c-bulleted{
+        list-style-type: disc;
+        margin: 1rem 0rem 1rem 1rem;
+
+        li{
+            font-size: 0.7rem;
+            line-height: 2;
+        }
+    }
+
+    figure{
+        margin: 0 auto;
+        width: 50%;
         margin-bottom: 1.5rem;
     }
 
@@ -31,7 +52,7 @@
         }
     }
 
-    @include respond-to('xl') {
+    @include respond-to('xxl') {
         width: 40%;
         height: 80%;
 

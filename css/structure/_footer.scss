@@ -24,7 +24,7 @@ footer {
         }
     }
 
-    @include respond-to('xl') {
+    @include respond-to('xxl') {
 
         span {
             font-size: 0.7rem;

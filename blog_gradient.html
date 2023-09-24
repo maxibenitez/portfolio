@@ -11,11 +11,16 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>Machine Learning Portfolio</h1></a>
+    <a href="index.html">
+      <h1>Machine Learning Portfolio</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">Inicio</a>
@@ -30,7 +35,9 @@
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html"><h1>ML Portfolio</h1></a>
+    <a href="index.html">
+      <h1>ML Portfolio</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">I</a>
@@ -49,33 +56,48 @@
       <h2>Descenso de Gradiente</h2>
     </div>
     <div class="c-cases">
-      <div class="c-analysis">
-        <h4>Análisis del problema</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-      <div class="c-data">
-        <h4>Preparación de los datos</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-      <div class="c-results">
-        <h4>Resultados</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.</p>
-      </div>
+      <p>El descenso de gradiente es un algoritmo fundamental en el aprendizaje automático y la optimización de
+        funciones. Se utiliza para encontrar los valores de los parámetros que minimizan una función de costo.</p>
+      <h4>Descenso de Gradiente</h4>
+      <p>Es un algoritmo de optimización para encontrar los parámetros que minimizan una función de costo. Es
+        especialmente útil cuando no se pueden calcular los parámetros de manera analítica y se requiere un enfoque de
+        optimización.</p>
+      <h5>Intuición para el Descenso de Gradiente</h5>
+      <p>El objetivo es ir probando diferentes valores para los coeficientes, evaluar su costo y seleccionar nuevos
+        coeficientes que tengan un costo ligeramente mejor (más bajo). Repetir este proceso varias veces conducirá a
+        los coeficientes que resultan en el costo mínimo.</p>
+      <h5>Procedimiento de Descenso de Gradiente</h5>
+      <p>Se inicia con valores iniciales para los coeficientes.</p>
+      <p>$$coeficiente = 0.0$$</p>
+      <p>El costo de los coeficientes se evalúa al insertarlos en la función y calcular el costo.</p>
+      <p>$$costo = f(coeficiente)$$</p>
+      <p>Se calcula la derivada del costo. La derivada se refiere a la pendiente y necesitamos conocer la pendiente
+        para saber la dirección (signo) en la que mover los valores de los coeficientes para obtener un costo más bajo
+        en la siguiente iteración.</p>
+      <p>$$delta = derivada(costo)$$</p>
+      <p>Ahora podemos actualizar los valores de los coeficientes. Se debe especificar un parámetro de tasa de
+        aprendizaje (alfa) que controle cuánto pueden cambiar los coeficientes en cada actualización.</p>
+      <p>$$coeficiente = coeficiente - (alfa \times delta)$$</p>
+      <p>Este proceso se repite hasta que el costo de los coeficientes (costo) sea 0.0 o no se puedan lograr más
+        mejoras en el costo.</p>
+      <h4>Descenso de Gradiente por Lotes</h4>
+      <p>En algoritmos supervisados, se busca ajustar una función objetivo. La función de costo se calcula para todo
+        el conjunto de entrenamiento, y los coeficientes se actualizan al final de cada lote de datos (lote se le
+        llama a una iteración del algoritmo).
+        Ejemplos comunes de algoritmos con coeficientes que se pueden optimizar utilizando el descenso de gradiente
+        son la Regresión Lineal y la Regresión Logística.</p>
+      <h4>Descenso de Gradiente Estocástico</h4>
+      <p>En conjuntos de datos grandes, el descenso de gradiente puede ser lento. El descenso de gradiente estocástico
+        actualiza los coeficientes para cada instancia de entrenamiento, siendo más rápido pero ruidoso.</p>
+      <p>$$prediction = \frac {1}{1+e^-(B0+B1\times X1+B2\times X2)}$$</p>
+      <h4>Consejos para el Descenso del Gradiente</h4>
+      <ul class="c-bulleted">
+        <li>Graficar costo frente al tiempo</li>
+        <li>Ajustar la tasa de aprendizaje</li>
+        <li>Reescalar las entradas</li>
+        <li>Considerar pocas pasadas</li>
+        <li>Graficar el costo promedio</li>
+      </ul>
     </div>
   </main>
 

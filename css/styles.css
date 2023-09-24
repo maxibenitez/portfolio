@@ -1,110 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "icomoon";
-  src: url("../../fonts/icomoon.eot?uwlxwj");
-  src: url("../../fonts/icomoon.eot?uwlxwj#iefix") format("embedded-opentype"), url("../../fonts/icomoon.ttf?uwlxwj") format("truetype"), url("../../fonts/icomoon.woff?uwlxwj") format("woff"), url("../../fonts/icomoon.svg?uwlxwj#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-[class^=icon-], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-equalizer:before {
-  content: "\e900";
-}
-
-.icon-record:before {
-  content: "\e901";
-}
-
-.icon-add:before {
-  content: "\e913";
-}
-
-.icon-add__circle:before {
-  content: "\e914";
-}
-
-.icon-money:before {
-  content: "\e912";
-}
-
-.icon-eye:before {
-  content: "\e902";
-}
-
-.icon-apps:before {
-  content: "\e903";
-}
-
-.icon-arrow__forward:before {
-  content: "\e904";
-}
-
-.icon-more__hori:before {
-  content: "\e905";
-}
-
-.icon-more__vert:before {
-  content: "\e906";
-}
-
-.icon-arrow__upward:before {
-  content: "\e907";
-}
-
-.icon-arrow__downward:before {
-  content: "\e908";
-}
-
-.icon-person:before {
-  content: "\e909";
-}
-
-.icon-assignment:before {
-  content: "\e90a";
-}
-
-.icon-dashboard:before {
-  content: "\e90b";
-}
-
-.icon-list:before {
-  content: "\e90c";
-}
-
-.icon-search:before {
-  content: "\e90d";
-}
-
-.icon-settings:before {
-  content: "\e90e";
-}
-
-.icon-shopping__basket:before {
-  content: "\e90f";
-}
-
-.icon-trending__down:before {
-  content: "\e910";
-}
-
-.icon-trending__up:before {
-  content: "\e911";
-}
-
 /*---
     Usage:
     @include respond-to('sm') {  ...  }
@@ -155,10 +49,6 @@ a {
 
 p a {
   display: inline;
-}
-
-li {
-  list-style-type: none;
 }
 
 html {
@@ -280,6 +170,7 @@ body {
 }
 .c-blog .c-header h2 {
   font-size: 1.8rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 .c-blog .c-header p {
@@ -299,6 +190,7 @@ body {
 }
 .c-blog .c-blog__list .c-item {
   min-height: 7rem;
+  list-style-type: none;
 }
 .c-blog .c-blog__list .c-item a {
   display: flex;
@@ -309,7 +201,7 @@ body {
   border: 1px solid #808080;
   border-radius: 0.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .c-blog {
     height: calc(100vh - 3rem);
     position: relative;
@@ -344,7 +236,7 @@ body {
     white-space: nowrap;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .c-blog .c-header {
     width: 40%;
   }
@@ -392,6 +284,7 @@ body {
 }
 .c-case__studies .c-header h2 {
   font-size: 1.8rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 .c-case__studies .c-header p {
@@ -462,7 +355,7 @@ body {
     z-index: 1;
   }
   .c-case__studies .c-header {
-    max-width: 50%;
+    width: 50%;
   }
   .c-case__studies .c-header h2 {
     font-size: 1.5rem;
@@ -479,7 +372,7 @@ body {
     font-size: 1rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .c-case__studies .c-header {
     width: 40%;
   }
@@ -512,12 +405,29 @@ body {
 }
 .c-cases h4 {
   font-size: 1.35rem;
+  font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.c-cases h5 {
+  font-weight: bold;
 }
 .c-cases p {
   font-size: 0.7rem;
   line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.c-cases .c-bulleted {
+  list-style-type: disc;
+  margin: 1rem 0rem 1rem 1rem;
+}
+.c-cases .c-bulleted li {
+  font-size: 0.7rem;
+  line-height: 2;
+}
+.c-cases figure {
+  margin: 0 auto;
+  width: 50%;
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
@@ -534,7 +444,7 @@ body {
     font-size: 0.7rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .c-cases {
     width: 40%;
     height: 80%;
@@ -628,7 +538,7 @@ body {
     font-size: 0.7rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .c-home .c-welcome .c-welcome_msg {
     width: 20%;
     height: 45%;
@@ -740,7 +650,7 @@ body {
     list-style: none;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .c-nav_web h1 {
     font-size: 1rem;
   }
@@ -792,7 +702,7 @@ footer span {
     font-size: 0.65rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   footer span {
     font-size: 0.7rem;
   }

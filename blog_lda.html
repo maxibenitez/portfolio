@@ -11,11 +11,16 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>Machine Learning Portfolio</h1></a>
+    <a href="index.html">
+      <h1>Machine Learning Portfolio</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">Inicio</a>
@@ -30,7 +35,9 @@
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html"><h1>ML Portfolio</h1></a>
+    <a href="index.html">
+      <h1>ML Portfolio</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
         <a href="index.html">I</a>
@@ -47,16 +54,50 @@
   <main class="c-case__studies">
     <div class="c-header">
       <h2>Análisis Discriminante Lineal</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
     </div>
     <div class="c-cases">
-
+      <p>La regresión logística es un algoritmo de clasificación tradicionalmente limitado solo a problemas de
+        clasificación de dos clases. Si tienes más de dos clases, entonces el Análisis Discriminante Lineal (LDA, por
+        sus siglas en inglés) es la técnica de clasificación lineal preferida.
+      </p>
+      <h4>Limitaciones de la Regresión Logística</h4>
+      <p>La regresión logística es efectiva pero tiene limitaciones:</p>
+      <ul class="c-bulleted">
+        <li>Problemas de Dos Clases: La regresión logística está diseñada para problemas de clasificación de dos clases
+          o binarios. Puede ampliarse para clasificación multiclase, pero rara vez se utiliza para este propósito.</li>
+        <li>Inestable con Clases Bien Separadas: La regresión logística puede volverse inestable cuando las clases están
+          bien separadas.</li>
+        <li>Inestable con Pocos Ejemplos: La regresión logística puede volverse inestable cuando hay pocos ejemplos para
+          estimar los parámetros.</li>
+      </ul>
+      <h4>Representación de los Modelos LDA</h4>
+      <p>El LDA se basa en propiedades estadísticas de los datos para cada clase, como las medias y las matrices de
+        covarianza. Estos valores se utilizan para hacer predicciones y se almacenan en el modelo aprendido.</p>
+      <h4>Aprendizaje de Modelos LDA</h4>
+      <p>El LDA asume que los datos siguen una distribución gaussiana y que cada atributo tiene la misma varianza.
+        Estima la media y la varianza para cada clase a partir de los datos, utilizando fórmulas para calcular estos
+        valores.</p>
+      <p>$$mean_k = \frac {1}{n_k} \times \sum_{i=1}^n x_i$$</p>
+      <p>Donde meank es el valor medio de x para la clase k, nk es el número de instancias con la clase k. La varianza
+        se calcula en todas las clases como la diferencia promedio al cuadrado de cada valor con respecto a la media.
+      </p>
+      <p>$$sigma^2 = \frac {1}{n - K} \times \sum_{i=1}^n(x_i-mean_k)^2$$</p>
+      <p>Donde sigma2 es la varianza en todas las entradas (x), n es el número de instancias, K es el número de clases y
+        meank es la media de x para la clase a la que pertenece xi.</p>
+      <h4>Realizando Predicciones con LDA</h4>
+      <p>El LDA realiza predicciones calculando la probabilidad de que una entrada pertenezca a cada clase y utilizando
+        el Teorema de Bayes. Utiliza funciones discriminantes para estimar las probabilidades y clasificar nuevas
+        instancias en función de las probabilidades estimadas.</p>
+      <p>$$D_k(x) = x \times \frac{mean_k}{sigma^2} - \frac{(mean_k)^2}{2\times sigma^2} + ln(P(k))$$</p>
+      <p>Dk(x) es la función discriminante para la clase k dada la entrada x; meank, sigma2 y P(k) se estiman a partir
+        de tus datos. La función ln() es el logaritmo natural.</p>
+      <h4>Preparación de Datos para LDA</h4>
+      <ul class="c-bulleted">
+        <li>Considerar que sean problemas de clasificación</li>
+        <li>Asegurarse que los datos sigan una distribución Gaussiana</li>
+        <li>Eliminar ruido (valores atípicos)</li>
+        <li>Estandarizar los datos para que tengan media 0 y desviación estándar 1 (misma varianza)</li>
+      </ul>
     </div>
   </main>
 

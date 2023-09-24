@@ -14,6 +14,7 @@
 
         h2 {
             font-size: 1.8rem;
+            font-weight: bold;
             margin-bottom: 1rem;
         }
 
@@ -93,7 +94,7 @@
         z-index: 1;
 
         .c-header {
-            max-width: 50%;
+            width: 50%;
 
             h2 {
                 font-size: 1.5rem;
@@ -118,7 +119,7 @@
         }
     }
 
-    @include respond-to('xl') {
+    @include respond-to('xxl') {
         .c-header {
             width: 40%;
 
