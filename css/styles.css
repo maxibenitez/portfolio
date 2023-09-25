@@ -176,7 +176,7 @@ body {
 .c-blog .c-header p {
   font-size: 0.7rem;
   line-height: 2;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .c-blog .c-blog__list {
   overflow-y: scroll;
@@ -196,7 +196,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  text-align: center;
+  width: 90%;
   height: 100%;
   border: 1px solid #808080;
   border-radius: 0.5rem;
@@ -290,7 +291,7 @@ body {
 .c-case__studies .c-header p {
   font-size: 0.7rem;
   line-height: 2;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .c-case__studies .c-cards {
   overflow-y: scroll;
@@ -408,8 +409,14 @@ body {
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  line-height: 1.5;
 }
 .c-cases h5 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.c-cases h5, .c-cases strong {
   font-weight: bold;
 }
 .c-cases p {

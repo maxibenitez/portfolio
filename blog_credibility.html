@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Maximiliano Benítez">
+    <meta name="robots" content="noindex" />
+    <title>Portfolio</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+</head>
+
+<body>
+    <nav class="c-nav_web">
+        <a href="index.html">
+            <h1>Machine Learning Portfolio</h1>
+        </a>
+        <ul class="c-navigation__list">
+            <li id="li-home" class="c-item" data-target-section="home">
+                <a href="index.html">Inicio</a>
+            </li>
+            <li id="li-blog" class="c-item is-active" data-target-section="blog">
+                <a href="blog.html">Blog</a>
+            </li>
+            <li id="li-case__studies" class="c-item" data-target-section="case__studies">
+                <a href="case_studies.html">Casos de Estudio</a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="c-nav_mobile">
+        <a href="index.html">
+            <h1>ML Portfolio</h1>
+        </a>
+        <ul class="c-navigation__list">
+            <li id="li-home" class="c-item" data-target-section="home">
+                <a href="index.html">I</a>
+            </li>
+            <li id="li-blog" class="c-item is-active" data-target-section="blog">
+                <a href="blog.html">B</a>
+            </li>
+            <li id="li-case__studies" class="c-item" data-target-section="case__studies">
+                <a href="case_studies.html">CE</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="c-blog">
+        <div class="c-header">
+            <h2>Credibilidad: evaluación de lo aprendido</h2>
+        </div>
+        <div class="c-cases">
+            <p>Evaluar métodos no es tan simple como parece. A menudo, el rendimiento en el conjunto de entrenamiento no
+                es un indicador confiable del rendimiento en un conjunto de prueba independiente. El sobreajuste y la
+                falta de datos de prueba independientes son desafíos comunes en la evaluación.</p>
+            <h4>Entrenamiento y prueba</h4>
+            <p>En problemas de clasificación, la tasa de error es una medida natural para evaluar el rendimiento de un
+                clasificador. Esta tasa mide la proporción de errores cometidos en un conjunto completo de instancias y
+                refleja el rendimiento general del clasificador.
+                <br>
+                El error de resustitución se calcula utilizando el conjunto de entrenamiento, reemplazando las
+                instancias en el clasificador entrenado. Sin embargo, esta tasa de error en el conjunto de entrenamiento
+                no es un buen indicador del rendimiento futuro en nuevos datos, ya que el clasificador podría estar
+                sobreajustado a los datos de entrenamiento.
+                <br>
+                Para predecir el rendimiento futuro de un clasificador, se debe evaluar su tasa de error en un conjunto
+                de datos independiente no utilizado durante el entrenamiento. Este conjunto se llama conjunto de prueba
+                y se supone que representa el problema subyacente. En ocasiones, los datos de prueba pueden ser
+                diferentes en naturaleza a los datos de entrenamiento. En algunas situaciones, se habla de tres
+                conjuntos de datos: entrenamiento, validación y prueba. Estos conjuntos deben ser independientes entre
+                sí para obtener resultados confiables. Es crucial que los datos de prueba no se utilicen en la creación
+                del clasificador. En algunos casos, los datos de validación y prueba se usan para optimizar parámetros y
+                seleccionar el mejor clasificador, pero no para estimar el error futuro.
+                <br>
+                Los datos de entrenamiento se utilizan para desarrollar clasificadores, los datos de validación para
+                optimizar parámetros y seleccionar un clasificador, y los datos de prueba para calcular la tasa de error
+                final.
+                <br>
+                En general, un mayor tamaño de muestra de entrenamiento suele llevar a un mejor rendimiento del
+                clasificador, pero los beneficios disminuyen después de cierto punto. Un tamaño de muestra de prueba
+                mayor proporciona una estimación de error más precisa.
+                <br>
+                La falta de datos puede limitar la efectividad del proceso de entrenamiento, validación y prueba, y se
+                busca aprovechar al máximo los datos disponibles para tomar decisiones informadas sobre el rendimiento
+                del clasificador en datos futuros. En situaciones con pocos datos disponibles, se utilizan
+                procedimientos de retención, donde una parte de los datos se reserva para la prueba y el resto se
+                usa para el entrenamiento. Se enfrenta el dilema de querer usar más datos para entrenamiento pero
+                también para obtener una estimación precisa del error.
+            </p>
+            <h4>Prediciendo el rendimiento</h4>
+            <p>En esta sección hablamos sobre la tasa de éxito en lugar de la tasa de error, y la predicción del
+                rendimiento de un clasificador mediante razonamiento estadístico.
+                <br>
+                Cuando se mide la tasa de éxito de un clasificador en un conjunto de prueba, es una estimación numérica
+                que debe representar la tasa de éxito en la población objetivo. Para estimar qué tan cerca está la tasa
+                de éxito observada de la tasa de éxito verdadera, se utilizan intervalos de confianza. Estos intervalos
+                proporcionan un rango dentro del cual se espera que se encuentre la tasa de éxito verdadera con cierta
+                confianza. Para calcular intervalos de confianza, se utiliza la variable observada de tasa de éxito, se
+                la estandariza y se relaciona con la distribución normal para determinar los límites de confianza.
+                <br>
+                La tasa de éxito observada en un conjunto de pruebas se asemeja a una variable aleatoria que se
+                distribuye normalmente. La media de esta variable es la misma que la tasa de éxito verdadera, y la
+                varianza disminuye con el tamaño del conjunto de prueba. Los resultados son más confiables con conjuntos
+                de datos más grandes. La suposición de una distribución normal es válida para tamaños de muestra
+                considerables.
+            </p>
+            <h4>Validación Cruzada</h4>
+            <p>En situaciones con datos limitados, se utiliza el **método de retención (hold-out)**, se suele dividir el
+                conjunto de datos en una parte para entrenamiento y otra para prueba. La **estratificación** se utiliza
+                para asegurar que cada clase esté representada de manera adecuada en ambos conjuntos. La división
+                hold-out puede no ser representativa en algunos casos y se pueden mitigar estos efectos aplicando la
+                retención repetida o validación cruzada.
+                <br>
+                La validación cruzada, es una técnica que involucra dividir los datos en varios pliegues, entrenar y
+                probar el modelo en diferentes combinaciones de estos pliegues para obtener una estimación general del
+                rendimiento del modelo. En la validación cruzada estratificada de k-pliegues, los datos se dividen en k
+                conjuntos aproximadamente iguales, y en cada iteración, uno de los conjuntos se usa como conjunto de
+                prueba, mientras que los otros se usan para entrenamiento. Esto se repite k veces hasta que cada
+                conjunto ha sido usado como prueba. La elección de k, el número de pliegues, es importante. Se ha
+                encontrado que k = 10 es una elección común y práctica para la mayoría de las situaciones, ya que
+                proporciona una buena estimación del rendimiento. Sin embargo, no es un número rígido y otros valores
+                como 5 o 20 también pueden ser efectivos.
+                <br>
+                La validación cruzada proporciona una estimación más robusta del rendimiento del modelo en comparación
+                con la simple división hold-out. Sin embargo, es computacionalmente intensiva, ya que involucra entrenar
+                el modelo varias veces en diferentes conjuntos.</p>
+            <h4>Otras Estimaciones</h4>
+            <h5>Validación Cruzada Dejando Uno Afuera</h5>
+            <p>En este enfoque, cada instancia en el conjunto de datos se excluye una a la vez, y el esquema de
+                aprendizaje se entrena en todas las demás instancias. Luego, se evalúa el rendimiento del esquema en la
+                instancia excluida. Este proceso se repite para cada instancia, y los resultados se promedian para
+                estimar el error general. Aunque este método utiliza la máxima cantidad de datos para el entrenamiento y
+                es determinista, es computacionalmente costoso y no puede ser estratificado, lo que puede llevar a
+                estimaciones sesgadas en algunos casos.</p>
+            <h5>Bootstrap</h5>
+            <p>El bootstrap se basa en muestreo con reemplazo. Se crea un nuevo conjunto de datos extrayendo instancias
+                del conjunto original con reemplazo. Luego, las instancias no seleccionadas se utilizan como conjunto de
+                prueba y las seleccionadas como conjunto de entrenamiento. Debido a que algunas instancias se repetirán,
+                el conjunto de entrenamiento contendrá aproximadamente el 63.2% de las instancias originales. La tasa de
+                error en el conjunto de prueba se combina con la tasa de error en el conjunto de entrenamiento (error de
+                resustitución) para obtener una estimación final de la tasa de error. Este proceso se repite varias
+                veces y los resultados se promedian. El procedimiento de bootstrap puede ser la mejor forma de estimar
+                la tasa de error para conjuntos de datos muy pequeños.</p>
+        </div>
+    </main>
+
+    <footer>
+        <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
+    </footer>
+</body>
+
+</html>

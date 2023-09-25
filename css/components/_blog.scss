@@ -21,7 +21,7 @@
         p {
             font-size: 0.7rem;
             line-height: 2;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
         }
     }
 
@@ -43,7 +43,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%;
+                text-align: center;
+                width: 90%;
                 height: 100%;
                 border: 1px solid #808080;
                 border-radius: 0.5rem;

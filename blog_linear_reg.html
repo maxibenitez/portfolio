@@ -11,6 +11,9 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 
 <body>
@@ -48,7 +51,7 @@
     </ul>
   </nav>
 
-  <main class="c-case__studies">
+  <main class="c-blog">
     <div class="c-header">
       <h2>Regresión Lineal</h2>
     </div>
@@ -108,6 +111,52 @@
         <li>Distribuciones gaussianas de variables</li>
         <li>Reescalar las entradas</li>
       </ul>
+      <h4>Tutorial de Regresión Lineal Simple</h4>
+      <p>La regresión lineal es una herramienta simple y útil que ayuda a predecir una variable (y) basada en otra
+        variable (x). Imagina que tienes datos sobre la altura de personas (x) y su peso (y), y quieres predecir el peso
+        a partir de la altura.</p>
+      <figure>
+        <img src="../images/simple_lin_reg_dataset.png" alt="Simple Linear Regression Dataset">
+      </figure>
+      <h5>Estimación de la pendiente (B1) y de la intersección (B0)</h5>
+      <p>
+        Los coeficientes B0 y B1 son esenciales en la ecuación de la línea. B0 es como un ajuste vertical y B1 controla
+        la inclinación de la línea. En otras palabras, B1 te dice cuánto cambia "y" cuando "x" cambia.
+        <br>
+        $$B1 = \frac {\sum_{i=1}^n(x_i-mean(x))\times(y_i-mean(y))}{\sum_{i=1}^n(x_i-mean(x))^2}$$
+        <br>
+        $$B0 = mean(y) - B1 \times mean(x)$$
+      </p>
+      <h5>Haciendo Predicciones</h5>
+      <p>
+        Una vez que tienes los coeficientes, puedes insertar un valor de "x" en la ecuación de la línea para predecir
+        el valor correspondiente de "y".
+        <br>
+        $$y = B0 + B1 \times x$$
+      </p>
+      <h5>Estimación del Error</h5>
+      <p>
+        Para saber cuán preciso es tu modelo, mides el Error Cuadrático Medio (RMSE). Piensa en él como una forma de
+        entender cuánto se equivoca tu modelo en comparación con los datos reales. Menor RMSE significa mejor ajuste.
+        <br>
+        $$RMSE = \sqrt{\frac {\sum_{i=1}^n(p_i-y_i)^2}{n}}$$
+      </p>
+      <figure>
+        <img src="../images/simple_lin_reg_pred.png" alt="Simple Linear Regression Predictions">
+      </figure>
+      <h5>Atajo</h5>
+      <p>En lugar de calcular los coeficientes manualmente, existe un atajo usando la correlación entre "x" e "y" y su
+        desviación estándar. Esto te permite obtener B1 de manera más rápida.
+        <br>
+        $$B1 = corr(x,y) \times \frac{stdev(y)}{stdev(x)}$$
+        <br>
+        Donde corr(x) es la correlación entre x e y, y stdev() es el cálculo de la desviación estándar para una
+        variable. La correlación (también conocida como coeficiente de correlación de Pearson) es una medida de cuán
+        relacionadas están dos variables en el rango de -1 a 1. Un valor de 1 indica que las dos variables están
+        perfectamente correlacionadas positivamente, es decir, se mueven en la misma dirección, y un valor de -1 indica
+        que están perfectamente correlacionadas negativamente, cuando una se mueve, la otra se mueve en la dirección
+        opuesta.
+      </p>
     </div>
   </main>
 

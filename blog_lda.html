@@ -51,7 +51,7 @@
     </ul>
   </nav>
 
-  <main class="c-case__studies">
+  <main class="c-blog">
     <div class="c-header">
       <h2>Análisis Discriminante Lineal</h2>
     </div>
@@ -76,21 +76,28 @@
       <h4>Aprendizaje de Modelos LDA</h4>
       <p>El LDA asume que los datos siguen una distribución gaussiana y que cada atributo tiene la misma varianza.
         Estima la media y la varianza para cada clase a partir de los datos, utilizando fórmulas para calcular estos
-        valores.</p>
-      <p>$$mean_k = \frac {1}{n_k} \times \sum_{i=1}^n x_i$$</p>
-      <p>Donde meank es el valor medio de x para la clase k, nk es el número de instancias con la clase k. La varianza
+        valores.
+        <br>
+        $$mean_k = \frac {1}{n_k} \times \sum_{i=1}^n x_i$$
+        <br>
+        Donde meank es el valor medio de x para la clase k, nk es el número de instancias con la clase k. La varianza
         se calcula en todas las clases como la diferencia promedio al cuadrado de cada valor con respecto a la media.
+        <br>
+        $$sigma^2 = \frac {1}{n - K} \times \sum_{i=1}^n(x_i-mean_k)^2$$
+        <br>
+        Donde sigma^2 es la varianza en todas las entradas (x), n es el número de instancias, K es el número de clases y
+        meank es la media de x para la clase a la que pertenece xi.
       </p>
-      <p>$$sigma^2 = \frac {1}{n - K} \times \sum_{i=1}^n(x_i-mean_k)^2$$</p>
-      <p>Donde sigma2 es la varianza en todas las entradas (x), n es el número de instancias, K es el número de clases y
-        meank es la media de x para la clase a la que pertenece xi.</p>
       <h4>Realizando Predicciones con LDA</h4>
       <p>El LDA realiza predicciones calculando la probabilidad de que una entrada pertenezca a cada clase y utilizando
         el Teorema de Bayes. Utiliza funciones discriminantes para estimar las probabilidades y clasificar nuevas
-        instancias en función de las probabilidades estimadas.</p>
-      <p>$$D_k(x) = x \times \frac{mean_k}{sigma^2} - \frac{(mean_k)^2}{2\times sigma^2} + ln(P(k))$$</p>
-      <p>Dk(x) es la función discriminante para la clase k dada la entrada x; meank, sigma2 y P(k) se estiman a partir
-        de tus datos. La función ln() es el logaritmo natural.</p>
+        instancias en función de las probabilidades estimadas.
+        <br>
+        $$D_k(x) = x \times \frac{mean_k}{sigma^2} - \frac{(mean_k)^2}{2\times sigma^2} + ln(P(k))$$
+        <br>
+        Dk(x) es la función discriminante para la clase k dada la entrada x; meank, sigma2 y P(k) se estiman a partir
+        de tus datos. La función ln() es el logaritmo natural.
+      </p>
       <h4>Preparación de Datos para LDA</h4>
       <ul class="c-bulleted">
         <li>Considerar que sean problemas de clasificación</li>
