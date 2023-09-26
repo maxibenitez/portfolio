@@ -411,12 +411,12 @@ body {
   margin-bottom: 1rem;
   line-height: 1.5;
 }
-.c-cases h5 {
+.c-cases h5, .c-cases h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   line-height: 1.5;
 }
-.c-cases h5, .c-cases strong {
+.c-cases h5, .c-cases h6, .c-cases strong {
   font-weight: bold;
 }
 .c-cases p {

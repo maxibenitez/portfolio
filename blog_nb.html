@@ -11,6 +11,9 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 
 <body>
@@ -50,10 +53,99 @@
 
   <main class="c-blog">
     <div class="c-header">
-      <h2>Naive Bayes</h2>
+      <h2>Naïve Bayes</h2>
     </div>
     <div class="c-cases">
-
+      <p>El algoritmo de Naïve Bayes es una técnica de clasificación que se basa en la probabilidad y la teoría
+        estadística. Su objetivo es predecir una etiqueta de clase basada en la relación entre los atributos y la
+        etiqueta de clase. Aunque este algoritmo hace una suposición fuerte de independencia entre los atributos (de ahí
+        su nombre "naïve"), sigue siendo útil en muchas aplicaciones debido a su simplicidad y robustez.
+        <br>
+        El proceso de clasificación con Naïve Bayes se asemeja al proceso de toma de decisiones cotidianas que involucra
+        estimaciones basadas en la experiencia previa. Por ejemplo, al predecir el tiempo de viaje, consideramos varios
+        factores como la hora del día, el clima y las condiciones del tráfico. Del mismo modo, Naïve Bayes utiliza la
+        probabilidad para calcular las posibilidades de que un evento ocurra dado ciertos factores.
+        <br>
+        Es importante destacar que Naïve Bayes asume independencia entre los atributos, lo cual no siempre es cierto en
+        la realidad. Por ejemplo, en el caso de ingreso anual y el valor de la vivienda, aunque se pueden considerar
+        independientes, las personas con ingresos más altos tienden a comprar casas más caras, lo que introduce una
+        relación. A pesar de esta suposición simplificada, Naïve Bayes sigue siendo efectivo en muchas situaciones y es
+        ampliamente utilizado en clasificación y análisis de texto, entre otros campos.
+      </p>
+      <h4>Cómo funciona</h4>
+      <p>El algoritmo de Naïve Bayes se basa en el teorema de Bayes y se utiliza para predecir resultados en función de
+        la evidencia proporcionada por los atributos.
+        <br>
+        El teorema de Bayes establece que:
+        <br>
+        $$P(Y|X)=\frac{P(Y)*P(\textbf{X}|Y)}{P(\textbf{X})}$$
+        <br>
+        El proceso se divide en tres pasos clave:
+      </p>
+      <h6>Paso 1: Cálculo de la Probabilidad Previa (P(Y))</h6>
+      <p>Esta es la probabilidad de cada resultado posible (etiqueta de clase) y se calcula a partir de los datos de
+        entrenamiento. Por ejemplo, si tenemos dos resultados posibles ("Jugar = sí" y "Jugar = no") y en nuestros datos
+        de entrenamiento hay 5 ejemplos de "no" y 9 ejemplos de "sí", entonces P(Y = no) = 5/14 y P(Y = sí) = 9/14.
+      </p>
+      <h6>Paso 2: Cálculo de la Probabilidad Condicional de Clase (P(X|Y))</h6>
+      <p>Esta es la probabilidad de cada valor de atributo dado un resultado particular. Se calcula para todos los
+        atributos y para cada valor de resultado distinto. Por ejemplo, si estamos calculando la probabilidad
+        condicional de la temperatura alta (X1) dado que Y = no, contamos cuántas veces la temperatura es alta cuando no
+        se juega y cuántas veces es alta cuando se juega.
+      </p>
+      <h6>Paso 3: Predicción del Resultado Usando el Teorema de Bayes</h6>
+      <p>Con las probabilidades anteriores calculadas, se utiliza el teorema de Bayes para predecir el resultado para un
+        nuevo registro de prueba sin etiquetar. Se calcula la probabilidad posterior P(Y|X) para ambas posibles clases
+        de resultado (sí y no) y se elige la clase con la probabilidad más alta como la predicción.
+        <br>
+        El enfoque de modelado bayesiano es relativamente sencillo de entender y se implementa mediante la construcción
+        de una tabla de probabilidades. Sin embargo, el algoritmo Naïve Bayes asume una independencia entre atributos,
+        lo que puede no ser cierto en todos los casos. A pesar de esta limitación, sigue siendo una técnica efectiva en
+        la clasificación y puede manejar valores faltantes de manera adecuada.
+      </p>
+      <h4>Problemas</h4>
+      <p>Los problemas clave en el uso del algoritmo Naïve Bayes son los siguientes:</p>
+      <h5>Problema 1: Conjunto de Entrenamiento Incompleto</h5>
+      <p>Cuando un atributo en el registro de prueba no tiene ejemplos correspondientes en el conjunto de entrenamiento,
+        las probabilidades condicionales de clase pueden volverse cero, lo que lleva a predicciones incorrectas. Para
+        abordar esto, se puede utilizar la corrección de Laplace, que asigna pequeñas probabilidades predeterminadas a
+        los registros faltantes en lugar de cero.</p>
+      <h5>Problema 2: Atributos Continuos</h5>
+      <p>Si un atributo tiene valores numéricos continuos en lugar de valores nominales, la discretización puede no ser
+        efectiva. En cambio, se pueden usar funciones de densidad de probabilidad, asumiendo que los valores siguen una
+        distribución normal o equivalente. Esto permite calcular la probabilidad condicional de clase para valores
+        continuos.</p>
+      <h5>Problema 3: Independencia de Atributos</h5>
+      <p>El algoritmo Naïve Bayes asume independencia entre atributos, lo que puede ser demasiado restrictivo en la
+        práctica. Para abordar esto, se pueden eliminar atributos fuertemente correlacionados antes de aplicar el
+        algoritmo. Además, se puede utilizar la prueba de chi-cuadrado para evaluar la independencia de atributos
+        categóricos y determinar si se pueden considerar independientes en función de un nivel de confianza predefinido.
+      </p>
+      <h4>Cómo implementarlo</h4>
+      <p>La implementación del modelo bayesiano es relativamente sencilla y puede realizarse en cualquier lenguaje de
+        programación. Los pasos para implementarlo son los siguientes:</p>
+      <h6>Paso 1: Preparación de datos</h6>
+      <p>Se requiere un conjunto de datos de entrenamiento y un conjunto de datos de prueba. Los atributos pueden ser
+        tanto numéricos como nominales, y no es necesario realizar transformaciones especiales en los datos.</p>
+      <h6>Paso 2: Operador de Modelado y Parámetros</h6>
+      <p>Se utiliza un operador de Bayes que acepta el conjunto de datos de entrenamiento. Se puede configurar un
+        parámetro opcional para incluir o no la corrección de Laplace, especialmente recomendada para conjuntos de datos
+        más pequeños.</p>
+      <h6>Paso 3: Evaluación</h6>
+      <p>El conjunto de datos de prueba se etiqueta utilizando el modelo bayesiano mediante el operador Apply Model.
+        Luego, se evalúa el rendimiento del modelo utilizando métricas de clasificación, como precisión y recuperación,
+        a través del operador de Performance.</p>
+      <figure>
+        <img src="../images/nb.png" alt="Naive Bayes RapidMiner">
+      </figure>
+      <h6>Paso 4: Ejecución e Interpretación</h6>
+      <p>El proceso completo proporciona una descripción del modelo, un vector de rendimiento y un conjunto de datos
+        etiquetado. La descripción del modelo incluye probabilidades condicionales de clase de los atributos y funciones
+        de densidad de probabilidad para atributos continuos. El vector de rendimiento evalúa el rendimiento del modelo
+        en el conjunto de datos de prueba.</p>
+      <figure>
+        <img src="../images/nb_output.png" alt="Naive Bayes Output">
+      </figure>
     </div>
   </main>
 
