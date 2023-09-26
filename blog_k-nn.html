@@ -11,6 +11,9 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 
 <body>
@@ -53,7 +56,235 @@
       <h2>k-Nearest Neighbours</h2>
     </div>
     <div class="c-cases">
-
+      <p>Hay dos enfoques en la ciencia de datos predictiva: "aprendices ansiosos" y "aprendices perezosos".
+        <br>
+        Los "aprendices ansiosos" buscan encontrar una relación matemática entre las variables de entrada y objetivo en
+        un conjunto de datos para predecir resultados futuros. Por ejemplo, predecir la tasa de interés de un préstamo
+        en función del puntaje crediticio, el nivel de ingresos y el monto del préstamo.
+        <br>
+        En contraste, los "aprendices perezosos" no intentan encontrar una relación matemática, sino que utilizan el
+        conjunto de datos de entrenamiento como una tabla de búsqueda para emparejar variables de entrada y encontrar
+        resultados. Este enfoque se ilustra con el algoritmo de vecinos más cercanos (k-NN), que busca registros
+        similares en un espacio de n dimensiones y clasifica nuevos registros basados en la similitud con los registros
+        de entrenamiento más cercanos.
+        <br>
+        Aunque el método de vecinos más cercanos es simple, puede ser complicado encontrar la coincidencia más cercana
+        para un nuevo registro sin etiqueta, especialmente cuando no hay una coincidencia exacta disponible en los datos
+        de entrenamiento.
+      </p>
+      <h4>Cómo funciona</h4>
+      <p>El algoritmo de vecinos más cercanos (k-NN) funciona en un espacio de n dimensiones, donde cada registro en un
+        conjunto de datos se representa como un punto. Por ejemplo, en el conjunto de datos Iris, se consideran dos
+        atributos: la longitud y el ancho de los pétalos. Los puntos de datos se pueden visualizar en un gráfico de
+        dispersión, y la especie de Iris se indica por colores. Para un registro de prueba no etiquetado, se busca en su
+        vecino para determinar su especie predicha.</p>
+      <figure>
+        <img src="../images/iris_dataset.png" alt="Iris Dataset">
+      </figure>
+      <p>La "k" en k-NN indica cuántos registros de entrenamiento cercanos se deben considerar al predecir un registro
+        de prueba. Si k = 1, se toma el registro de entrenamiento más cercano como la predicción. Sin embargo, esto
+        puede ser problemático si el registro más cercano es un valor atípico. Para evitar esto, se puede aumentar "k" a
+        un número impar, como 3, y se consideran los tres registros de entrenamiento más cercanos. La clase predicha se
+        determina por mayoría.</p>
+      <figure>
+        <img src="../images/iris_predict.png" alt="LIris Predict">
+      </figure>
+      <p>La clave en k-NN es encontrar el registro de entrenamiento más cercano utilizando una medida de proximidad.
+        Luego, se realiza una votación basada en la clase de los registros de entrenamiento más cercanos. Aquí se
+        discuten las diversas técnicas utilizadas para medir la proximidad.</p>
+      <h4>Medidas de proximidad</h4>
+      <p>La medida de proximidad es fundamental en el algoritmo k-NN para determinar cuán similares o diferentes son los
+        registros de prueba en comparación con los registros de entrenamiento memorizados. Aquí se describen varias
+        técnicas para cuantificar la similitud entre dos registros:</p>
+      <h5>Distancia</h5>
+      <p>La distancia entre puntos de datos es fundamental para determinar qué vecinos son los más cercanos y, por lo
+        tanto, influyen en la predicción de la clase objetivo. La distancia euclidiana es una medida comúnmente
+        utilizada para calcular la distancia entre dos puntos en un espacio bidimensional o n-dimensional. Se generaliza
+        la fórmula de distancia bidimensional a conjuntos de datos con n atributos:
+        <br>
+        $$d=\sqrt{(x_{1}-y_{1})^{2}+(x_{2}-y_{2})^{2}+...+(x_{n}-y_{n})^{2}}$$
+        <br>
+        En problemas prácticos, es importante normalizar los atributos antes de calcular la distancia, ya que los
+        atributos pueden estar en diferentes escalas y unidades. La normalización asegura una comparación justa entre
+        los atributos, y se puede realizar mediante métodos como la transformación de rango o la transformación Z.
+        Además de la distancia euclidiana, existen otras medidas de distancia, como la distancia de Manhattan (suma de
+        las diferencias absolutas entre atributos) y la distancia de Chebyshev (diferencia máxima entre atributos).
+        Estas medidas se adaptan a diferentes tipos de datos y situaciones.
+      </p>
+      <figure>
+        <img src="../images/distance_measures.png" alt="Distance Measures">
+      </figure>
+      <p>Las tres medidas de distancia mencionadas anteriormente se pueden generalizar aún más con una fórmula, la
+        medida de distancia de Minkowski. La distancia entre dos puntos en un espacio n-dimensional se da mediante la
+        ecuación:
+        <br>
+        $$d=(\sum_{i=1}^{n}\left| x_{i}-y_{i} \right|^{p})^{\frac{1}{p}}$$
+        <br>
+        Una vez que se determinan los k vecinos más cercanos utilizando alguna medida de distancia, la predicción de la
+        clase objetivo se realiza seleccionando la clase que es mayoría entre los k vecinos más cercanos:
+        <br>
+        $$y_0 = \text{clase mayoritaria} \{ y_1, y_2, y_3, \ldots, y_k \}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>y0:</strong> es la clase objetivo predicha del punto de datos de prueba.</li>
+        <li><strong>yi:</strong> es la clase del i-ésimo vecino ni.</li>
+      </ul>
+      <h5>Pesos</h5>
+      <p>En el algoritmo k-NN, la asignación de pesos a los vecinos es importante cuando se busca una clasificación
+        basada en la cercanía de los puntos de datos. Los pesos wi se utilizan para dar más influencia a los vecinos
+        cercanos y menos influencia a los vecinos lejanos en la predicción de la clase objetivo. Los pesos se calculan
+        de manera que cumplan dos condiciones: deben ser proporcionales a la distancia entre el punto de datos de prueba
+        y el vecino, y la suma de todos los pesos debe ser igual a uno.
+        <br>
+        Un cálculo común de pesos es mediante una decaída exponencial basada en la distancia:
+        <br>
+        $$w_{i}=\frac{e^{-d(x,n_{i})}}{\sum_{i-1}^{k}e^{-d(x,n_{i})}}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>wi:</strong> es el peso del i-ésimo vecino ni.</li>
+        <li><strong>d(x,ni):</strong> es la distancia entre el punto de datos de prueba x y el vecino ni.</li>
+        <li><strong>k:</strong> es el número total de vecinos.</li>
+      </ul>
+      <p>Estos pesos se utilizan en la etapa final de votación múltiple para predecir la clase objetivo y0. La clase
+        predicha y0 se calcula considerando las clases de los vecinos ponderadas por los pesos:
+        <br>
+        $$y_0 = \text{clase mayoritaria} \{ w_1 \cdot y_1, w_2 \cdot y_2, w_3 \cdot y_3, \ldots, w_k \cdot y_k \}$$
+        <br>
+        Donde yi es el resultado de la clase del vecino ni.
+        <br>
+        Es importante destacar que la medida de distancia utilizada funciona bien para atributos numéricos, pero si los
+        atributos son categóricos, la distancia es 0 o 1. Para atributos categóricos, si los valores son iguales, la
+        distancia es 0; si son diferentes, la distancia es 1. Para atributos ordinales, se pueden convertir a valores
+        numéricos antes de calcular la distancia para preservar más información que cuando se tratan como categóricos.
+      </p>
+      <h5>Similitud de correlación</h5>
+      <p>La similitud de correlación se utiliza para medir la relación lineal entre dos conjuntos de datos, X e Y,
+        mediante la correlación de Pearson. La correlación de Pearson toma valores entre -1 (correlación negativa
+        perfecta) y 1 (correlación positiva perfecta), con 0 indicando que no hay correlación lineal entre X e Y. La
+        fórmula para calcular la correlación de Pearson entre X e Y es:
+        <br>
+        $$Correlación(X, Y) = \frac{s_{xy}}{s_x \cdot s_y}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>sxy:</strong> es la covarianza entre X e Y, que mide cómo varían juntos.</li>
+        <li><strong>sx y sy:</strong> son las desviaciones estándar de X e Y, respectivamente.</li>
+      </ul>
+      <p>La covarianza se calcula como:
+        <br>
+        $$s_{xy} = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - x)(y_i - y)$$
+        <br>
+        Un valor alto de correlación (cerca de 1 o -1) indica una fuerte relación lineal entre los datos, mientras que
+        un valor cercano a 0 significa que no hay una relación lineal evidente, aunque puede haber otras relaciones no
+        lineales.
+        <br>
+        Es importante tener en cuenta que la correlación de Pearson mide específicamente la relación lineal y no detecta
+        relaciones no lineales, como relaciones cuadráticas u otras de grado superior. Por lo tanto, un valor de
+        correlación de 0 no significa necesariamente que no haya ninguna relación entre los datos, solo que no hay una
+        relación lineal.
+      </p>
+      <h5>Coeficiente de coincidencia simple</h5>
+      <p>El coeficiente de coincidencia simple (SMC) es una métrica utilizada para medir la similitud entre dos
+        conjuntos de datos binarios. Se calcula considerando la ocurrencia simultánea de 0 o 1 en relación con el total
+        de ocurrencias y se define como:
+        <br>
+        $$Coeficiente\;de\;Coincidencia\;Simple\;(SMC) = \frac{Ocurrencias\;de\;Coincidencia}{Total\;de\;Ocurrencias} =
+        \frac{m_{00} + m_{11}}{m_{10} + m_{01} + m_{11} + m_{00}}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>m11:</strong> representa las ocurrencias donde ambos conjuntos tienen el valor 1.</li>
+        <li><strong>m10:</strong> representa las ocurrencias donde el primer conjunto tiene el valor 1 y el segundo
+          conjunto tiene el valor 0.</li>
+        <li><strong>m01:</strong> representa las ocurrencias donde el primer conjunto tiene el valor 0 y el segundo
+          conjunto tiene el valor 1.</li>
+        <li><strong>m00:</strong> representa las ocurrencias donde ambos conjuntos tienen el valor 0.</li>
+      </ul>
+      <h5>Similitud de Jaccard</h5>
+      <p>El coeficiente de Jaccard es una métrica de similitud que se utiliza para comparar dos conjuntos, especialmente
+        en el contexto de análisis de documentos de texto. El coeficiente de Jaccard se utiliza cuando se trabaja con
+        conjuntos de datos con muchos atributos. Se calcula considerando la presencia o ausencia de elementos en los
+        conjuntos y se define como:
+        <br>
+        $$Coeficiente\;de\;Jaccard = \frac{Ocurrencias\;Comunes}{Total\;de\;Ocurrencias} = \frac{m_{11}}{m_{10} + m_{01}
+        + m_{11}}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>m11:</strong> representa el número de elementos comunes entre los conjuntos X e Y.</li>
+        <li><strong>m10:</strong> representa el número de elementos presentes en X pero ausentes en Y.</li>
+        <li><strong>m01:</strong> representa el número de elementos presentes en Y pero ausentes en X.</li>
+      </ul>
+      <h5>Similitud del coseno</h5>
+      <p>La similitud del coseno es una métrica utilizada para medir la similitud entre dos vectores, especialmente en
+        el contexto de análisis de documentos. Se calcula mediante la fórmula:
+        <br>
+        $$Similitud\;del\;Coseno(|X, Y|) = \frac{x \cdot y}{\|x\| \cdot \|y\|}$$
+        <br>
+        Donde:
+      </p>
+      <ul class="c-bulleted">
+        <li><strong>x*y:</strong> es el producto punto de los vectores x e y, calculado como la suma de los productos de
+          sus componentes correspondientes.</li>
+        <li><strong>||x||:</strong> es la norma de $x$, calculada como la raíz cuadrada de la suma de los cuadrados de
+          sus componentes.</li>
+        <li><strong>||y||:</strong> es la norma de $y$, calculada de la misma manera.</li>
+      </ul>
+      <p>Un valor de similitud cercano a 1 indica una alta similitud, mientras que un valor cercano a 0 indica poca
+        similitud.</p>
+      <h4>Cómo implementarlo</h4>
+      <p>La implementación del algoritmo k-NN es relativamente sencilla y se puede realizar en diversas herramientas,
+        como hojas de cálculo o software de ciencia de datos. A continuación, se resumen los pasos clave para
+        implementar k-NN:</p>
+      <h5>Paso 1: Preparación de Datos</h5>
+      <ul class="c-bulleted">
+        <li><strong>Normalización de atributos:</strong> Es importante normalizar los atributos, especialmente cuando
+          tienen diferentes escalas o unidades. Esto se puede lograr mediante métodos como la transformación Z o el
+          rango.</li>
+        <li><strong>División de datos:</strong> Divide el conjunto de datos en dos conjuntos exclusivos, uno para
+          entrenamiento y otro para pruebas. Esto se hace típicamente utilizando un operador de división de datos.</li>
+      </ul>
+      <h5>Paso 2: Configuración de Parámetros</h5>
+      <ul class="c-bulleted">
+        <li><strong>Selecciona el valor de "k":</strong> Elige el valor de "k" que determina cuántos vecinos cercanos se
+          considerarán al hacer una predicción. Puedes experimentar con diferentes valores de "k" para encontrar el
+          mejor rendimiento.</li>
+        <li><strong>Considera el voto ponderado:</strong> Decide si deseas utilizar pesos basados en la distancia al
+          calcular las predicciones para múltiples vecinos. Esto puede ser útil para dar más peso a los vecinos más
+          cercanos.</li>
+        <li><strong>Elige la medida de distancia:</strong> Selecciona la medida de distancia adecuada para tu conjunto
+          de datos y problema, como la distancia euclidiana o la distancia de Manhattan.</li>
+      </ul>
+      <figure>
+        <img src="../images/k-nn.png" alt="--NN">
+      </figure>
+      <h5>Paso 3: Aplicación del Modelo y Evaluación</h5>
+      <ul class="c-bulleted">
+        <li><strong>Aplicación del modelo:</strong> Utiliza el conjunto de entrenamiento para desarrollar el modelo
+          k-NN. Este modelo memoriza todos los registros de entrenamiento.</li>
+        <li><strong>Predicción:</strong> Aplica el modelo k-NN al conjunto de pruebas para predecir la clase o el valor
+          objetivo de cada registro de prueba.</li>
+        <li><strong>Evaluación del rendimiento:</strong> Utiliza métricas de rendimiento, como la matriz de confusión,
+          precisión, recall y F1-score, para evaluar qué tan bien se desempeña el modelo en la clasificación de los
+          datos de prueba.</li>
+      </ul>
+      <h5>Paso 4: Interpretación de Resultados</h5>
+      <ul class="c-bulleted">
+        <li><strong>Modelo k-NN:</strong> El modelo en sí mismo es simplemente el conjunto de registros de
+          entrenamiento.</li>
+        <li><strong>Vector de rendimiento:</strong> La salida proporciona información sobre la precisión y el
+          rendimiento del modelo, incluyendo la matriz de confusión que muestra las predicciones correctas e
+          incorrectas.</li>
+        <li><strong>Conjunto de datos de prueba etiquetado:</strong> Puedes examinar las predicciones a nivel de
+          registro para comprender cómo el modelo clasificó cada instancia de prueba.</li>
+      </ul>
     </div>
   </main>
 
