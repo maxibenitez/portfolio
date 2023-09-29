@@ -42,6 +42,15 @@
             max-height: 15rem;
             border-radius: 0.5rem;
 
+            .iris-image {
+                background-image: url(../images/iris.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+            
             .titanic-image {
                 background-image: url(../images/titanic.jpg);
                 background-size: cover;
@@ -62,6 +71,15 @@
 
             .cardiac-image {
                 background-image: url(../images/cardiac.jpg);
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 70%;
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+            
+            .banking-image {
+                background-image: url(../images/banking.jpg);
                 background-size: cover;
                 background-position: center;
                 width: 100%;
