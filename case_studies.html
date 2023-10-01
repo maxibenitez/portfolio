@@ -11,47 +11,63 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item is-active" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item is-active_web">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-regular fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item is-active" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <main class="c-case__studies">
-    <div class="c-header">
-      <h2>Casos de Estudio</h2>
-      <p>En esta sección, podrás explorar aplicaciones prácticas y concretas
+  <header>CASOS DE ESTUDIO</header>
+
+  <main>
+    <section class="c-container">
+      <h2 class="c-header">CASOS DE ESTUDIO</h2>
+      <p class="c-info underline">En esta sección, podrás explorar aplicaciones prácticas y concretas
         de mis conocimientos en machine learning y data science. Cada
         caso de estudio representa desafíos reales hasta la aplicación
         de soluciones basadas en datos. Aquí, presentaré detalles sobre
@@ -59,33 +75,39 @@
         preparación de los datos, hasta la implementación de modelos y la
         obtención de resultados significativos.
       </p>
-    </div>
-    <div class="c-cards">
-      <a href="case_iris.html" class="c-card">
-        <div class="iris-image"></div>
-        <span>Iris Classification</span>
-      </a>
-      <a href="case_titanic.html" class="c-card">
-        <div class="titanic-image"></div>
-        <span>Titanic Survivors</span>
-      </a>
-      <a href="case_wine.html" class="c-card">
-        <div class="wine-image"></div>
-        <span>Wine Classification</span>
-      </a>
-      <a href="case_cardiac.html" class="c-card">
-        <div class="cardiac-image"></div>
-        <span>Heart Disease</span>
-      </a>
-      <a href="case_banking.html" class="c-card">
-        <div class="banking-image"></div>
-        <span>Banking</span>
-      </a>
-      <a href="case_sports.html" class="c-card">
-        <div class="sports-image"></div>
-        <span>Sports Prediction</span>
-      </a>
-    </div>
+      <ul class="c-cards__list">
+        <li class="c-card">
+          <a class="iris" href="case_iris.html">
+            <span>IRIS CLASSIFICATION</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a class="titanic" href="case_titanic.html">
+            <span>TITANIC SURVIVORS</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a class="wine" href="case_wine.html">
+            <span>WINE CLASSIFICATION</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a class="heart" href="case_heart.html">
+            <span>HEART DISEASE</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a class="sports" href="case_sports.html">
+            <span>SPORTS PREDICTION</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a class="banking" href="case_banking.html">
+            <span>BANKING</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer>

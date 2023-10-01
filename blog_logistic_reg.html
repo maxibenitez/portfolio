@@ -11,75 +11,91 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item is-active_web">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-solid fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <main class="c-blog">
-    <div class="c-header">
-      <h2>Regresión Logística</h2>
-    </div>
-    <div class="c-cases">
-      <p>La regresión logística es una técnica que se utiliza principalmente para problemas de clasificación binaria,
-        donde debemos predecir entre dos clases posibles. Por ejemplo, si un correo electrónico es spam o no spam. La
-        regresión logística se basa en la función logística, también conocida como función sigmoide. Esta función
-        transforma cualquier número en un valor entre 0 y 1. Es como una curva en forma de "S" y se usa para modelar
-        probabilidades.</p>
-      <figure>
-        <img src="../images/logistic_chart.png" alt="Logistic Chart">
-      </figure>
-      <p>Similar a la regresión lineal, la regresión logística utiliza una ecuación con coeficientes para combinar
-        valores de entrada y predecir una salida binaria. Los coeficientes se aprenden a partir de los datos de
-        entrenamiento. Los coeficientes en la ecuación de regresión logística se estiman a través de la estimación de
-        máxima verosimilitud. Este proceso busca los valores de coeficientes que minimizan el error entre las
-        probabilidades predichas y las reales.
-        <br>
-        La regresión logística predice la probabilidad de que una instancia pertenezca a una clase específica. Hacer
-        predicciones con regresión logística es simple. Simplemente ingresas los valores en la ecuación y calculas la
-        probabilidad. Luego, puedes redondear para obtener una clasificación final.
-      </p>
-      <h4>Preparar Datos para Regresión Logística</h4>
-      <ul class="c-bulleted">
-        <li>Variable de salida binaria</li>
-        <li>Eliminar ruido (valores atípicos)</li>
-        <li>Asegurarse que los datos sigan una distribución Gaussiana</li>
-        <li>Eliminar entradas altamente correlacionadas</li>
-        <li>Fracaso en la convergencia (debido al no realizar el punto anterior)</li>
-      </ul>
-    </div>
+  <header class="underline">REGRESIÓN LOGÍSTICA</header>
+
+  <main>
+    <section class="c-container">
+      <h2 class="c-content_header">REGRESIÓN LOGÍSTICA</h2>
+      <div class="c-content">
+        <p>La regresión logística es una técnica que se utiliza principalmente para problemas de clasificación binaria,
+          donde debemos predecir entre dos clases posibles. Por ejemplo, si un correo electrónico es spam o no spam. La
+          regresión logística se basa en la función logística, también conocida como función sigmoide. Esta función
+          transforma cualquier número en un valor entre 0 y 1. Es como una curva en forma de "S" y se usa para modelar
+          probabilidades.</p>
+        <figure>
+          <img src="../images/logistic_chart.png" alt="Logistic Chart">
+        </figure>
+        <p>Similar a la regresión lineal, la regresión logística utiliza una ecuación con coeficientes para combinar
+          valores de entrada y predecir una salida binaria. Los coeficientes se aprenden a partir de los datos de
+          entrenamiento. Los coeficientes en la ecuación de regresión logística se estiman a través de la estimación de
+          máxima verosimilitud. Este proceso busca los valores de coeficientes que minimizan el error entre las
+          probabilidades predichas y las reales.
+          <br>
+          La regresión logística predice la probabilidad de que una instancia pertenezca a una clase específica. Hacer
+          predicciones con regresión logística es simple. Simplemente ingresas los valores en la ecuación y calculas la
+          probabilidad. Luego, puedes redondear para obtener una clasificación final.
+        </p>
+        <h4>Preparar Datos para Regresión Logística</h4>
+        <ul class="c-bulleted">
+          <li>Variable de salida binaria</li>
+          <li>Eliminar ruido (valores atípicos)</li>
+          <li>Asegurarse que los datos sigan una distribución Gaussiana</li>
+          <li>Eliminar entradas altamente correlacionadas</li>
+          <li>Fracaso en la convergencia (debido al no realizar el punto anterior)</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>

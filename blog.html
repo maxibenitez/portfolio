@@ -11,104 +11,120 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item is-active_web">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-solid fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <main class="c-blog">
-    <div class="c-header">
-      <h2>Blog</h2>
-      <p>En esta sección, encontrarás resúmenes de textos relacionados
+  <header>BLOG</header>
+
+  <main>
+    <section class="c-container">
+      <h2 class="c-header">BLOG</h2>
+      <p class="c-info underline">En esta sección, encontrarás resúmenes de textos relacionados
         con libros fundamentales en este campo, exploraciones detalladas de
         diversos algoritmos, reflexiones sobre mis experiencias con herramientas
         como RapidMiner y otra información valiosa relacionada con machine learning.
       </p>
-    </div>
-    <ul class="c-blog__list">
-      <li class="c-item">
-        <a href="blog_gradient.html">
-          <h3>Descenso de Gradiente</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_linear_reg.html">
-          <h3>Regresión Lineal</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_logistic_reg.html">
-          <h3>Regresión Logística</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_lda.html">
-          <h3>Análisis Discriminante Lineal</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_how_valid_ml_rp.html">
-          <h3>Cómo validar correctamente modelos de Machine Learning - RapidMiner</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_credibility.html">
-          <h3>Credibilidad: evaluación de lo aprendido</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_k-nn.html">
-          <h3>k-Nearest Neighbours</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_nb.html">
-          <h3>Naïve Bayes</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_fselection.html">
-          <h3>Feature Selection</h3>
-        </a>
-      </li>
-      <li class="c-item">
-        <a href="blog_deshpande.html">
-          <h3>Tutorial “Feature Selection” de Deshpande</h3>
-        </a>
-      </li>
-    </ul>
+      <ul class="c-cards__list">
+        <li class="c-card">
+          <a href="blog_gradient.html">
+            <span>DESCENSO DE GRADIENTE</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_linear_reg.html">
+            <span>REGRESIÓN LINEAL</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_logistic_reg.html">
+            <span>REGRESIÓN LOGÍSTICA</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_lda.html">
+            <span>ANÁLISIS DISCRIMINANTE LINEAL</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_how_valid_ml_rp.html">
+            <span>VALIDAR MODELOS - RAPIDMINER</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_credibility.html">
+            <span>CREDIBILIDAD: EVALUACIÓN DE LO APRENDIDO</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_k-nn.html">
+            <span>K-NEAREST NEIGHBOURS</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_nb.html">
+            <span>NAÏVE BAYES</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_fselection.html">
+            <span>FEATURE SELECTION</span>
+          </a>
+        </li>
+        <li class="c-card">
+          <a href="blog_deshpande.html">
+            <span>TUTORIAL “FEATURE SELECTION” DE DESHPANDE</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer>

@@ -3,11 +3,12 @@
 @import 'base/utilities';
 @import 'base/variables';
 
-@import 'components/blog';
-@import 'components/case__studies';
-@import 'components/cases';
-@import 'components/home';
+@import 'components/button';
+@import 'components/card';
+@import 'components/container';
+@import 'components/header';
 @import 'components/navigation';
 
 @import 'structure/body';   
+@import 'structure/main';   
 @import 'structure/footer';   

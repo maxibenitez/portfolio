@@ -1,0 +1,16 @@
+.c-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    height: 6vh;
+    width: 60%;
+    margin: 1rem 0;
+
+    @include respond-to('lg') {
+        width: 30%;
+    }
+}

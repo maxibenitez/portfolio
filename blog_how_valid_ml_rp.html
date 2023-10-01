@@ -11,143 +11,190 @@
     <title>Portfolio</title>
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="c-nav_web">
-        <a href="index.html">
-            <h1>Machine Learning Portfolio</h1>
-        </a>
+        <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
         <ul class="c-navigation__list">
-            <li id="li-home" class="c-item" data-target-section="home">
-                <a href="index.html">Inicio</a>
-            </li>
-            <li id="li-blog" class="c-item is-active" data-target-section="blog">
-                <a href="blog.html">Blog</a>
-            </li>
-            <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-                <a href="case_studies.html">Casos de Estudio</a>
-            </li>
+          <li id="li-home" class="c-item">
+            <a href="index.html">INICIO</a>
+          </li>
+          <li id="li-blog" class="c-item is-active_web">
+            <a href="blog.html">BLOG</a>
+          </li>
+          <li id="li-case__studies" class="c-item">
+            <a href="case_studies.html">CASOS DE ESTUDIO</a>
+          </li>
+          <li id="li-tools" class="c-item">
+            <a href="tools.html">HERRAMIENTAS</a>
+          </li>
         </ul>
-    </nav>
+      </nav>
 
     <nav class="c-nav_mobile">
-        <a href="index.html">
-            <h1>ML Portfolio</h1>
-        </a>
         <ul class="c-navigation__list">
             <li id="li-home" class="c-item" data-target-section="home">
-                <a href="index.html">I</a>
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-xl"></i></i>
+                    <span>INICIO</span>
+                </a>
             </li>
             <li id="li-blog" class="c-item is-active" data-target-section="blog">
-                <a href="blog.html">B</a>
+                <a href="blog.html">
+                    <i class="fa-solid fa-file fa-xl"></i>
+                    <span>BLOG</span>
+                </a>
             </li>
             <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-                <a href="case_studies.html">CE</a>
+                <a href="case_studies.html">
+                    <i class="fa-solid fa-book fa-xl"></i>
+                    <span>CASOS ESTUDIO</span>
+                </a>
+            </li>
+            <li id="li-tools" class="c-item" data-target-section="tools">
+                <a href="tools.html">
+                    <i class="fa-solid fa-wrench fa-xl"></i>
+                    <span>HERRAMIENTAS</span>
+                </a>
             </li>
         </ul>
     </nav>
 
-    <main class="c-blog">
-        <div class="c-header">
-            <h2>Cómo validar correctamente modelos de ML</h2>
-        </div>
-        <div class="c-cases">
-            <p>La validación de modelos en machine learning es crucial para determinar la precisión de un modelo antes
-                de su implementación.
-            </p>
-            <h4>Conceptos básicos de modelos predictivos y validación</h4>
-            <p>Un modelo predictivo es una función que asigna un conjunto dado de valores para las columnas x a los
-                valores correspondientes correctos para la columna y. Encontrar tal función para un conjunto de datos
-                dado se llama entrenar el modelo. Esta capacidad de generalizar desde situaciones conocidas a
-                situaciones futuras desconocidas es la razón por la que llamamos a este tipo particular de modelo
-                "predictivo".</p>
-            <h5>Error de entrenamiento vs. Error de prueba</h5>
-            <p>La precisión de un modelo se evalúa midiendo su error de clasificación. Esto se logra comparando las
-                predicciones del modelo con los valores reales. Hay dos tipos de errores principales:</p>
-            <ul class="c-bulleted">
-                <li><strong>Error de entrenamiento:</strong> Se calcula en los mismos datos utilizados para entrenar el
-                    modelo.</li>
-                <li><strong>Error de prueba:</strong> Se calcula en conjuntos de datos diferentes para el entrenamiento
-                    y la evaluación,
-                    evitando la superposición entre datos de entrenamiento y prueba.</li>
-            </ul>
-            <h5>Proceso de cálculo de errores</h5>
-            <p>En RapidMiner, un proceso típico para calcular el error de entrenamiento incluye cargar un conjunto de
-                datos, alimentarlo a un modelo y evaluar su precisión usando el operador "Performance". En el caso del
-                error de prueba, dos conjuntos de datos disjuntos se utilizan para el entrenamiento y la evaluación del
-                modelo. Este proceso permite obtener una estimación más precisa de cómo el modelo se desempeñará en
-                situaciones futuras desconocidas.</p>
-            <h5>Por qué deberías ignorar el error de entrenamiento</h5>
-            <p>Usar el error de entrenamiento te proporciona una validación del modelo inexacta. En lugar de
-                proporcionar una evaluación precisa de la capacidad de un modelo para generalizar, el error de
-                entrenamiento puede ser engañosamente optimista. </p>
-            <ul class="c-bulleted">
-                <li><strong>Validación utilizando conjuntos de datos de retención (Hold-out):</strong> Es una buena
-                    práctica utilizar una
-                    parte de los datos disponibles para el entrenamiento y otra parte para probar el modelo. Esta parte
-                    de los datos utilizada para las pruebas también se llama conjunto de datos de retención. Una buena
-                    práctica es utilizar un 70% de tus datos para el entrenamiento y el 30% restante para las pruebas.
-                </li>
-                <li><strong>Cross-Validation:</strong> Con la validación cruzada k-fold, no solo creas múltiples
-                    muestras de prueba
-                    repetidamente, sino que divides el conjunto de datos completo que tienes en k partes disjuntas del
-                    mismo tamaño. Luego, entrenas k modelos diferentes en k-1 partes cada uno, mientras pruebas esos
-                    modelos siempre en la parte restante de los datos. Es un método sencillo que te garantiza que no
-                    haya superposición entre los conjuntos de entrenamiento y prueba. También garantiza que no haya
-                    superposición entre los k conjuntos de prueba, lo cual es bueno ya que no introduce ninguna forma de
-                    sesgo de selección negativo.</li>
-            </ul>
-            <h4>Contaminación accidental</h4>
-            <p>La contaminación accidental se refiere a la introducción de información de datos de prueba en los datos
-                de entrenamiento durante la validación cruzada, lo que puede llevar a una estimación optimista y errónea
-                del rendimiento del modelo en situaciones reales.</p>
-            <h5>Ejemplo 1: Contaminación a través de la Normalización</h5>
-            <p>Normalizar datos antes de la validación cruzada puede filtrar información de los datos de prueba en los
-                de entrenamiento. El enfoque correcto es normalizar dentro de cada iteración de la validación cruzada,
-                evitando la contaminación.</p>
-            <h5>Ejemplo 2: Contaminación a través de la Optimización de Parámetros</h5>
-            <p>Optimizar los parámetros del modelo es similar a otro proceso de aprendizaje automático y debe validarse
-                correctamente. Validar solo el resultado de la optimización de parámetros puede llevar a estimaciones
-                excesivamente optimistas. El enfoque correcto implica una validación cruzada anidada, que considera el
-                impacto de la optimización en los datos de prueba.</p>
-            <h5>Ejemplo 3: Contaminación a través de la Selección de Características</h5>
-            <p>La selección de características busca elegir las columnas más relevantes para el modelo, pero también
-                debe validarse correctamente. Elegir características antes de la validación cruzada puede introducir
-                filtración de información. La validación adecuada requiere una validación cruzada anidada, considerando
-                el efecto de la selección de características en el rendimiento.</p>
-            <h4>Consecuencias de la contaminación ambiental</h4>
-            <p>Es fundamental comprender las graves consecuencias que la contaminación accidental puede tener en la
-                validación de modelos de aprendizaje automático. Aunque es posible construir modelos aparentemente
-                buenos sin una validación adecuada, estos modelos podrían resultar mediocres o incluso peligrosos en
-                situaciones reales de producción.</p>
-            <ul class="c-bulleted">
-                <li><strong>Ejemplo Médico:</strong> Imagina un modelo que utiliza resonancias magnéticas para detectar
-                    células tumorales
-                    malignas. Con una validación contaminada, el modelo parece excepcionalmente preciso, pero en la
-                    producción real, se comete un error del 10%, lo que podría llevar a tratamientos incorrectos o no
-                    identificados.</li>
-                <li><strong>Ejemplo Empresarial:</strong> Una empresa invierte $20 millones para implementar medidas
-                    basadas en un modelo
-                    de aprendizaje automático que prometía reducir la pérdida de clientes en $40 millones. Sin embargo,
-                    debido a la validación incorrecta, solo logra un ahorro de $10 millones, lo que resulta en una
-                    pérdida de $10 millones en lugar de una ganancia esperada de $20 millones.</li>
-            </ul>
-            <h5>Cómo evitar la contaminación accidental</h5>
-            <ul class="c-bulleted">
-                <li><strong>Esquemas de validación adecuados como la validación cruzada:</strong> realizar una
-                    validación cruzada adecuada, considerando todas las transformaciones y optimizaciones alrededor de
-                    la selección del modelo.</li>
-                <li><strong>Esquemas de validación modulares:</strong> utilizar esquemas de validación modulares para
-                    medir el impacto de los cambios.</li>
-                <li><strong>Anidación multinivel:</strong> para medir el efecto de acciones fuera de la selección del
-                    modelo, se requiere anidar múltiples validaciones cruzadas.</li>
-                <li><strong>Modelos de preprocesamiento:</strong> las plataformas visuales deben admitir aplicar el
-                    mismo preprocesamiento a datos de prueba como se hizo en los de entrenamiento. Esto es especialmente
-                    problemático para transformaciones complejas. Muchos productos no admiten modelos de
-                    preprocesamiento, lo que limita su utilidad en escenarios prácticos y no científicos.</li>
-            </ul>
-        </div>
+    <header class="underline">VALIDAR MODELOS DE ML</header>
+
+    <main>
+        <section class="c-container">
+            <h2 class="c-content_header">VALIDAR MODELOS DE ML</h2>
+            <div class="c-content">
+                <p>La validación de modelos en machine learning es crucial para determinar la precisión de un modelo
+                    antes
+                    de su implementación.
+                </p>
+                <h4>Conceptos básicos de modelos predictivos y validación</h4>
+                <p>Un modelo predictivo es una función que asigna un conjunto dado de valores para las columnas x a los
+                    valores correspondientes correctos para la columna y. Encontrar tal función para un conjunto de
+                    datos
+                    dado se llama entrenar el modelo. Esta capacidad de generalizar desde situaciones conocidas a
+                    situaciones futuras desconocidas es la razón por la que llamamos a este tipo particular de modelo
+                    "predictivo".</p>
+                <h5>Error de entrenamiento vs. Error de prueba</h5>
+                <p>La precisión de un modelo se evalúa midiendo su error de clasificación. Esto se logra comparando las
+                    predicciones del modelo con los valores reales. Hay dos tipos de errores principales:</p>
+                <ul class="c-bulleted">
+                    <li><strong>Error de entrenamiento:</strong> Se calcula en los mismos datos utilizados para entrenar
+                        el
+                        modelo.</li>
+                    <li><strong>Error de prueba:</strong> Se calcula en conjuntos de datos diferentes para el
+                        entrenamiento
+                        y la evaluación,
+                        evitando la superposición entre datos de entrenamiento y prueba.</li>
+                </ul>
+                <h5>Proceso de cálculo de errores</h5>
+                <p>En RapidMiner, un proceso típico para calcular el error de entrenamiento incluye cargar un conjunto
+                    de
+                    datos, alimentarlo a un modelo y evaluar su precisión usando el operador "Performance". En el caso
+                    del
+                    error de prueba, dos conjuntos de datos disjuntos se utilizan para el entrenamiento y la evaluación
+                    del
+                    modelo. Este proceso permite obtener una estimación más precisa de cómo el modelo se desempeñará en
+                    situaciones futuras desconocidas.</p>
+                <h5>Por qué deberías ignorar el error de entrenamiento</h5>
+                <p>Usar el error de entrenamiento te proporciona una validación del modelo inexacta. En lugar de
+                    proporcionar una evaluación precisa de la capacidad de un modelo para generalizar, el error de
+                    entrenamiento puede ser engañosamente optimista. </p>
+                <ul class="c-bulleted">
+                    <li><strong>Validación utilizando conjuntos de datos de retención (Hold-out):</strong> Es una buena
+                        práctica utilizar una
+                        parte de los datos disponibles para el entrenamiento y otra parte para probar el modelo. Esta
+                        parte
+                        de los datos utilizada para las pruebas también se llama conjunto de datos de retención. Una
+                        buena
+                        práctica es utilizar un 70% de tus datos para el entrenamiento y el 30% restante para las
+                        pruebas.
+                    </li>
+                    <li><strong>Cross-Validation:</strong> Con la validación cruzada k-fold, no solo creas múltiples
+                        muestras de prueba
+                        repetidamente, sino que divides el conjunto de datos completo que tienes en k partes disjuntas
+                        del
+                        mismo tamaño. Luego, entrenas k modelos diferentes en k-1 partes cada uno, mientras pruebas esos
+                        modelos siempre en la parte restante de los datos. Es un método sencillo que te garantiza que no
+                        haya superposición entre los conjuntos de entrenamiento y prueba. También garantiza que no haya
+                        superposición entre los k conjuntos de prueba, lo cual es bueno ya que no introduce ninguna
+                        forma de
+                        sesgo de selección negativo.</li>
+                </ul>
+                <h4>Contaminación accidental</h4>
+                <p>La contaminación accidental se refiere a la introducción de información de datos de prueba en los
+                    datos
+                    de entrenamiento durante la validación cruzada, lo que puede llevar a una estimación optimista y
+                    errónea
+                    del rendimiento del modelo en situaciones reales.</p>
+                <h5>Ejemplo 1: Contaminación a través de la Normalización</h5>
+                <p>Normalizar datos antes de la validación cruzada puede filtrar información de los datos de prueba en
+                    los
+                    de entrenamiento. El enfoque correcto es normalizar dentro de cada iteración de la validación
+                    cruzada,
+                    evitando la contaminación.</p>
+                <h5>Ejemplo 2: Contaminación a través de la Optimización de Parámetros</h5>
+                <p>Optimizar los parámetros del modelo es similar a otro proceso de aprendizaje automático y debe
+                    validarse
+                    correctamente. Validar solo el resultado de la optimización de parámetros puede llevar a
+                    estimaciones
+                    excesivamente optimistas. El enfoque correcto implica una validación cruzada anidada, que considera
+                    el
+                    impacto de la optimización en los datos de prueba.</p>
+                <h5>Ejemplo 3: Contaminación a través de la Selección de Características</h5>
+                <p>La selección de características busca elegir las columnas más relevantes para el modelo, pero también
+                    debe validarse correctamente. Elegir características antes de la validación cruzada puede introducir
+                    filtración de información. La validación adecuada requiere una validación cruzada anidada,
+                    considerando
+                    el efecto de la selección de características en el rendimiento.</p>
+                <h4>Consecuencias de la contaminación ambiental</h4>
+                <p>Es fundamental comprender las graves consecuencias que la contaminación accidental puede tener en la
+                    validación de modelos de aprendizaje automático. Aunque es posible construir modelos aparentemente
+                    buenos sin una validación adecuada, estos modelos podrían resultar mediocres o incluso peligrosos en
+                    situaciones reales de producción.</p>
+                <ul class="c-bulleted">
+                    <li><strong>Ejemplo Médico:</strong> Imagina un modelo que utiliza resonancias magnéticas para
+                        detectar
+                        células tumorales
+                        malignas. Con una validación contaminada, el modelo parece excepcionalmente preciso, pero en la
+                        producción real, se comete un error del 10%, lo que podría llevar a tratamientos incorrectos o
+                        no
+                        identificados.</li>
+                    <li><strong>Ejemplo Empresarial:</strong> Una empresa invierte $20 millones para implementar medidas
+                        basadas en un modelo
+                        de aprendizaje automático que prometía reducir la pérdida de clientes en $40 millones. Sin
+                        embargo,
+                        debido a la validación incorrecta, solo logra un ahorro de $10 millones, lo que resulta en una
+                        pérdida de $10 millones en lugar de una ganancia esperada de $20 millones.</li>
+                </ul>
+                <h5>Cómo evitar la contaminación accidental</h5>
+                <ul class="c-bulleted">
+                    <li><strong>Esquemas de validación adecuados como la validación cruzada:</strong> realizar una
+                        validación cruzada adecuada, considerando todas las transformaciones y optimizaciones alrededor
+                        de
+                        la selección del modelo.
+                    </li>
+                    <li><strong>Esquemas de validación modulares:</strong> utilizar esquemas de validación modulares
+                        para
+                        medir el impacto de los cambios.
+                    </li>
+                    <li><strong>Anidación multinivel:</strong> para medir el efecto de acciones fuera de la selección
+                        del
+                        modelo, se requiere anidar múltiples validaciones cruzadas.
+                    </li>
+                    <li><strong>Modelos de preprocesamiento:</strong> las plataformas visuales deben admitir aplicar el
+                        mismo preprocesamiento a datos de prueba como se hizo en los de entrenamiento. Esto es
+                        especialmente
+                        problemático para transformaciones complejas. Muchos productos no admiten modelos de
+                        preprocesamiento, lo que limita su utilidad en escenarios prácticos y no científicos.
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <footer>

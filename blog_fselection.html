@@ -11,6 +11,7 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -18,201 +19,245 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item is-active_web">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-solid fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <main class="c-blog">
-    <div class="c-header">
-      <h2>Feature Selection</h2>
-    </div>
-    <div class="c-cases">
-      <p>En este capítulo se aborda la selección de características, un paso crucial en la preparación de datos para la
-        ciencia de datos. Se destaca que gran parte del esfuerzo en análisis de datos se dedica a la limpieza y
-        preparación de datos. El enfoque del capítulo es reducir un conjunto de datos a sus características esenciales,
-        lo que se conoce con varios términos como selección de características, reducción de dimensiones, selección de
-        variables, identificación de parámetros clave, ponderación de atributos o regularización.
-        <br>
-        Se menciona una diferencia sutil entre reducción de dimensiones y selección de características, donde la primera
-        combina atributos para reducir su número, mientras que la segunda elimina algunos atributos. Se explican dos
-        enfoques principales para la selección de características: el tipo de filtro, que selecciona atributos que
-        cumplen ciertos criterios predefinidos, y el tipo de envoltura, que elige atributos de manera iterativa para
-        mejorar el rendimiento de un algoritmo.
-        <br>
-        Dentro de los métodos de tipo filtro, se mencionan categorías basadas en el tipo de datos (numéricos y
-        nominales). Entre los métodos de tipo envoltura, se destacan la regresión paso a paso, la selección hacia
-        adelante y la eliminación hacia atrás. Además, se exploran algunos métodos específicos de tipo filtro, como el
-        PCA (análisis de componentes principales), el filtrado basado en la ganancia de información y el filtrado basado
-        en la chi-cuadrado.
-        <br>
-        La selección de características es un proceso fundamental en la ciencia de datos para reducir el ruido y mejorar
-        la eficacia de los modelos predictivos.
-      </p>
-      <h4>Clasificación de los métodos de selección de características</h4>
-      <p>La selección de características en la ciencia de datos es esencial para identificar las variables más
-        importantes en un modelo predictivo. Aunque la capacidad de cómputo actual puede manejar grandes conjuntos de
-        datos, los modelos siguen siendo útiles para mejorar la toma de decisiones y evitar dependencias excesivas de
-        correlaciones. La selección de características optimiza el rendimiento y facilita la interpretación al reducir
-        el número de atributos.
-        <br>
-        Existen dos razones técnicas para la selección de características: eliminar atributos altamente correlacionados
-        que no aportan información adicional y eliminar información redundante que no afecta las predicciones. Los
-        métodos de selección de características pueden aplicarse antes del modelado o de manera iterativa durante el
-        proceso de la ciencia de datos.
-        <br>
-        Los métodos de selección de características se dividen en dos esquemas: filtro y envoltura. El esquema de filtro
-        no requiere algoritmos de aprendizaje y se utiliza cuando hay muchas características o se necesita ahorrar
-        recursos computacionales. En contraste, el esquema de envoltura está optimizado para un algoritmo de aprendizaje
-        específico y se considera supervisado.
-      </p>
-      <figure>
-        <img src="../images/feature_selection.png" alt="Feature Selection">
-      </figure>
-      <h4>Análisis de Componentes Principales (PCA)</h4>
-      <p>El Análisis de Componentes Principales (PCA) es una técnica que busca identificar un pequeño subconjunto de
-        atributos que explican la mayor parte de la variabilidad en un conjunto de datos. Ayuda a responder la pregunta
-        de qué atributos son los más importantes para un rendimiento capturado por una variable objetivo. PCA transforma
-        las variables originales en componentes principales que tienen propiedades clave: no están correlacionados,
-        explican una gran cantidad de varianza en los datos y pueden relacionarse nuevamente con las variables
-        originales a través de factores de ponderación. Esto permite reducir las dimensiones de los datos, eliminando
-        efectivamente las variables originales con factores de ponderación bajos en los componentes principales. El
-        objetivo es simplificar el conjunto de datos y facilitar la interpretación de los resultados.</p>
-      <h5>Cómo funciona</h5>
-      <p>El Análisis de Componentes Principales (PCA) busca calcular componentes principales, como z1 y z2, que cumplan
-        con ciertas propiedades. Estos componentes son transformaciones lineales de las variables originales, como v1 y
-        v2. El objetivo es que estos nuevos componentes maximicen la variabilidad en los datos y estén no
-        correlacionados entre sí.
-        <br>
-        En el caso de dos variables, v1 y v2, se pueden encontrar componentes principales z1 y z2 que representan la
-        máxima variabilidad y no tienen correlación. A medida que aumenta el número de variables, los componentes
-        principales se expresan como combinaciones lineales de las variables subyacentes, vm:
-        <br>
-        $$z_{m}=\sum_{}w_{i} \cdot x_{i}$$
-        <br>
-        Para encontrar los componentes principales en conjuntos de datos con más de dos variables, se realiza un
-        análisis de autovalores de la matriz de covarianza de las variables originales. El autovalor asociado al
-        autovalor más grande es el primer componente principal, y así sucesivamente. La covarianza mide cómo dos
-        variables varían en relación con sus medias y se utiliza para calcular los coeficientes de correlación.
-        <br>
-        $$COV_{ij} = E\left[ V_{i}V_{j} \right]-E\left[ V_{i} \right]E\left[ V_{j} \right]$$
-      </p>
-      <h5>Cómo implementarlo</h5>
-      <h6>Paso 1: Preparación de datos</h6>
-      <ul class="c-bulleted">
-        <li>Eliminar los atributos no numéricos, ya que PCA solo funciona con atributos numéricos.</li>
-        <li>Leer el archivo de Excel en RapidMiner.</li>
-      </ul>
-      <h6>Paso 2: Operador PCA</h6>
-      <ul class="c-bulleted">
-        <li>Utilizar el operador PCA en RapidMiner y conectarlo a los datos.</li>
-        <li>Configurar el umbral de varianza (por ejemplo, 95%) para seleccionar atributos que expliquen una cantidad
-          significativa de la varianza en los datos.</li>
-      </ul>
-      <figure>
-        <img src="../images/pca.png" alt="PCA">
-      </figure>
-      <h6>Paso 3: Ejecución e interpretación</h6>
-      <ul class="c-bulleted">
-        <li>Ejecutar el análisis de PCA.</li>
-        <li>Examinar los autovalores para determinar cuántos componentes principales son necesarios para explicar la
-          varianza deseada.</li>
-        <li>Identificar los atributos más relevantes seleccionando los factores de ponderación más altos para cada
-          componente principal.</li>
-      </ul>
-      <p>Es importante tener en cuenta que el PCA es sensible a la escala de los datos, por lo que se puede utilizar la
-        normalización para abordar este problema. Sin embargo, la normalización puede cambiar los resultados del PCA y
-        requerir más componentes principales para explicar la misma varianza.</p>
-      <h4>Filtrado basado en la teoría de la información</h4>
-      <p>El filtrado basado en la teoría de la información se basa en conceptos como la ganancia de información y la
-        relación de ganancia. Estos métodos comparan la información compartida entre un atributo y la variable objetivo.
-        El objetivo de la selección de características es incluir atributos que estén fuertemente correlacionados con la
-        variable objetivo.
-        <br>
-        Para aplicar el filtrado basado en la ganancia de información, se calcula la ganancia de información de todos
-        los atributos y se clasifican en función de su influencia en la variable objetivo. Esto permite seleccionar
-        aquellos atributos que cumplan con cierto umbral o elegir las mejores k características.
-        <br>
-        Es importante tener en cuenta que el cálculo de ganancia de información depende de los tipos de datos y de cómo
-        se discretizan los datos nominales. Por lo tanto, es necesario prestar atención a la discretización de los
-        atributos antes de aplicar el filtrado.
-      </p>
-      <h4>Filtrado basado en el test de chi-cuadrado</h4>
-      <p>El filtrado basado en el test de chi-cuadrado es útil cuando se trabaja con conjuntos de datos que consisten en
-        atributos categóricos o nominales. Esta técnica ayuda a determinar si existe una relación significativa entre un
-        atributo y la variable objetivo.
-        <br>
-        Para realizar el análisis de chi-cuadrado, se construye una tabla de contingencia que muestra las frecuencias
-        observadas para cada combinación de atributos y la variable objetivo. Luego, se calculan las frecuencias
-        esperadas utilizando la probabilidad de ocurrencia conjunta de los atributos. La estadística de chi-cuadrado se
-        calcula como la suma de las diferencias al cuadrado entre las frecuencias observadas y esperadas, y se utiliza
-        para evaluar la independencia entre los atributos y la variable objetivo.
-        <br>
-        Esta técnica permite clasificar los atributos en función de su influencia en la variable objetivo. La
-        clasificación obtenida mediante el test de chi-cuadrado puede ser similar a la obtenida mediante la ganancia de
-        información cuando se nominalizan los atributos.
-        <br>
-        Es importante destacar que la normalización de pesos a veces se utiliza en esta técnica para asignar valores en
-        el rango de 0 a 1.
-      </p>
-      <h4>Selección de características del tipo envoltura</h4>
-      <p>El enfoque de selección de características tipo "wrapper scheme," que utiliza métodos iterativos para elegir
-        características en función de su impacto en la calidad del modelo.
-        <br>
-        Los métodos de tipo "wrapper" buscan reducir la cantidad de atributos en un modelo de regresión sin comprometer
-        su capacidad predictiva. En lugar de considerar todas las combinaciones posibles de atributos, estos métodos
-        utilizan estrategias iterativas para agregar o eliminar características. Dos enfoques comunes son la selección
-        hacia adelante y la eliminación hacia atrás.
-      </p>
-      <ul class="c-bulleted">
-        <li><strong>Selección hacia adelante:</strong> Comienza con un atributo y construye un modelo base. Luego,
-          agrega un atributo adicional y compara el rendimiento del nuevo modelo con el modelo base. Si mejora
-          significativamente, el nuevo modelo se convierte en el base, y el proceso continúa agregando atributos uno por
-          uno hasta alcanzar el nivel deseado de rendimiento.</li>
-        <li><strong>Eliminación hacia atrás:</strong> Comienza con un modelo que incluye todos los atributos y elimina
-          uno de ellos en cada iteración. La elección del atributo a eliminar suele basarse en alguna métrica, como el
-          valor t más bajo. Si el rendimiento del nuevo modelo es mejor que el del modelo base, el atributo se elimina,
-          y el proceso continúa hasta que no haya una mejora significativa en el rendimiento.</li>
-      </ul>
-      <p>En un estudio de caso con datos de viviendas de Boston, se demuestra cómo implementar la eliminación hacia
-        atrás utilizando RapidMiner. El objetivo es construir un modelo de regresión múltiple de alta calidad con la
-        menor cantidad de atributos posible. La configuración de RapidMiner implica anidar el proceso de entrenamiento y
-        prueba dentro del operador de eliminación hacia atrás. Se pueden especificar varios parámetros, como el criterio
-        de detención (disminución, disminución relativa máxima o disminución significativa) y el nivel de significancia.
-        <br>
-        El resultado muestra que nueve atributos se eliminaron en el modelo final, lo que resultó en una disminución del
-        R2. Se discute cómo la elección de los criterios de detención y sus niveles debe basarse en la experiencia y el
-        conocimiento del dominio.
-      </p>
-    </div>
+  <header class="underline">FEATURE SELECTION</header>
+
+  <main>
+    <section class="c-container">
+      <h2 class="c-content_header">FEATURE SELECTION</h2>
+      <div class="c-content">
+        <p>En este capítulo se aborda la selección de características, un paso crucial en la preparación de datos para
+          la
+          ciencia de datos. Se destaca que gran parte del esfuerzo en análisis de datos se dedica a la limpieza y
+          preparación de datos. El enfoque del capítulo es reducir un conjunto de datos a sus características
+          esenciales,
+          lo que se conoce con varios términos como selección de características, reducción de dimensiones, selección de
+          variables, identificación de parámetros clave, ponderación de atributos o regularización.
+          <br>
+          Se menciona una diferencia sutil entre reducción de dimensiones y selección de características, donde la
+          primera
+          combina atributos para reducir su número, mientras que la segunda elimina algunos atributos. Se explican dos
+          enfoques principales para la selección de características: el tipo de filtro, que selecciona atributos que
+          cumplen ciertos criterios predefinidos, y el tipo de envoltura, que elige atributos de manera iterativa para
+          mejorar el rendimiento de un algoritmo.
+          <br>
+          Dentro de los métodos de tipo filtro, se mencionan categorías basadas en el tipo de datos (numéricos y
+          nominales). Entre los métodos de tipo envoltura, se destacan la regresión paso a paso, la selección hacia
+          adelante y la eliminación hacia atrás. Además, se exploran algunos métodos específicos de tipo filtro, como el
+          PCA (análisis de componentes principales), el filtrado basado en la ganancia de información y el filtrado
+          basado
+          en la chi-cuadrado.
+          <br>
+          La selección de características es un proceso fundamental en la ciencia de datos para reducir el ruido y
+          mejorar
+          la eficacia de los modelos predictivos.
+        </p>
+        <h4>Clasificación de los métodos de selección de características</h4>
+        <p>La selección de características en la ciencia de datos es esencial para identificar las variables más
+          importantes en un modelo predictivo. Aunque la capacidad de cómputo actual puede manejar grandes conjuntos de
+          datos, los modelos siguen siendo útiles para mejorar la toma de decisiones y evitar dependencias excesivas de
+          correlaciones. La selección de características optimiza el rendimiento y facilita la interpretación al reducir
+          el número de atributos.
+          <br>
+          Existen dos razones técnicas para la selección de características: eliminar atributos altamente
+          correlacionados
+          que no aportan información adicional y eliminar información redundante que no afecta las predicciones. Los
+          métodos de selección de características pueden aplicarse antes del modelado o de manera iterativa durante el
+          proceso de la ciencia de datos.
+          <br>
+          Los métodos de selección de características se dividen en dos esquemas: filtro y envoltura. El esquema de
+          filtro
+          no requiere algoritmos de aprendizaje y se utiliza cuando hay muchas características o se necesita ahorrar
+          recursos computacionales. En contraste, el esquema de envoltura está optimizado para un algoritmo de
+          aprendizaje
+          específico y se considera supervisado.
+        </p>
+        <figure>
+          <img src="../images/feature_selection.png" alt="Feature Selection">
+        </figure>
+        <h4>Análisis de Componentes Principales (PCA)</h4>
+        <p>El Análisis de Componentes Principales (PCA) es una técnica que busca identificar un pequeño subconjunto de
+          atributos que explican la mayor parte de la variabilidad en un conjunto de datos. Ayuda a responder la
+          pregunta
+          de qué atributos son los más importantes para un rendimiento capturado por una variable objetivo. PCA
+          transforma
+          las variables originales en componentes principales que tienen propiedades clave: no están correlacionados,
+          explican una gran cantidad de varianza en los datos y pueden relacionarse nuevamente con las variables
+          originales a través de factores de ponderación. Esto permite reducir las dimensiones de los datos, eliminando
+          efectivamente las variables originales con factores de ponderación bajos en los componentes principales. El
+          objetivo es simplificar el conjunto de datos y facilitar la interpretación de los resultados.</p>
+        <h5>Cómo funciona</h5>
+        <p>El Análisis de Componentes Principales (PCA) busca calcular componentes principales, como z1 y z2, que
+          cumplan
+          con ciertas propiedades. Estos componentes son transformaciones lineales de las variables originales, como v1
+          y
+          v2. El objetivo es que estos nuevos componentes maximicen la variabilidad en los datos y estén no
+          correlacionados entre sí.
+          <br>
+          En el caso de dos variables, v1 y v2, se pueden encontrar componentes principales z1 y z2 que representan la
+          máxima variabilidad y no tienen correlación. A medida que aumenta el número de variables, los componentes
+          principales se expresan como combinaciones lineales de las variables subyacentes, vm:
+          <br>
+          $$z_{m}=\sum_{}w_{i} \cdot x_{i}$$
+          <br>
+          Para encontrar los componentes principales en conjuntos de datos con más de dos variables, se realiza un
+          análisis de autovalores de la matriz de covarianza de las variables originales. El autovalor asociado al
+          autovalor más grande es el primer componente principal, y así sucesivamente. La covarianza mide cómo dos
+          variables varían en relación con sus medias y se utiliza para calcular los coeficientes de correlación.
+          <br>
+          $$COV_{ij} = E\left[ V_{i}V_{j} \right]-E\left[ V_{i} \right]E\left[ V_{j} \right]$$
+        </p>
+        <h5>Cómo implementarlo</h5>
+        <h6>Paso 1: Preparación de datos</h6>
+        <ul class="c-bulleted">
+          <li>Eliminar los atributos no numéricos, ya que PCA solo funciona con atributos numéricos.</li>
+          <li>Leer el archivo de Excel en RapidMiner.</li>
+        </ul>
+        <h6>Paso 2: Operador PCA</h6>
+        <ul class="c-bulleted">
+          <li>Utilizar el operador PCA en RapidMiner y conectarlo a los datos.</li>
+          <li>Configurar el umbral de varianza (por ejemplo, 95%) para seleccionar atributos que expliquen una cantidad
+            significativa de la varianza en los datos.</li>
+        </ul>
+        <figure>
+          <img src="../images/pca.png" alt="PCA">
+        </figure>
+        <h6>Paso 3: Ejecución e interpretación</h6>
+        <ul class="c-bulleted">
+          <li>Ejecutar el análisis de PCA.</li>
+          <li>Examinar los autovalores para determinar cuántos componentes principales son necesarios para explicar la
+            varianza deseada.</li>
+          <li>Identificar los atributos más relevantes seleccionando los factores de ponderación más altos para cada
+            componente principal.</li>
+        </ul>
+        <p>Es importante tener en cuenta que el PCA es sensible a la escala de los datos, por lo que se puede utilizar
+          la
+          normalización para abordar este problema. Sin embargo, la normalización puede cambiar los resultados del PCA y
+          requerir más componentes principales para explicar la misma varianza.</p>
+        <h4>Filtrado basado en la teoría de la información</h4>
+        <p>El filtrado basado en la teoría de la información se basa en conceptos como la ganancia de información y la
+          relación de ganancia. Estos métodos comparan la información compartida entre un atributo y la variable
+          objetivo.
+          El objetivo de la selección de características es incluir atributos que estén fuertemente correlacionados con
+          la
+          variable objetivo.
+          <br>
+          Para aplicar el filtrado basado en la ganancia de información, se calcula la ganancia de información de todos
+          los atributos y se clasifican en función de su influencia en la variable objetivo. Esto permite seleccionar
+          aquellos atributos que cumplan con cierto umbral o elegir las mejores k características.
+          <br>
+          Es importante tener en cuenta que el cálculo de ganancia de información depende de los tipos de datos y de
+          cómo
+          se discretizan los datos nominales. Por lo tanto, es necesario prestar atención a la discretización de los
+          atributos antes de aplicar el filtrado.
+        </p>
+        <h4>Filtrado basado en el test de chi-cuadrado</h4>
+        <p>El filtrado basado en el test de chi-cuadrado es útil cuando se trabaja con conjuntos de datos que consisten
+          en
+          atributos categóricos o nominales. Esta técnica ayuda a determinar si existe una relación significativa entre
+          un
+          atributo y la variable objetivo.
+          <br>
+          Para realizar el análisis de chi-cuadrado, se construye una tabla de contingencia que muestra las frecuencias
+          observadas para cada combinación de atributos y la variable objetivo. Luego, se calculan las frecuencias
+          esperadas utilizando la probabilidad de ocurrencia conjunta de los atributos. La estadística de chi-cuadrado
+          se
+          calcula como la suma de las diferencias al cuadrado entre las frecuencias observadas y esperadas, y se utiliza
+          para evaluar la independencia entre los atributos y la variable objetivo.
+          <br>
+          Esta técnica permite clasificar los atributos en función de su influencia en la variable objetivo. La
+          clasificación obtenida mediante el test de chi-cuadrado puede ser similar a la obtenida mediante la ganancia
+          de
+          información cuando se nominalizan los atributos.
+          <br>
+          Es importante destacar que la normalización de pesos a veces se utiliza en esta técnica para asignar valores
+          en
+          el rango de 0 a 1.
+        </p>
+        <h4>Selección de características del tipo envoltura</h4>
+        <p>El enfoque de selección de características tipo "wrapper scheme," que utiliza métodos iterativos para elegir
+          características en función de su impacto en la calidad del modelo.
+          <br>
+          Los métodos de tipo "wrapper" buscan reducir la cantidad de atributos en un modelo de regresión sin
+          comprometer
+          su capacidad predictiva. En lugar de considerar todas las combinaciones posibles de atributos, estos métodos
+          utilizan estrategias iterativas para agregar o eliminar características. Dos enfoques comunes son la selección
+          hacia adelante y la eliminación hacia atrás.
+        </p>
+        <ul class="c-bulleted">
+          <li><strong>Selección hacia adelante:</strong> Comienza con un atributo y construye un modelo base. Luego,
+            agrega un atributo adicional y compara el rendimiento del nuevo modelo con el modelo base. Si mejora
+            significativamente, el nuevo modelo se convierte en el base, y el proceso continúa agregando atributos uno
+            por
+            uno hasta alcanzar el nivel deseado de rendimiento.</li>
+          <li><strong>Eliminación hacia atrás:</strong> Comienza con un modelo que incluye todos los atributos y elimina
+            uno de ellos en cada iteración. La elección del atributo a eliminar suele basarse en alguna métrica, como el
+            valor t más bajo. Si el rendimiento del nuevo modelo es mejor que el del modelo base, el atributo se
+            elimina,
+            y el proceso continúa hasta que no haya una mejora significativa en el rendimiento.</li>
+        </ul>
+        <p>En un estudio de caso con datos de viviendas de Boston, se demuestra cómo implementar la eliminación hacia
+          atrás utilizando RapidMiner. El objetivo es construir un modelo de regresión múltiple de alta calidad con la
+          menor cantidad de atributos posible. La configuración de RapidMiner implica anidar el proceso de entrenamiento
+          y
+          prueba dentro del operador de eliminación hacia atrás. Se pueden especificar varios parámetros, como el
+          criterio
+          de detención (disminución, disminución relativa máxima o disminución significativa) y el nivel de
+          significancia.
+          <br>
+          El resultado muestra que nueve atributos se eliminaron en el modelo final, lo que resultó en una disminución
+          del
+          R2. Se discute cómo la elección de los criterios de detención y sus niveles debe basarse en la experiencia y
+          el
+          conocimiento del dominio.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>

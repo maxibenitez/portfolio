@@ -11,6 +11,7 @@
     <title>Portfolio</title>
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
@@ -19,216 +20,285 @@
 <body>
     <nav class="c-nav_web">
         <a href="index.html">
-            <h1>Machine Learning Portfolio</h1>
+            <h1>MACHINE LEARNING PORTFOLIO</h1>
         </a>
         <ul class="c-navigation__list">
-            <li id="li-home" class="c-item" data-target-section="home">
-                <a href="index.html">Inicio</a>
+            <li id="li-home" class="c-item">
+                <a href="index.html">INICIO</a>
             </li>
-            <li id="li-blog" class="c-item is-active" data-target-section="blog">
-                <a href="blog.html">Blog</a>
+            <li id="li-blog" class="c-item is-active_web">
+                <a href="blog.html">BLOG</a>
             </li>
-            <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-                <a href="case_studies.html">Casos de Estudio</a>
+            <li id="li-case__studies" class="c-item">
+                <a href="case_studies.html">CASOS DE ESTUDIO</a>
+            </li>
+            <li id="li-tools" class="c-item">
+                <a href="tools.html">HERRAMIENTAS</a>
             </li>
         </ul>
     </nav>
 
     <nav class="c-nav_mobile">
-        <a href="index.html">
-            <h1>ML Portfolio</h1>
-        </a>
         <ul class="c-navigation__list">
             <li id="li-home" class="c-item" data-target-section="home">
-                <a href="index.html">I</a>
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-xl"></i></i>
+                    <span>INICIO</span>
+                </a>
             </li>
             <li id="li-blog" class="c-item is-active" data-target-section="blog">
-                <a href="blog.html">B</a>
+                <a href="blog.html">
+                    <i class="fa-solid fa-file fa-xl"></i>
+                    <span>BLOG</span>
+                </a>
             </li>
             <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-                <a href="case_studies.html">CE</a>
+                <a href="case_studies.html">
+                    <i class="fa-solid fa-book fa-xl"></i>
+                    <span>CASOS ESTUDIO</span>
+                </a>
+            </li>
+            <li id="li-tools" class="c-item" data-target-section="tools">
+                <a href="tools.html">
+                    <i class="fa-solid fa-wrench fa-xl"></i>
+                    <span>HERRAMIENTAS</span>
+                </a>
             </li>
         </ul>
     </nav>
 
-    <main class="c-blog">
-        <div class="c-header">
-            <h2>Tutorial “Feature Selection” de Deshpande</h2>
-        </div>
-        <div class="c-cases">
-            <h4>Mejores Modelos de Aprendizaje Automático con Selección de Características Multiobjetivo: Parte 1</h4>
-            <p>La selección de características es esencial para mejorar los modelos de aprendizaje automático. La
-                ingeniería de características tiene un gran impacto en la calidad del modelo. Incluso los modelos
-                avanzados pueden ser engañados por características ruidosas, lo que afecta su rendimiento. La selección
-                de características ayuda a eliminar el ruido y permite que el modelo se centre en patrones relevantes.
-                Además, reducir el número de características acelera el entrenamiento y simplifica el modelo, haciéndolo
-                más robusto.
-                <br>
-                <br>
-                El problema de la selección de características es complicado debido a la búsqueda exhaustiva de
-                subconjuntos óptimos. Utilizando como ejemplo un conjunto de datos que tiene 10 atributos y una etiqueta
-                a predecir. El objetivo es encontrar un subconjunto de atributos que maximice la precisión del modelo.
-                Esto se puede representar mediante vectores de bits, donde 1 indica que un atributo se utiliza y 0 que
-                no se utiliza.
-                <br>
-                Una estrategia sería probar todas las combinaciones posibles, comenzando con un solo atributo. Por
-                ejemplo, el primer atributo puede dar una precisión del 68%, mejor que usar todos los atributos (62%).
-                Luego, se evalúan todas las combinaciones de dos atributos, tres, y así sucesivamente, hasta probar
-                todas las posibles combinaciones. Este enfoque se conoce como fuerza bruta.
-                <br>
-                Sin embargo, la cantidad de combinaciones crece exponencialmente con el número de atributos. Con 10
-                atributos, hay 2^10 - 1 combinaciones posibles, es decir, 1,023 combinaciones a probar, lo que es
-                manejable. Pero en conjuntos de datos más grandes, se dificulta evaluar incluso para las computadoras
-                más potentes.
-            </p>
-            <h5>Heurística</h5>
-            <p>Las heurísticas son una solución más eficiente que la búsqueda exhaustiva de subconjuntos de atributos en
-                el problema de selección de características. Dos enfoques ampliamente utilizados son la selección hacia
-                adelante y la eliminación hacia atrás.</p>
-            <ul class="c-bulleted">
-                <li><strong>Selección hacia adelante:</strong> Este enfoque comienza probando todos los subconjuntos con
-                    un solo atributo
-                    y conserva el mejor. Luego, se prueban subconjuntos de dos atributos que incluyen el mejor atributo
-                    de la ronda anterior. Si se mejora la precisión, se continúa agregando más atributos al conjunto. El
-                    proceso se repite hasta que ya no se pueda mejorar. Esto reduce significativamente el tiempo de
-                    ejecución en comparación con la búsqueda exhaustiva.</li>
-                <li><strong>Eliminación hacia atrás:</strong> Aquí, se comienza con un subconjunto que incluye todos los
-                    atributos y se
-                    intenta eliminar uno a la vez. Si se obtiene una mejora, se continúa eliminando el atributo que
-                    condujo a la mayor mejora en la precisión. Luego, se exploran todas las combinaciones posibles al
-                    eliminar más atributos. El proceso se repite hasta que ya no se pueda mejorar.</li>
-            </ul>
-            <p>Estos enfoques son más rápidos que la fuerza bruta, pero tienen limitaciones. En la mayoría de los casos,
-                los resultados no son óptimos debido a la naturaleza multi-modal del paisaje de aptitud de las
-                precisiones del modelo. Los algoritmos heurísticos tienden a quedarse atascados en óptimos locales y no
-                exploran a fondo el espacio de soluciones. Por lo tanto, el subconjunto de características resultante
-                suele ser subóptimo y no garantiza encontrar el óptimo global. Estos algoritmos se consideran
-                "codiciosos" ya que toman lo que pueden obtener fácilmente y a menudo pasan por alto el óptimo global
-                deseado.</p>
-            <h4>Algoritmos Evolutivos para la Selección de Características: Parte 2</h4>
-            <p>El algoritmo evolutivo es una técnica de optimización genérica que imita las ideas de la evolución
-                natural. Hay tres conceptos básicos: crossover (combinación de padres), mutation (pequeños cambios
-                en los individuos), y selection (supervivencia de los individuos más aptos).
-                <br>
-                En la inicialización, se crea una población de individuos representados por vectores de bits que indican
-                la selección de atributos. Estos individuos se generan aleatoriamente, y se puede elegir el tamaño de la
-                población, generalmente entre el 5% y el 30% del número total de atributos.
-                <br>
-                Luego, en un bucle iterativo, los individuos se emparejan aleatoriamente para el cruce, lo que combina
-                características de los padres. A continuación, se aplica la mutación, que cambia un solo bit de
-                selección de atributo en cada individuo. La evaluación de los individuos se realiza mediante métricas de
-                aptitud, como la precisión de un modelo de aprendizaje automático entrenado con el subconjunto de
-                características.
-                <br>
-                La selección determina qué individuos sobreviven y forman la base para la próxima generación. Esto se
-                hace a menudo mediante la selección por torneo, donde se enfrentan grupos de individuos y el más apto de
-                cada grupo avanza. El bucle continúa hasta que se cumple un criterio de detención, como un número máximo
-                de generaciones o la falta de mejoras durante un tiempo. El mejor individuo hasta ese punto se considera
-                el resultado.
-            </p>
-            <h5>Selección de Características Evolutivas en RapidMiner</h5>
-            <p>En la selección de características utilizando diferentes enfoques en el conjunto de datos Sonar.
-                <br>
-                Cada línea en este gráfico representa un ejemplo en el conjunto de datos. El color especifica si el
-                objeto correspondiente es una roca (azul) o una mina (rojo).
-            </p>
-            <figure>
-                <img src="../images/sonar_dataset.png" alt="Sonar Dataset">
-            </figure>
-            <p>Las regiones transparentes representan las desviaciones estándar de los atributos para cada clase.</p>
-            <figure>
-                <img src="../images/sonar_regions.png" alt="Sonar Regions">
-            </figure>
-            <ul class="c-bulleted">
-                <li><strong>Referencia (Proceso 1):</strong> Se evaluó un modelo Naïve Bayes en el conjunto de datos
-                    completo con validación cruzada de 5 pliegues, obteniendo una precisión del 67.83%.</li>
-                <li><strong>Selección hacia adelante (Proceso 2)</strong> Se utilizó la selección hacia adelante y se
-                    detuvo después de 4 rondas, la precisión resultante fue del 77.43%. Sin embargo, esta técnica solo
-                    seleccionó atributos de algunas áreas del espectro de frecuencia.</li>
-                <li><strong>Eliminación hacia atrás (Proceso 3):</strong> Se aplicó la eliminación hacia atrás,
-                    eliminando solo 8 de los 60 atributos. La precisión fue del 73.12%, mejor que usar todos los
-                    atributos, pero aún con mucho ruido.</li>
-                <li><strong>Selección de Características Evolutivas (Proceso 4):</strong> Se utilizó un enfoque
-                    evolutivo con un tamaño de población de 20 y 30 generaciones máximas. Se logró una precisión del
-                    82.72%, siendo el mejor resultado. El subconjunto seleccionado abarcó las áreas importantes del
-                    espectro de frecuencia, superando a otros enfoques al evitar extremos locales.</li>
-            </ul>
-            <h4>Optimización Multiobjetivo para la Selección de Características: Parte 3</h4>
-            <h5>Regularización para la Selección de Características</h5>
-            <p>La regularización en la selección de características es esencial para evitar el sobreajuste y controlar
-                la complejidad de los modelos. Algunos puntos clave son:</p>
-            <ul class="c-bulleted">
-                <li>El sobreajuste no solo afecta al modelo en sí, sino también a todas las decisiones tomadas en el
-                    análisis de datos, incluida la selección de características.</li>
-                <li>La regularización penaliza la complejidad al construir modelos, y esto es fundamental en el
-                    aprendizaje estadístico.</li>
-                <li>Se busca minimizar tanto el error en los datos de entrenamiento como la complejidad del modelo. Sin
-                    embargo, estos objetivos pueden ser conflictivos, ya que menos características significan menos
-                    complejidad pero posiblemente menor precisión.</li>
-                <li>La optimización multiobjetivo es una solución para encontrar un rango completo de soluciones
-                    potenciales en lugar de depender de un solo valor de "C". Esto implica adaptar la selección de
-                    características evolutivas para obtener múltiples resultados óptimos.</li>
-            </ul>
-            <p>$$R_{reg}(γ) = R_{emp}(γ) + C \times Ω(γ)$$</p>
-            <ul class="c-bulleted">
-                <li><strong>Rreg(γ):</strong> es el riesgo regularizado, que es la medida global de la calidad de un
-                    modelo de aprendizaje automático, incluyendo la selección de características y la regularización.
-                </li>
-                <li><strong>Remp(γ):</strong> es el riesgo empírico, que representa el error que el modelo comete en los
-                    datos de entrenamiento (γ representa el conjunto de características seleccionadas).</li>
-                <li><strong>C:</strong> es un hiperparámetro llamado "factor de penalización" o "parámetro de
-                    regularización". Este parámetro controla cuánto se penaliza la complejidad del modelo. Un valor más
-                    alto de C favorece la precisión en los datos de entrenamiento, pero puede llevar a un modelo más
-                    complejo y al sobreajuste. Un valor más bajo de C favorece la simplicidad del modelo, pero puede
-                    llevar a un modelo subajustado.</li>
-                <li><strong>Ω(γ):</strong> representa una medida de la complejidad del modelo, que puede variar según el
-                    algoritmo de selección de características utilizado. Por ejemplo, en el contexto de la selección de
-                    características evolutivas, esto podría representar el número de características seleccionadas.</li>
-            </ul>
-            <h5>O... Simplemente optimizas ambos simultáneamente</h5>
-            <p>En la selección de características, a menudo queremos lograr un equilibrio entre maximizar la precisión
-                de un modelo y minimizar el número de características utilizadas. Para abordar esto, se utiliza un
-                enfoque llamado selección de clasificación no dominada, que optimiza ambos objetivos simultáneamente.
-                <br>
-                Este enfoque se representa visualmente en un espacio de soluciones donde el eje x representa el número
-                de características y el eje y la precisión del modelo. Se busca encontrar soluciones hacia la esquina
-                superior izquierda de este gráfico, donde se utilizan menos características y se obtiene una alta
-                precisión.
-                <br>
-                Los modelos en esta esquina superior izquierda son considerados óptimos ya que utilizan un conjunto
-                mínimo de características y proporcionan un alto rendimiento. Cuando se comparan diferentes modelos, se
-                utiliza la noción de "dominación", donde un modelo se considera superior si tiene menos características
-                y una precisión igual o mayor que otro.
-                <br>
-                Este enfoque permite encontrar un conjunto de soluciones conocido como "frente de Pareto", que son
-                conjuntos de características que dominan a todos los demás en términos de precisión y complejidad. Estas
-                soluciones representan un equilibrio entre ambos objetivos y no requieren la definición previa de un
-                factor de compensación.
-            </p>
-            <h5>Multicriterio Selección de características</h5>
-            <p>La optimización multiobjetivo en la selección de características es altamente efectiva porque permite
-                encontrar todas las soluciones potencialmente óptimas sin la necesidad de definir un factor de
-                compensación. Además, se puede obtener este conjunto completo de soluciones en una sola ejecución de
-                optimización, lo que lo convierte en un enfoque rápido.
-                <br>
-                Este enfoque proporciona información valiosa sobre las interacciones entre las características. Algunas
-                características pueden ser más importantes en conjuntos de características más pequeños, mientras que
-                otras pueden ganar relevancia en conjuntos más grandes. Esto permite aprender acerca de cómo las
-                características interactúan y cuál es el rango de precisión alcanzable en función del número de
-                características.
-                <br>
-                La visualización de un frente de Pareto muestra de un vistazo el rango de precisión y el número óptimo
-                de características en el que se debe enfocar. Esto brinda información esencial para la construcción de
-                modelos de aprendizaje automático.
-                <br>
-                La implementación de la optimización multiobjetivo en la selección de características se puede llevar a
-                cabo de manera sencilla en herramientas como RapidMiner. Solo se requieren ajustes menores en el flujo
-                de trabajo visual, como cambiar el esquema de selección a "clasificación no dominada" y agregar un
-                segundo criterio de rendimiento además de la precisión, que podría ser el número de características.
-                Esto permite obtener un conjunto completo de soluciones óptimas y proporciona una comprensión más
-                profunda de los datos y las características relevantes.
-            </p>
-        </div>
+    <header class="underline">"FEATURE SELECTION" DE DESHPANDE</header>
+
+    <main>
+        <section class="c-container">
+            <h2 class="c-content_header">"FEATURE SELECTION" DE DESHPANDE</h2>
+            <div class="c-content">
+                <h4>Mejores Modelos de Aprendizaje Automático con Selección de Características Multiobjetivo: Parte 1
+                </h4>
+                <p>La selección de características es esencial para mejorar los modelos de aprendizaje automático. La
+                    ingeniería de características tiene un gran impacto en la calidad del modelo. Incluso los modelos
+                    avanzados pueden ser engañados por características ruidosas, lo que afecta su rendimiento. La
+                    selección
+                    de características ayuda a eliminar el ruido y permite que el modelo se centre en patrones
+                    relevantes.
+                    Además, reducir el número de características acelera el entrenamiento y simplifica el modelo,
+                    haciéndolo
+                    más robusto.
+                    <br>
+                    <br>
+                    El problema de la selección de características es complicado debido a la búsqueda exhaustiva de
+                    subconjuntos óptimos. Utilizando como ejemplo un conjunto de datos que tiene 10 atributos y una
+                    etiqueta
+                    a predecir. El objetivo es encontrar un subconjunto de atributos que maximice la precisión del
+                    modelo.
+                    Esto se puede representar mediante vectores de bits, donde 1 indica que un atributo se utiliza y 0
+                    que
+                    no se utiliza.
+                    <br>
+                    Una estrategia sería probar todas las combinaciones posibles, comenzando con un solo atributo. Por
+                    ejemplo, el primer atributo puede dar una precisión del 68%, mejor que usar todos los atributos
+                    (62%).
+                    Luego, se evalúan todas las combinaciones de dos atributos, tres, y así sucesivamente, hasta probar
+                    todas las posibles combinaciones. Este enfoque se conoce como fuerza bruta.
+                    <br>
+                    Sin embargo, la cantidad de combinaciones crece exponencialmente con el número de atributos. Con 10
+                    atributos, hay 2^10 - 1 combinaciones posibles, es decir, 1,023 combinaciones a probar, lo que es
+                    manejable. Pero en conjuntos de datos más grandes, se dificulta evaluar incluso para las
+                    computadoras
+                    más potentes.
+                </p>
+                <h5>Heurística</h5>
+                <p>Las heurísticas son una solución más eficiente que la búsqueda exhaustiva de subconjuntos de
+                    atributos en
+                    el problema de selección de características. Dos enfoques ampliamente utilizados son la selección
+                    hacia
+                    adelante y la eliminación hacia atrás.</p>
+                <ul class="c-bulleted">
+                    <li><strong>Selección hacia adelante:</strong> Este enfoque comienza probando todos los subconjuntos
+                        con
+                        un solo atributo
+                        y conserva el mejor. Luego, se prueban subconjuntos de dos atributos que incluyen el mejor
+                        atributo
+                        de la ronda anterior. Si se mejora la precisión, se continúa agregando más atributos al
+                        conjunto. El
+                        proceso se repite hasta que ya no se pueda mejorar. Esto reduce significativamente el tiempo de
+                        ejecución en comparación con la búsqueda exhaustiva.</li>
+                    <li><strong>Eliminación hacia atrás:</strong> Aquí, se comienza con un subconjunto que incluye todos
+                        los
+                        atributos y se
+                        intenta eliminar uno a la vez. Si se obtiene una mejora, se continúa eliminando el atributo que
+                        condujo a la mayor mejora en la precisión. Luego, se exploran todas las combinaciones posibles
+                        al
+                        eliminar más atributos. El proceso se repite hasta que ya no se pueda mejorar.</li>
+                </ul>
+                <p>Estos enfoques son más rápidos que la fuerza bruta, pero tienen limitaciones. En la mayoría de los
+                    casos,
+                    los resultados no son óptimos debido a la naturaleza multi-modal del paisaje de aptitud de las
+                    precisiones del modelo. Los algoritmos heurísticos tienden a quedarse atascados en óptimos locales y
+                    no
+                    exploran a fondo el espacio de soluciones. Por lo tanto, el subconjunto de características
+                    resultante
+                    suele ser subóptimo y no garantiza encontrar el óptimo global. Estos algoritmos se consideran
+                    "codiciosos" ya que toman lo que pueden obtener fácilmente y a menudo pasan por alto el óptimo
+                    global
+                    deseado.</p>
+                <h4>Algoritmos Evolutivos para la Selección de Características: Parte 2</h4>
+                <p>El algoritmo evolutivo es una técnica de optimización genérica que imita las ideas de la evolución
+                    natural. Hay tres conceptos básicos: crossover (combinación de padres), mutation (pequeños cambios
+                    en los individuos), y selection (supervivencia de los individuos más aptos).
+                    <br>
+                    En la inicialización, se crea una población de individuos representados por vectores de bits que
+                    indican
+                    la selección de atributos. Estos individuos se generan aleatoriamente, y se puede elegir el tamaño
+                    de la
+                    población, generalmente entre el 5% y el 30% del número total de atributos.
+                    <br>
+                    Luego, en un bucle iterativo, los individuos se emparejan aleatoriamente para el cruce, lo que
+                    combina
+                    características de los padres. A continuación, se aplica la mutación, que cambia un solo bit de
+                    selección de atributo en cada individuo. La evaluación de los individuos se realiza mediante
+                    métricas de
+                    aptitud, como la precisión de un modelo de aprendizaje automático entrenado con el subconjunto de
+                    características.
+                    <br>
+                    La selección determina qué individuos sobreviven y forman la base para la próxima generación. Esto
+                    se
+                    hace a menudo mediante la selección por torneo, donde se enfrentan grupos de individuos y el más
+                    apto de
+                    cada grupo avanza. El bucle continúa hasta que se cumple un criterio de detención, como un número
+                    máximo
+                    de generaciones o la falta de mejoras durante un tiempo. El mejor individuo hasta ese punto se
+                    considera
+                    el resultado.
+                </p>
+                <h5>Selección de Características Evolutivas en RapidMiner</h5>
+                <p>En la selección de características utilizando diferentes enfoques en el conjunto de datos Sonar.
+                    <br>
+                    Cada línea en este gráfico representa un ejemplo en el conjunto de datos. El color especifica si el
+                    objeto correspondiente es una roca (azul) o una mina (rojo).
+                </p>
+                <figure>
+                    <img src="../images/sonar_dataset.png" alt="Sonar Dataset">
+                </figure>
+                <p>Las regiones transparentes representan las desviaciones estándar de los atributos para cada clase.
+                </p>
+                <figure>
+                    <img src="../images/sonar_regions.png" alt="Sonar Regions">
+                </figure>
+                <ul class="c-bulleted">
+                    <li><strong>Referencia (Proceso 1):</strong> Se evaluó un modelo Naïve Bayes en el conjunto de datos
+                        completo con validación cruzada de 5 pliegues, obteniendo una precisión del 67.83%.</li>
+                    <li><strong>Selección hacia adelante (Proceso 2)</strong> Se utilizó la selección hacia adelante y
+                        se
+                        detuvo después de 4 rondas, la precisión resultante fue del 77.43%. Sin embargo, esta técnica
+                        solo
+                        seleccionó atributos de algunas áreas del espectro de frecuencia.</li>
+                    <li><strong>Eliminación hacia atrás (Proceso 3):</strong> Se aplicó la eliminación hacia atrás,
+                        eliminando solo 8 de los 60 atributos. La precisión fue del 73.12%, mejor que usar todos los
+                        atributos, pero aún con mucho ruido.</li>
+                    <li><strong>Selección de Características Evolutivas (Proceso 4):</strong> Se utilizó un enfoque
+                        evolutivo con un tamaño de población de 20 y 30 generaciones máximas. Se logró una precisión del
+                        82.72%, siendo el mejor resultado. El subconjunto seleccionado abarcó las áreas importantes del
+                        espectro de frecuencia, superando a otros enfoques al evitar extremos locales.</li>
+                </ul>
+                <h4>Optimización Multiobjetivo para la Selección de Características: Parte 3</h4>
+                <h5>Regularización para la Selección de Características</h5>
+                <p>La regularización en la selección de características es esencial para evitar el sobreajuste y
+                    controlar
+                    la complejidad de los modelos. Algunos puntos clave son:</p>
+                <ul class="c-bulleted">
+                    <li>El sobreajuste no solo afecta al modelo en sí, sino también a todas las decisiones tomadas en el
+                        análisis de datos, incluida la selección de características.</li>
+                    <li>La regularización penaliza la complejidad al construir modelos, y esto es fundamental en el
+                        aprendizaje estadístico.</li>
+                    <li>Se busca minimizar tanto el error en los datos de entrenamiento como la complejidad del modelo.
+                        Sin
+                        embargo, estos objetivos pueden ser conflictivos, ya que menos características significan menos
+                        complejidad pero posiblemente menor precisión.</li>
+                    <li>La optimización multiobjetivo es una solución para encontrar un rango completo de soluciones
+                        potenciales en lugar de depender de un solo valor de "C". Esto implica adaptar la selección de
+                        características evolutivas para obtener múltiples resultados óptimos.</li>
+                </ul>
+                <p>$$R_{reg}(γ) = R_{emp}(γ) + C \times Ω(γ)$$</p>
+                <ul class="c-bulleted">
+                    <li><strong>Rreg(γ):</strong> es el riesgo regularizado, que es la medida global de la calidad de un
+                        modelo de aprendizaje automático, incluyendo la selección de características y la
+                        regularización.
+                    </li>
+                    <li><strong>Remp(γ):</strong> es el riesgo empírico, que representa el error que el modelo comete en
+                        los
+                        datos de entrenamiento (γ representa el conjunto de características seleccionadas).</li>
+                    <li><strong>C:</strong> es un hiperparámetro llamado "factor de penalización" o "parámetro de
+                        regularización". Este parámetro controla cuánto se penaliza la complejidad del modelo. Un valor
+                        más
+                        alto de C favorece la precisión en los datos de entrenamiento, pero puede llevar a un modelo más
+                        complejo y al sobreajuste. Un valor más bajo de C favorece la simplicidad del modelo, pero puede
+                        llevar a un modelo subajustado.</li>
+                    <li><strong>Ω(γ):</strong> representa una medida de la complejidad del modelo, que puede variar
+                        según el
+                        algoritmo de selección de características utilizado. Por ejemplo, en el contexto de la selección
+                        de
+                        características evolutivas, esto podría representar el número de características seleccionadas.
+                    </li>
+                </ul>
+                <h5>O... Simplemente optimizas ambos simultáneamente</h5>
+                <p>En la selección de características, a menudo queremos lograr un equilibrio entre maximizar la
+                    precisión
+                    de un modelo y minimizar el número de características utilizadas. Para abordar esto, se utiliza un
+                    enfoque llamado selección de clasificación no dominada, que optimiza ambos objetivos
+                    simultáneamente.
+                    <br>
+                    Este enfoque se representa visualmente en un espacio de soluciones donde el eje x representa el
+                    número
+                    de características y el eje y la precisión del modelo. Se busca encontrar soluciones hacia la
+                    esquina
+                    superior izquierda de este gráfico, donde se utilizan menos características y se obtiene una alta
+                    precisión.
+                    <br>
+                    Los modelos en esta esquina superior izquierda son considerados óptimos ya que utilizan un conjunto
+                    mínimo de características y proporcionan un alto rendimiento. Cuando se comparan diferentes modelos,
+                    se
+                    utiliza la noción de "dominación", donde un modelo se considera superior si tiene menos
+                    características
+                    y una precisión igual o mayor que otro.
+                    <br>
+                    Este enfoque permite encontrar un conjunto de soluciones conocido como "frente de Pareto", que son
+                    conjuntos de características que dominan a todos los demás en términos de precisión y complejidad.
+                    Estas
+                    soluciones representan un equilibrio entre ambos objetivos y no requieren la definición previa de un
+                    factor de compensación.
+                </p>
+                <h5>Multicriterio Selección de características</h5>
+                <p>La optimización multiobjetivo en la selección de características es altamente efectiva porque permite
+                    encontrar todas las soluciones potencialmente óptimas sin la necesidad de definir un factor de
+                    compensación. Además, se puede obtener este conjunto completo de soluciones en una sola ejecución de
+                    optimización, lo que lo convierte en un enfoque rápido.
+                    <br>
+                    Este enfoque proporciona información valiosa sobre las interacciones entre las características.
+                    Algunas
+                    características pueden ser más importantes en conjuntos de características más pequeños, mientras
+                    que
+                    otras pueden ganar relevancia en conjuntos más grandes. Esto permite aprender acerca de cómo las
+                    características interactúan y cuál es el rango de precisión alcanzable en función del número de
+                    características.
+                    <br>
+                    La visualización de un frente de Pareto muestra de un vistazo el rango de precisión y el número
+                    óptimo
+                    de características en el que se debe enfocar. Esto brinda información esencial para la construcción
+                    de
+                    modelos de aprendizaje automático.
+                    <br>
+                    La implementación de la optimización multiobjetivo en la selección de características se puede
+                    llevar a
+                    cabo de manera sencilla en herramientas como RapidMiner. Solo se requieren ajustes menores en el
+                    flujo
+                    de trabajo visual, como cambiar el esquema de selección a "clasificación no dominada" y agregar un
+                    segundo criterio de rendimiento además de la precisión, que podría ser el número de características.
+                    Esto permite obtener un conjunto completo de soluciones óptimas y proporciona una comprensión más
+                    profunda de los datos y las características relevantes.
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer>

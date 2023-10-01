@@ -11,6 +11,7 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -18,146 +19,172 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item is-active_web">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-solid fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
+  <header class="underline">REGRESIÓN LINEAL</header>
+
   <main class="c-blog">
-    <div class="c-header">
-      <h2>Regresión Lineal</h2>
-    </div>
-    <div class="c-cases">
-      <p>La regresión lineal es un algoritmo fundamental en estadísticas y aprendizaje automático. Aunque la regresión
-        lineal se originó en estadísticas, también es ampliamente utilizada en el aprendizaje automático. Esto se debe a
-        su utilidad en la predicción precisa y al equilibrio entre el error y la explicabilidad. La regresión lineal
-        tiene varios nombres según el contexto. Se refiere a la relación lineal entre las variables de entrada y salida.
-        Cuando hay una sola variable de entrada, se llama regresión lineal simple, y cuando hay múltiples variables, se
-        llama regresión lineal múltiple.
-      </p>
-      <h4>Representación del Modelo de Regresión Lineal</h4>
-      <p>La representación del modelo es una ecuación lineal que pondera las entradas (x) con coeficientes y un término
-        de sesgo. Los coeficientes determinan la contribución relativa de cada entrada en la predicción. La regresión
-        lineal puede extenderse a dimensiones superiores, como planos o hiperplanos.</p>
-      <h4>Aprendiendo el Modelo de Regresión Lineal</h4>
-      <p>Aprender un modelo de regresión lineal significa estimar los valores de los coeficientes utilizados en la
-        representación con los datos que tenemos disponibles. Se pueden utilizar varios métodos para aprender el modelo
-        de regresión lineal. Uno de los métodos comunes es el de Mínimos Cuadrados Ordinarios, que busca minimizar la
-        suma de los residuos al cuadrado. El Descenso del Gradiente es otra técnica popular para optimizar los
-        coeficientes.</p>
-      <h5>Mínimos Cuadrados Ordinarios</h5>
-      <ul class="c-bulleted">
-        <li>Se utiliza cuando se tienen múltiples entradas en un modelo de regresión.</li>
-        <li>Busca minimizar la suma de los residuos al cuadrado, que son las diferencias entre los valores observados y
-          los valores predichos por el modelo.</li>
-        <li>Trata los datos como una matriz y utiliza álgebra lineal para estimar los coeficientes óptimos del modelo.
-        </li>
-        <li>Es rápido de calcular cuando se tienen todos los datos disponibles.</li>
-      </ul>
-      <h5>Descenso del Gradiente</h5>
-      <ul class="c-bulleted">
-        <li>Utilizado para optimizar los coeficientes de un modelo iterativamente al minimizar el error en los datos de
-          entrenamiento.</li>
-        <li>Calcula los errores al cuadrado para cada par de entrada y salida y actualiza los coeficientes en la
-          dirección que minimiza el error.</li>
-        <li>Repite el proceso hasta alcanzar una suma mínima de errores cuadrados o hasta que no sea posible una mejora
-          adicional.</li>
-        <li>Requiere seleccionar un parámetro de tasa de aprendizaje (alfa) que determina el tamaño de los pasos de
-          mejora en cada iteración.</li>
-        <li>Útil cuando se trabaja con conjuntos de datos grandes que pueden no caber en la memoria.</li>
-      </ul>
-      <h4>Regresión Lineal Regularizada</h4>
-      <p>La regresión lineal regularizada aborda el sobreajuste ajustando el modelo para minimizar la suma de errores
-        cuadrados y la complejidad del modelo. Dos enfoques son Regresión Lasso y Regresión Ridge, que penalizan los
-        coeficientes más grandes. Estos métodos son efectivos cuando hay colinealidad en tus valores de entrada y los
-        mínimos cuadrados ordinarios sobreajustarían los datos de entrenamiento.</p>
-      <h4>Realizar Predicciones con Regresión Lineal</h4>
-      <p>Hacer predicciones con un modelo de regresión lineal implica sustituir los valores de entrada en la ecuación
-        lineal del modelo. Cada coeficiente pondera la entrada correspondiente y el sesgo aporta una contribución
-        constante.</p>
-      <h4>Preparación de Datos para la Regresión Lineal</h4>
-      <ul class="c-bulleted">
-        <li>Suposición lineal</li>
-        <li>Eliminar ruido (valores atípicos)</li>
-        <li>Eliminar colinealidad</li>
-        <li>Distribuciones gaussianas de variables</li>
-        <li>Reescalar las entradas</li>
-      </ul>
-      <h4>Tutorial de Regresión Lineal Simple</h4>
-      <p>La regresión lineal es una herramienta simple y útil que ayuda a predecir una variable (y) basada en otra
-        variable (x). Imagina que tienes datos sobre la altura de personas (x) y su peso (y), y quieres predecir el peso
-        a partir de la altura.</p>
-      <figure>
-        <img src="../images/simple_lin_reg_dataset.png" alt="Simple Linear Regression Dataset">
-      </figure>
-      <h5>Estimación de la pendiente (B1) y de la intersección (B0)</h5>
-      <p>
-        Los coeficientes B0 y B1 son esenciales en la ecuación de la línea. B0 es como un ajuste vertical y B1 controla
-        la inclinación de la línea. En otras palabras, B1 te dice cuánto cambia "y" cuando "x" cambia.
-        <br>
-        $$B1 = \frac {\sum_{i=1}^n(x_i-mean(x))\times(y_i-mean(y))}{\sum_{i=1}^n(x_i-mean(x))^2}$$
-        <br>
-        $$B0 = mean(y) - B1 \times mean(x)$$
-      </p>
-      <h5>Haciendo Predicciones</h5>
-      <p>
-        Una vez que tienes los coeficientes, puedes insertar un valor de "x" en la ecuación de la línea para predecir
-        el valor correspondiente de "y".
-        <br>
-        $$y = B0 + B1 \times x$$
-      </p>
-      <h5>Estimación del Error</h5>
-      <p>
-        Para saber cuán preciso es tu modelo, mides el Error Cuadrático Medio (RMSE). Piensa en él como una forma de
-        entender cuánto se equivoca tu modelo en comparación con los datos reales. Menor RMSE significa mejor ajuste.
-        <br>
-        $$RMSE = \sqrt{\frac {\sum_{i=1}^n(p_i-y_i)^2}{n}}$$
-      </p>
-      <figure>
-        <img src="../images/simple_lin_reg_pred.png" alt="Simple Linear Regression Predictions">
-      </figure>
-      <h5>Atajo</h5>
-      <p>En lugar de calcular los coeficientes manualmente, existe un atajo usando la correlación entre "x" e "y" y su
-        desviación estándar. Esto te permite obtener B1 de manera más rápida.
-        <br>
-        $$B1 = corr(x,y) \times \frac{stdev(y)}{stdev(x)}$$
-        <br>
-        Donde corr(x) es la correlación entre x e y, y stdev() es el cálculo de la desviación estándar para una
-        variable. La correlación (también conocida como coeficiente de correlación de Pearson) es una medida de cuán
-        relacionadas están dos variables en el rango de -1 a 1. Un valor de 1 indica que las dos variables están
-        perfectamente correlacionadas positivamente, es decir, se mueven en la misma dirección, y un valor de -1 indica
-        que están perfectamente correlacionadas negativamente, cuando una se mueve, la otra se mueve en la dirección
-        opuesta.
-      </p>
-    </div>
+    <section class="c-container">
+      <h2 class="c-content_header">REGRESIÓN LINEAL</h2>
+      <div class="c-content">
+        <p>La regresión lineal es un algoritmo fundamental en estadísticas y aprendizaje automático. Aunque la regresión
+          lineal se originó en estadísticas, también es ampliamente utilizada en el aprendizaje automático. Esto se debe
+          a
+          su utilidad en la predicción precisa y al equilibrio entre el error y la explicabilidad. La regresión lineal
+          tiene varios nombres según el contexto. Se refiere a la relación lineal entre las variables de entrada y
+          salida.
+          Cuando hay una sola variable de entrada, se llama regresión lineal simple, y cuando hay múltiples variables,
+          se
+          llama regresión lineal múltiple.
+        </p>
+        <h4>Representación del Modelo de Regresión Lineal</h4>
+        <p>La representación del modelo es una ecuación lineal que pondera las entradas (x) con coeficientes y un
+          término
+          de sesgo. Los coeficientes determinan la contribución relativa de cada entrada en la predicción. La regresión
+          lineal puede extenderse a dimensiones superiores, como planos o hiperplanos.</p>
+        <h4>Aprendiendo el Modelo de Regresión Lineal</h4>
+        <p>Aprender un modelo de regresión lineal significa estimar los valores de los coeficientes utilizados en la
+          representación con los datos que tenemos disponibles. Se pueden utilizar varios métodos para aprender el
+          modelo
+          de regresión lineal. Uno de los métodos comunes es el de Mínimos Cuadrados Ordinarios, que busca minimizar la
+          suma de los residuos al cuadrado. El Descenso del Gradiente es otra técnica popular para optimizar los
+          coeficientes.</p>
+        <h5>Mínimos Cuadrados Ordinarios</h5>
+        <ul class="c-bulleted">
+          <li>Se utiliza cuando se tienen múltiples entradas en un modelo de regresión.</li>
+          <li>Busca minimizar la suma de los residuos al cuadrado, que son las diferencias entre los valores observados
+            y
+            los valores predichos por el modelo.</li>
+          <li>Trata los datos como una matriz y utiliza álgebra lineal para estimar los coeficientes óptimos del modelo.
+          </li>
+          <li>Es rápido de calcular cuando se tienen todos los datos disponibles.</li>
+        </ul>
+        <h5>Descenso del Gradiente</h5>
+        <ul class="c-bulleted">
+          <li>Utilizado para optimizar los coeficientes de un modelo iterativamente al minimizar el error en los datos
+            de
+            entrenamiento.</li>
+          <li>Calcula los errores al cuadrado para cada par de entrada y salida y actualiza los coeficientes en la
+            dirección que minimiza el error.</li>
+          <li>Repite el proceso hasta alcanzar una suma mínima de errores cuadrados o hasta que no sea posible una
+            mejora
+            adicional.</li>
+          <li>Requiere seleccionar un parámetro de tasa de aprendizaje (alfa) que determina el tamaño de los pasos de
+            mejora en cada iteración.</li>
+          <li>Útil cuando se trabaja con conjuntos de datos grandes que pueden no caber en la memoria.</li>
+        </ul>
+        <h4>Regresión Lineal Regularizada</h4>
+        <p>La regresión lineal regularizada aborda el sobreajuste ajustando el modelo para minimizar la suma de errores
+          cuadrados y la complejidad del modelo. Dos enfoques son Regresión Lasso y Regresión Ridge, que penalizan los
+          coeficientes más grandes. Estos métodos son efectivos cuando hay colinealidad en tus valores de entrada y los
+          mínimos cuadrados ordinarios sobreajustarían los datos de entrenamiento.</p>
+        <h4>Realizar Predicciones con Regresión Lineal</h4>
+        <p>Hacer predicciones con un modelo de regresión lineal implica sustituir los valores de entrada en la ecuación
+          lineal del modelo. Cada coeficiente pondera la entrada correspondiente y el sesgo aporta una contribución
+          constante.</p>
+        <h4>Preparación de Datos para la Regresión Lineal</h4>
+        <ul class="c-bulleted">
+          <li>Suposición lineal</li>
+          <li>Eliminar ruido (valores atípicos)</li>
+          <li>Eliminar colinealidad</li>
+          <li>Distribuciones gaussianas de variables</li>
+          <li>Reescalar las entradas</li>
+        </ul>
+        <h4>Tutorial de Regresión Lineal Simple</h4>
+        <p>La regresión lineal es una herramienta simple y útil que ayuda a predecir una variable (y) basada en otra
+          variable (x). Imagina que tienes datos sobre la altura de personas (x) y su peso (y), y quieres predecir el
+          peso
+          a partir de la altura.</p>
+        <figure>
+          <img src="../images/simple_lin_reg_dataset.png" alt="Simple Linear Regression Dataset">
+        </figure>
+        <h5>Estimación de la pendiente (B1) y de la intersección (B0)</h5>
+        <p>
+          Los coeficientes B0 y B1 son esenciales en la ecuación de la línea. B0 es como un ajuste vertical y B1
+          controla
+          la inclinación de la línea. En otras palabras, B1 te dice cuánto cambia "y" cuando "x" cambia.
+          <br>
+          $$B1 = \frac {\sum_{i=1}^n(x_i-mean(x))\times(y_i-mean(y))}{\sum_{i=1}^n(x_i-mean(x))^2}$$
+          <br>
+          $$B0 = mean(y) - B1 \times mean(x)$$
+        </p>
+        <h5>Haciendo Predicciones</h5>
+        <p>
+          Una vez que tienes los coeficientes, puedes insertar un valor de "x" en la ecuación de la línea para predecir
+          el valor correspondiente de "y".
+          <br>
+          $$y = B0 + B1 \times x$$
+        </p>
+        <h5>Estimación del Error</h5>
+        <p>
+          Para saber cuán preciso es tu modelo, mides el Error Cuadrático Medio (RMSE). Piensa en él como una forma de
+          entender cuánto se equivoca tu modelo en comparación con los datos reales. Menor RMSE significa mejor ajuste.
+          <br>
+          $$RMSE = \sqrt{\frac {\sum_{i=1}^n(p_i-y_i)^2}{n}}$$
+        </p>
+        <figure>
+          <img src="../images/simple_lin_reg_pred.png" alt="Simple Linear Regression Predictions">
+        </figure>
+        <h5>Atajo</h5>
+        <p>En lugar de calcular los coeficientes manualmente, existe un atajo usando la correlación entre "x" e "y" y su
+          desviación estándar. Esto te permite obtener B1 de manera más rápida.
+          <br>
+          $$B1 = corr(x,y) \times \frac{stdev(y)}{stdev(x)}$$
+          <br>
+          Donde corr(x) es la correlación entre x e y, y stdev() es el cálculo de la desviación estándar para una
+          variable. La correlación (también conocida como coeficiente de correlación de Pearson) es una medida de cuán
+          relacionadas están dos variables en el rango de -1 a 1. Un valor de 1 indica que las dos variables están
+          perfectamente correlacionadas positivamente, es decir, se mueven en la misma dirección, y un valor de -1
+          indica
+          que están perfectamente correlacionadas negativamente, cuando una se mueve, la otra se mueve en la dirección
+          opuesta.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>

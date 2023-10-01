@@ -1,0 +1,115 @@
+.c-card {
+    min-height: 12rem;
+    list-style-type: none;
+
+    a {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 0.7rem;
+
+        span {
+            width: 90%;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+
+    .scikit {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/scikit.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rapidminer {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/rapidminer.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .pandas {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/pandas.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .numpy {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/numpy.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .matplotlib {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/matplotlib.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .iris {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/iris.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .titanic {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images//titanic.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .wine {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/wine.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .heart {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/heart.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .sports {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/sports.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .banking {
+        background-image:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+        url(../../images/banking.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    @include respond-to('lg') {
+        height: 6rem;
+        width: 12rem;
+    }
+}

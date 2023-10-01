@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 90vw;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    @include respond-to('lg') {
+        display: none;
+    }
+}

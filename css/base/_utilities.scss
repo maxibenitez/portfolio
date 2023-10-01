@@ -1,15 +1,21 @@
 .is-active{
-    height: 2rem;
-    width: 8rem;
-    border: 1px solid white;
-    border-radius: 1rem;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-top: 4px solid white;
+    position: relative;
+    bottom: 0.2rem;
+
+    &_web{
+        border-bottom: 4px solid white;
+        position: relative;
+        top: 0.4rem;
+
+        a{
+            color: white !important;
+            padding-bottom: 0.55rem;
+            font-weight: bold;
+        }
+    }
 
     a{
-        color: black !important;
-        font-weight: bold;
+        color: white !important;
     }
 }

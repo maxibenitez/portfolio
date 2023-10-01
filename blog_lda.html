@@ -11,6 +11,7 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -18,94 +19,115 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html">
-      <h1>Machine Learning Portfolio</h1>
-    </a>
+    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">Inicio</a>
+      <li id="li-home" class="c-item">
+        <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">Blog</a>
+      <li id="li-blog" class="c-item is-active_web">
+        <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">Casos de Estudio</a>
+      <li id="li-case__studies" class="c-item">
+        <a href="case_studies.html">CASOS DE ESTUDIO</a>
+      </li>
+      <li id="li-tools" class="c-item">
+        <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
   </nav>
 
   <nav class="c-nav_mobile">
-    <a href="index.html">
-      <h1>ML Portfolio</h1>
-    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item" data-target-section="home">
-        <a href="index.html">I</a>
+        <a href="index.html">
+          <i class="fa-solid fa-house fa-xl"></i></i>
+          <span>INICIO</span>
+        </a>
       </li>
       <li id="li-blog" class="c-item is-active" data-target-section="blog">
-        <a href="blog.html">B</a>
+        <a href="blog.html">
+          <i class="fa-solid fa-file fa-xl"></i>
+          <span>BLOG</span>
+        </a>
       </li>
       <li id="li-case__studies" class="c-item" data-target-section="case__studies">
-        <a href="case_studies.html">CE</a>
+        <a href="case_studies.html">
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>CASOS ESTUDIO</span>
+        </a>
+      </li>
+      <li id="li-tools" class="c-item" data-target-section="tools">
+        <a href="tools.html">
+          <i class="fa-solid fa-wrench fa-xl"></i>
+          <span>HERRAMIENTAS</span>
+        </a>
       </li>
     </ul>
   </nav>
 
-  <main class="c-blog">
-    <div class="c-header">
-      <h2>Análisis Discriminante Lineal</h2>
-    </div>
-    <div class="c-cases">
-      <p>La regresión logística es un algoritmo de clasificación tradicionalmente limitado solo a problemas de
-        clasificación de dos clases. Si tienes más de dos clases, entonces el Análisis Discriminante Lineal (LDA, por
-        sus siglas en inglés) es la técnica de clasificación lineal preferida.
-      </p>
-      <h4>Limitaciones de la Regresión Logística</h4>
-      <p>La regresión logística es efectiva pero tiene limitaciones:</p>
-      <ul class="c-bulleted">
-        <li>Problemas de Dos Clases: La regresión logística está diseñada para problemas de clasificación de dos clases
-          o binarios. Puede ampliarse para clasificación multiclase, pero rara vez se utiliza para este propósito.</li>
-        <li>Inestable con Clases Bien Separadas: La regresión logística puede volverse inestable cuando las clases están
-          bien separadas.</li>
-        <li>Inestable con Pocos Ejemplos: La regresión logística puede volverse inestable cuando hay pocos ejemplos para
-          estimar los parámetros.</li>
-      </ul>
-      <h4>Representación de los Modelos LDA</h4>
-      <p>El LDA se basa en propiedades estadísticas de los datos para cada clase, como las medias y las matrices de
-        covarianza. Estos valores se utilizan para hacer predicciones y se almacenan en el modelo aprendido.</p>
-      <h4>Aprendizaje de Modelos LDA</h4>
-      <p>El LDA asume que los datos siguen una distribución gaussiana y que cada atributo tiene la misma varianza.
-        Estima la media y la varianza para cada clase a partir de los datos, utilizando fórmulas para calcular estos
-        valores.
-        <br>
-        $$mean_k = \frac {1}{n_k} \times \sum_{i=1}^n x_i$$
-        <br>
-        Donde meank es el valor medio de x para la clase k, nk es el número de instancias con la clase k. La varianza
-        se calcula en todas las clases como la diferencia promedio al cuadrado de cada valor con respecto a la media.
-        <br>
-        $$sigma^2 = \frac {1}{n - K} \times \sum_{i=1}^n(x_i-mean_k)^2$$
-        <br>
-        Donde sigma^2 es la varianza en todas las entradas (x), n es el número de instancias, K es el número de clases y
-        meank es la media de x para la clase a la que pertenece xi.
-      </p>
-      <h4>Realizando Predicciones con LDA</h4>
-      <p>El LDA realiza predicciones calculando la probabilidad de que una entrada pertenezca a cada clase y utilizando
-        el Teorema de Bayes. Utiliza funciones discriminantes para estimar las probabilidades y clasificar nuevas
-        instancias en función de las probabilidades estimadas.
-        <br>
-        $$D_k(x) = x \times \frac{mean_k}{sigma^2} - \frac{(mean_k)^2}{2\times sigma^2} + ln(P(k))$$
-        <br>
-        Dk(x) es la función discriminante para la clase k dada la entrada x; meank, sigma2 y P(k) se estiman a partir
-        de tus datos. La función ln() es el logaritmo natural.
-      </p>
-      <h4>Preparación de Datos para LDA</h4>
-      <ul class="c-bulleted">
-        <li>Considerar que sean problemas de clasificación</li>
-        <li>Asegurarse que los datos sigan una distribución Gaussiana</li>
-        <li>Eliminar ruido (valores atípicos)</li>
-        <li>Estandarizar los datos para que tengan media 0 y desviación estándar 1 (misma varianza)</li>
-      </ul>
-    </div>
+  <header class="underline">ANÁLISIS DISCRIMINANTE LINEAL</header>
+
+  <main>
+    <section class="c-container">
+      <h2 class="c-content_header">ANÁLISIS DISCRIMINANTE LINEAL</h2>
+      <div class="c-content">
+        <p>La regresión logística es un algoritmo de clasificación tradicionalmente limitado solo a problemas de
+          clasificación de dos clases. Si tienes más de dos clases, entonces el Análisis Discriminante Lineal (LDA, por
+          sus siglas en inglés) es la técnica de clasificación lineal preferida.
+        </p>
+        <h4>Limitaciones de la Regresión Logística</h4>
+        <p>La regresión logística es efectiva pero tiene limitaciones:</p>
+        <ul class="c-bulleted">
+          <li>Problemas de Dos Clases: La regresión logística está diseñada para problemas de clasificación de dos
+            clases
+            o binarios. Puede ampliarse para clasificación multiclase, pero rara vez se utiliza para este propósito.
+          </li>
+          <li>Inestable con Clases Bien Separadas: La regresión logística puede volverse inestable cuando las clases
+            están
+            bien separadas.</li>
+          <li>Inestable con Pocos Ejemplos: La regresión logística puede volverse inestable cuando hay pocos ejemplos
+            para
+            estimar los parámetros.</li>
+        </ul>
+        <h4>Representación de los Modelos LDA</h4>
+        <p>El LDA se basa en propiedades estadísticas de los datos para cada clase, como las medias y las matrices de
+          covarianza. Estos valores se utilizan para hacer predicciones y se almacenan en el modelo aprendido.</p>
+        <h4>Aprendizaje de Modelos LDA</h4>
+        <p>El LDA asume que los datos siguen una distribución gaussiana y que cada atributo tiene la misma varianza.
+          Estima la media y la varianza para cada clase a partir de los datos, utilizando fórmulas para calcular estos
+          valores.
+          <br>
+          $$mean_k = \frac {1}{n_k} \times \sum_{i=1}^n x_i$$
+          <br>
+          Donde meank es el valor medio de x para la clase k, nk es el número de instancias con la clase k. La varianza
+          se calcula en todas las clases como la diferencia promedio al cuadrado de cada valor con respecto a la media.
+          <br>
+          $$sigma^2 = \frac {1}{n - K} \times \sum_{i=1}^n(x_i-mean_k)^2$$
+          <br>
+          Donde sigma^2 es la varianza en todas las entradas (x), n es el número de instancias, K es el número de clases
+          y
+          meank es la media de x para la clase a la que pertenece xi.
+        </p>
+        <h4>Realizando Predicciones con LDA</h4>
+        <p>El LDA realiza predicciones calculando la probabilidad de que una entrada pertenezca a cada clase y
+          utilizando
+          el Teorema de Bayes. Utiliza funciones discriminantes para estimar las probabilidades y clasificar nuevas
+          instancias en función de las probabilidades estimadas.
+          <br>
+          $$D_k(x) = x \times \frac{mean_k}{sigma^2} - \frac{(mean_k)^2}{2\times sigma^2} + ln(P(k))$$
+          <br>
+          Dk(x) es la función discriminante para la clase k dada la entrada x; meank, sigma2 y P(k) se estiman a partir
+          de tus datos. La función ln() es el logaritmo natural.
+        </p>
+        <h4>Preparación de Datos para LDA</h4>
+        <ul class="c-bulleted">
+          <li>Considerar que sean problemas de clasificación</li>
+          <li>Asegurarse que los datos sigan una distribución Gaussiana</li>
+          <li>Eliminar ruido (valores atípicos)</li>
+          <li>Estandarizar los datos para que tengan media 0 y desviación estándar 1 (misma varianza)</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
