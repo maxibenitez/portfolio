@@ -16,7 +16,9 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -66,11 +68,124 @@
 
   <main>
     <section class="c-container">
+      <h2 class="c-content_header">SCIKIT - LEARN</h2>
       <div class="c-content">
-        <div class="c-construction">
-            <i class="fa-solid fa-person-digging fa-2xl"></i>
-            <span>Página en construcción...</span>
-        </div>
+        <p>En esta entrada, profundizaré en una de las librerías esenciales en machine learning: scikit-learn.
+          Podrás ver algunas de sus numerosas funciones y los parámetros que cada una ofrece.</p>
+        <h4>train_test_split</h4>
+        <p>La función se utiliza para dividir un conjunto de datos en conjuntos de entrenamiento y prueba de manera
+          aleatoria. Parámetros para esta función:</p>
+        <ul class="c-bulleted">
+          <li><strong>arrays (obligatorio):</strong> arrays o matrices que se dividen en conjuntos de entrenamiento y
+            prueba.
+          </li>
+          <li><strong>test_size (opcional):</strong> especifica la proporción del conjunto de datos que se asignará al
+            conjunto de prueba.
+            /li>
+          <li><strong>train_size (opcional):</strong> permite especificar la proporción del conjunto de datos que se
+            asignará al conjunto de entrenamiento.
+          </li>
+          <li><strong>random_state (opcional):</strong> indica la semilla utilizada por el generador de números
+            aleatorios para garantizar que la división de datos sea reproducible.
+          </li>
+          <li><strong>shuffle (opcional):</strong> indica si los datos deben mezclarse antes de realizar la división.
+          </li>
+        </ul>
+        <h4>LinearDiscriminantAnalysis</h4>
+        <p>La función implementa el algoritmo de Análisis Discriminante Lineal (LDA). Parámetros para esta función:</p>
+        <ul class="c-bulleted">
+          <li><strong>solver (opcional):</strong> especifica el algoritmo utilizado para resolver el problema de
+            optimización. Puede ser “svd” (por defecto), “lsqr” o “eigen”.
+          </li>
+          <li><strong>shrikage (opcional):</strong> controla si se aplica la regularización de Ledoit-Wolf.
+          </li>
+          <li><strong>n_components (opcional):</strong> especifica el número de componentes (o discriminantes lineales)
+            a extraer.
+          </li>
+        </ul>
+        <h4>LogisticRegression</h4>
+        <p>La función se utiliza para crear un modelo de regresión logística. Parámetros para esta función:</p>
+        <ul class="c-bulleted">
+          <li><strong>penalty (opcional):</strong> especifica la norma de penalización utilizada en la regresión
+            logística. Los valores son: “l1”, “l2”, “elasticnet” o None (por defecto).
+          </li>
+          <li><strong>C (opcional):</strong> inverso de la fuerza de regularización. Valores bajos aumentan la
+            regularización, valores altos disminuyen la regularización.
+          </li>
+          <li><strong>solver (opcional):</strong> algoritmo de optimización a utilizar. Puede ser “newton-cg”, “lbfgs”,
+            “liblinear”, “sag”, o “saga”.
+          </li>
+          <li><strong>max_iter (opcional):</strong> número máximo de iteraciones para que el solucionador converja.
+          </li>
+          <li><strong>multi_class (opcional):</strong> controla cómo manejar problemas de clasificación multiclase.
+          </li>
+          <li><strong>random_state (opcional):</strong> semilla del generador de números aleatorios utilizado para la
+            inicialización del modelo.
+          </li>
+          <li><strong>class_weight (opcional):</strong> permite asignar pesos personalizados para las clases.
+          </li>
+        </ul>
+        <h4>fit</h4>
+        <p>La función se utiliza para entrenar un modelo utilizando datos de entrenamiento. Dependiendo si se utiliza
+          LDA o Regresión Logística, que parámetros adicionales se utiliza, hay algunos que tienen en común:</p>
+        <ul class="c-bulleted">
+          <li><strong>X (obligatorio):</strong> matriz de características de entrenamiento.
+          </li>
+          <li><strong>Y (obligatorio):</strong> vector de etiquetas de clase correspondiente a las muestras de
+            entrenamiento.
+          </li>
+          <li><strong>solver (opcional):</strong> el algoritmo a utilizar para resolver el problema de optimización
+            durante el ajuste.
+          </li>
+        </ul>
+        <h4>predict</h4>
+        <p>La función se utiliza para realizar predicciones utilizando un modelo entrenado. Esta función tiene un solo
+          parámetro:</p>
+        <ul class="c-bulleted">
+          <li><strong>X (obligatorio):</strong> matriz de características de prueba para la cual se desean realizar las
+            predicciones.
+          </li>
+        </ul>
+        <h4>classification_report</h4>
+        <p>La función se utiliza para generar un informe de clasificación que muestra varias métricas de evaluación del
+          rendimiento de un modelo de clasificación. Parámetros para esta función:</p>
+        <ul class="c-bulleted">
+          <li><strong>y_true (obligatorio):</strong> array que contiene las etiquetas reales de las muestras en el
+            conjunto de prueba.
+          </li>
+          <li><strong>y_pred (obligatorio):</strong> array que contiene las etiquetas predichas por el modelo para las
+            mismas muestras anteriores.
+          </li>
+          <li><strong>labels (opcional):</strong> lista de etiquetas de clase usadas para construir el informe de
+            clasificación.
+          </li>
+          <li><strong>target_names (opcional):</strong> lista de nombres de clases que se utilizarán para etiquetar las
+            filas del informe de clasificación.
+          </li>
+          <li><strong>sample_weight (opcional):</strong> permite asignar un peso específico a las muestras en la
+            evaluación de métricas.
+          </li>
+          <li><strong>digits (opcional):</strong> indica la cantidad de dígitos que se mostrarán después del punto
+            decimal en el informe.
+          </li>
+        </ul>
+        <h4>confusion_matrix</h4>
+        <p>La función se utiliza para calcular y mostrar una matriz de confusión que resume el rendimiento de un modelo
+          de clasificación en un conjunto de datos. Parámetros para esta función:</p>
+        <ul class="c-bulleted">
+          <li><strong>y_true (obligatorio):</strong> array que contiene las etiquetas reales de las muestras en el
+            conjunto de prueba.
+          </li>
+          <li><strong>y_pred (obligatorio):</strong> array que contiene las etiquetas predichas por el modelo para las
+            mismas muestras anteriores.
+          </li>
+          <li><strong>labels (opcional):</strong> lista de etiquetas de clase usadas para construir la matriz de
+            confusión.
+          </li>
+          <li><strong>target_names (opcional):</strong> permite asignar un peso específico a las muestras al calcular la
+            matriz de confusión.
+          </li>
+        </ul>
       </div>
     </section>
   </main>
