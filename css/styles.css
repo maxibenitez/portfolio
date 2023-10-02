@@ -182,72 +182,128 @@ body {
 }
 .c-card a {
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0.7rem;
 }
 .c-card a span {
-  width: 90%;
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 50%;
+  padding: 0 1rem 1rem 1rem;
   text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
+  border-radius: 0 0 0.7rem 0.7rem;
+  background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 .c-card .scikit {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/scikit.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/scikit.png);
   background-size: cover;
   background-position: center;
 }
 .c-card .rapidminer {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/rapidminer.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/rapidminer.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .pandas {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/pandas.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/pandas.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .numpy {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/numpy.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/numpy.png);
   background-size: cover;
   background-position: center;
 }
 .c-card .matplotlib {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/matplotlib.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/matplotlib.png);
   background-size: cover;
   background-position: center;
 }
 .c-card .iris {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/iris.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/iris.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .titanic {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images//titanic.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images//titanic.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .wine {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/wine.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/wine.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .heart {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/heart.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/heart.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .sports {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/sports.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/sports.jpg);
   background-size: cover;
   background-position: center;
 }
 .c-card .banking {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(../../images/banking.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/banking.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .gradient {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/gradient.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .linear_reg {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/linear_reg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .logistic_reg {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/logistic_reg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .lda {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/lda.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .validate_mod {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/validate_mod.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .credibility {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/credibility.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .k-nn {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/k-nn.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .naive {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/naive.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .feature {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/feat_selec.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.c-card .deshpande {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/deshpande.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -266,13 +322,13 @@ body {
   width: 90%;
   height: 100%;
 }
+.c-container .c-container_header .c-header {
+  display: none;
+}
 .c-container h2 {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-}
-.c-container .c-header {
-  display: none;
 }
 .c-container p {
   font-size: 0.65rem;
@@ -285,11 +341,13 @@ body {
   align-items: center;
   width: 100%;
 }
-.c-container .c-cards__list {
+.c-container .c-container_content {
   overflow-y: scroll;
   padding: 2rem 0rem;
   width: 100%;
   height: 100%;
+}
+.c-container .c-container_content .c-cards__list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(auto-fill, 12rem);
@@ -352,14 +410,52 @@ body {
 .c-container .c-content .c-construction span {
   font-size: 0.8rem;
 }
+.c-container .swiper,
+.c-container .slide-container {
+  display: none;
+}
 @media screen and (min-width: 992px) {
   .c-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 90%;
     height: 100%;
+  }
+  .c-container .c-about {
+    width: 50%;
+    align-self: flex-start;
+  }
+  .c-container .c-about p {
+    font-size: 0.65rem;
+    padding-bottom: 1rem;
+    line-height: 2;
+  }
+  .c-container .c-about .c-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-self: flex-start;
+  }
+  .c-container .c-container_header {
+    height: 40%;
+    padding-top: 3rem;
+  }
+  .c-container .c-container_header .c-header {
+    display: block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    align-self: flex-start;
+    letter-spacing: 0.2rem;
+  }
+  .c-container .c-container_header .c-info {
+    width: 50%;
+    font-size: 0.65rem;
+    align-self: flex-start;
+    padding-bottom: 1rem;
+    line-height: 2;
   }
   .c-container h2 {
     font-weight: bold;
@@ -368,36 +464,6 @@ body {
     margin-bottom: 0.5rem;
     text-align: left;
     width: 100%;
-  }
-  .c-container .c-header {
-    display: block;
-    font-weight: bold;
-    font-size: 1.5rem;
-    align-self: flex-start;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1.3rem;
-    margin-top: 3rem;
-  }
-  .c-container .c-info {
-    width: 50%;
-    font-size: 0.65rem;
-    align-self: flex-start;
-    padding-bottom: 1rem;
-    line-height: 2;
-  }
-  .c-container .c-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-    align-self: flex-start;
-  }
-  .c-container .c-cards__list {
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-width: 100%;
   }
   .c-container .c-content_header {
     display: block;
@@ -422,6 +488,29 @@ body {
   .c-container .c-content figure {
     width: 60%;
   }
+  .c-container .c-container_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    overflow-y: hidden;
+    padding: 0;
+  }
+  .c-container .c-container_content .c-cards__list {
+    display: none;
+  }
+  .c-container .c-container_content .slide-container {
+    display: block;
+    max-width: 90vw;
+    height: 90%;
+    width: 90%;
+    padding: 2rem;
+    --swiper-theme-color: white;
+    --swiper-navigation-size: 1.5rem;
+  }
+  .c-container .c-container_content .slide-container .slide-content {
+    height: 90%;
+  }
 }
 
 header {
@@ -444,7 +533,7 @@ header {
   justify-content: center;
   height: 7vh;
   text-transform: uppercase;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(7, 7, 7);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -502,7 +591,7 @@ header {
     height: 10vh;
   }
   .c-nav_web h1 {
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
   }
   .c-nav_web .c-navigation__list {
     display: flex;
@@ -527,9 +616,9 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #1E1E1E;
-  background-image: radial-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)), url(../../images/background.png);
+  background-image: radial-gradient(rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.9)), url(../../images/background.png);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   letter-spacing: 1px;
   color: white;
   font-family: "Raleway", sans-serif;
@@ -547,7 +636,7 @@ body h2 {
 @media screen and (min-width: 992px) {
   body {
     justify-content: flex-start;
-    background-image: radial-gradient(closest-side at 50% 50%, rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url(../../images/background_web.jpg);
+    background-image: radial-gradient(closest-side at 50% 50%, rgba(7, 7, 7, 0.85), rgba(7, 7, 7, 0.85)), url(../../images/background_web.jpg);
   }
   body .underline {
     border-bottom: none;

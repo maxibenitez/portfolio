@@ -4,10 +4,10 @@ body {
     align-items: center;
     background-color: #1E1E1E;
     background-image:
-        radial-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)),
+        radial-gradient(rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.9)),
         url(../../images/background.png);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     letter-spacing: 1px;
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -28,7 +28,7 @@ body {
     @include respond-to('lg') {
         justify-content: flex-start;
         background-image:
-        radial-gradient(closest-side at 50% 50%, rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)),
+        radial-gradient(closest-side at 50% 50%, rgba(7, 7, 7, 0.85), rgba(7, 7, 7, 0.85)),
         url(../../images/background_web.jpg);
 
         .underline{

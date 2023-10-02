@@ -4,106 +4,192 @@
 
     a {
         display: flex;
-        align-items: flex-end;
         justify-content: center;
+        align-items: flex-end;
         width: 100%;
         height: 100%;
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 0.7rem;
 
         span {
-            width: 90%;
-            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 50%;
+            padding: 0 1rem 1rem 1rem;
             text-align: center;
             font-size: 0.8rem;
             font-weight: bold;
+            border-radius: 0 0 0.7rem 0.7rem;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         }
     }
 
     .scikit {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/scikit.png);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/scikit.png);
         background-size: cover;
         background-position: center;
     }
 
     .rapidminer {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/rapidminer.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/rapidminer.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .pandas {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/pandas.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/pandas.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .numpy {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/numpy.png);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/numpy.png);
         background-size: cover;
         background-position: center;
     }
 
     .matplotlib {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/matplotlib.png);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/matplotlib.png);
         background-size: cover;
         background-position: center;
     }
 
     .iris {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/iris.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/iris.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .titanic {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images//titanic.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images//titanic.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .wine {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/wine.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/wine.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .heart {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/heart.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/heart.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .sports {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/sports.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/sports.jpg);
         background-size: cover;
         background-position: center;
     }
 
     .banking {
         background-image:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-        url(../../images/banking.jpg);
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/banking.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .gradient {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/gradient.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .linear_reg {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/linear_reg.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .logistic_reg {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/logistic_reg.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .lda {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/lda.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .validate_mod {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/validate_mod.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .credibility {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/credibility.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .k-nn {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/k-nn.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .naive {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/naive.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .feature {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/feat_selec.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .deshpande {
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+            url(../../images/deshpande.jpeg);
         background-size: cover;
         background-position: center;
     }

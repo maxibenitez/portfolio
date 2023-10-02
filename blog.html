@@ -11,12 +11,15 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -66,70 +69,136 @@
 
   <main>
     <section class="c-container">
-      <h2 class="c-header">BLOG</h2>
-      <p class="c-info underline">En esta sección, encontrarás resúmenes de textos relacionados
-        con libros fundamentales en este campo, exploraciones detalladas de
-        diversos algoritmos, reflexiones sobre mis experiencias con herramientas
-        como RapidMiner y otra información valiosa relacionada con machine learning.
-      </p>
-      <ul class="c-cards__list">
-        <li class="c-card">
-          <a href="blog_gradient.html">
-            <span>DESCENSO DE GRADIENTE</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_linear_reg.html">
-            <span>REGRESIÓN LINEAL</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_logistic_reg.html">
-            <span>REGRESIÓN LOGÍSTICA</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_lda.html">
-            <span>ANÁLISIS DISCRIMINANTE LINEAL</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_how_valid_ml_rp.html">
-            <span>VALIDAR MODELOS - RAPIDMINER</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_credibility.html">
-            <span>CREDIBILIDAD: EVALUACIÓN DE LO APRENDIDO</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_k-nn.html">
-            <span>K-NEAREST NEIGHBOURS</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_nb.html">
-            <span>NAÏVE BAYES</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_fselection.html">
-            <span>FEATURE SELECTION</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a href="blog_deshpande.html">
-            <span>TUTORIAL “FEATURE SELECTION” DE DESHPANDE</span>
-          </a>
-        </li>
-      </ul>
+      <div class="c-container_header">
+        <h2 class="c-header">BLOG</h2>
+        <p class="c-info underline">En esta sección, encontrarás resúmenes de textos relacionados
+          con libros fundamentales en este campo, exploraciones detalladas de
+          diversos algoritmos, reflexiones sobre mis experiencias con herramientas
+          como RapidMiner y otra información valiosa relacionada con machine learning.
+        </p>
+      </div>
+      <div class="c-container_content">
+        <div class="slide-container swiper">
+          <div class="slide-content">
+            <div class="slide-wrapper swiper-wrapper">
+              <div class="c-card swiper-slide">
+                <a class="gradient" href="blog_gradient.html">
+                  <span>DESCENSO DE GRADIENTE</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="linear_reg" href="blog_linear_reg.html">
+                  <span>REGRESIÓN LINEAL</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="logistic_reg" href="blog_logistic_reg.html">
+                  <span>REGRESIÓN LOGÍSTICA</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="lda" href="blog_lda.html">
+                  <span>ANÁLISIS DISCRIMINANTE LINEAL</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="validate_mod" href="blog_how_valid_ml_rp.html">
+                  <span>VALIDAR MODELOS - RAPIDMINER</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="credibility" href="blog_credibility.html">
+                  <span>CREDIBILIDAD: EVALUACIÓN DE LO APRENDIDO</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="k-nn" href="blog_k-nn.html">
+                  <span>K-NEAREST NEIGHBOURS</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="naive" href="blog_nb.html">
+                  <span>NAÏVE BAYES</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="feature" href="blog_fselection.html">
+                  <span>FEATURE SELECTION</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="deshpande" href="blog_deshpande.html">
+                  <span>TUTORIAL “FEATURE SELECTION” DE DESHPANDE</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <ul class="c-cards__list">
+          <li class="c-card">
+            <a class="gradient" href="blog_gradient.html">
+              <span>DESCENSO DE GRADIENTE</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="linear_reg" href="blog_linear_reg.html">
+              <span>REGRESIÓN LINEAL</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="logistic_reg" href="blog_logistic_reg.html">
+              <span>REGRESIÓN LOGÍSTICA</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="lda" href="blog_lda.html">
+              <span>ANÁLISIS DISCRIMINANTE LINEAL</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="validate_mod" href="blog_how_valid_ml_rp.html">
+              <span>VALIDAR MODELOS - RAPIDMINER</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="credibility" href="blog_credibility.html">
+              <span>CREDIBILIDAD: EVALUACIÓN DE LO APRENDIDO</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="k-nn" href="blog_k-nn.html">
+              <span>K-NEAREST NEIGHBOURS</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="naive" href="blog_nb.html">
+              <span>NAÏVE BAYES</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="feature" href="blog_fselection.html">
+              <span>FEATURE SELECTION</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="deshpande" href="blog_deshpande.html">
+              <span>TUTORIAL “FEATURE SELECTION” DE DESHPANDE</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
 </body>
 
 </html>

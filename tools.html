@@ -11,12 +11,15 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -66,44 +69,87 @@
 
   <main>
     <section class="c-container">
-      <h2 class="c-header">HERRAMIENTAS</h2>
-      <p class="c-info underline">En esta sección, podrás visualizar tutoriales y guías sobre softwares y librerías que he utilizado en los
-        distintos casos de estudio de machine learning. Estas potentes herramientas me permitieron desarrollar y aplicar
-        modelos de manera eficiente.
-      </p>
-      <ul class="c-cards__list">
-        <li class="c-card">
-          <a class="scikit" href="tools_scikit.html">
-            <span>SCIKIT - LEARN</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a class="rapidminer" href="tools_rapidminer.html">
-            <span>RAPIDMINER</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a class="pandas" href="tools_pandas.html">
-            <span>PANDAS</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a class="numpy" href="tools_numpy.html">
-            <span>NUMPY</span>
-          </a>
-        </li>
-        <li class="c-card">
-          <a class="matplotlib" href="tools_matplotlib.html">
-            <span>MATPLOTLIB</span>
-          </a>
-        </li>
-      </ul>
+      <div class="c-container_header">
+        <h2 class="c-header">HERRAMIENTAS</h2>
+        <p class="c-info underline">En esta sección, podrás visualizar tutoriales y guías sobre softwares y librerías
+          que he utilizado en los
+          distintos casos de estudio de machine learning. Estas potentes herramientas me permitieron desarrollar y
+          aplicar
+          modelos de manera eficiente.
+        </p>
+      </div>
+      <div class="c-container_content">
+        <div class="slide-container swiper">
+          <div class="slide-content">
+            <div class="slide-wrapper swiper-wrapper">
+              <div class="c-card swiper-slide">
+                <a class="scikit" href="tools_scikit.html">
+                  <span>SCIKIT - LEARN</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="rapidminer" href="tools_rapidminer.html">
+                  <span>RAPIDMINER</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="pandas" href="tools_pandas.html">
+                  <span>PANDAS</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="numpy" href="tools_numpy.html">
+                  <span>NUMPY</span>
+                </a>
+              </div>
+              <div class="c-card swiper-slide">
+                <a class="matplotlib" href="tools_matplotlib.html">
+                  <span>MATPLOTLIB</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <ul class="c-cards__list">
+          <li class="c-card">
+            <a class="scikit" href="tools_scikit.html">
+              <span>SCIKIT - LEARN</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="rapidminer" href="tools_rapidminer.html">
+              <span>RAPIDMINER</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="pandas" href="tools_pandas.html">
+              <span>PANDAS</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="numpy" href="tools_numpy.html">
+              <span>NUMPY</span>
+            </a>
+          </li>
+          <li class="c-card">
+            <a class="matplotlib" href="tools_matplotlib.html">
+              <span>MATPLOTLIB</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
 </body>
 
 </html>
