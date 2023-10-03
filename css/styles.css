@@ -179,6 +179,7 @@ body {
 .c-card {
   min-height: 12rem;
   list-style-type: none;
+  position: relative;
 }
 .c-card a {
   display: flex;
@@ -202,108 +203,114 @@ body {
   border-radius: 0 0 0.7rem 0.7rem;
   background: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
+.c-card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  box-shadow: 1.5rem 1.5rem 1.5rem rgb(0, 0, 0);
+  border-radius: 0.7rem;
+  z-index: -1;
+}
 .c-card .scikit {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/scikit.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/M81J8Ds/scikit.png");
   background-size: cover;
   background-position: center;
 }
 .c-card .rapidminer {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/rapidminer.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/1rBWYGP/rapidminer.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .pandas {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/pandas.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.c-card .numpy {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/numpy.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/yBsPfz5/pandas.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .matplotlib {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/matplotlib.png);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/T4YDqrc/matplotlib.png");
   background-size: cover;
   background-position: center;
 }
 .c-card .iris {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/iris.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/4tGK9f1/iris.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .titanic {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images//titanic.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/88x2V7B/titanic.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .wine {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/wine.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/ZgdpvQ3/wine.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .heart {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/heart.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/4fF4kJD/heart.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .sports {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/sports.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/B4b61wv/sports.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .banking {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/banking.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/F4KgRss/banking.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .gradient {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/gradient.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/X4K1k3W/gradient.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .linear_reg {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/linear_reg.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/PMHZSy2/linear-reg.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .logistic_reg {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/logistic_reg.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/p0JPNRv/logistic-reg.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .lda {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/lda.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/LChS8qS/lda.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .validate_mod {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/validate_mod.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/HCW5db9/validate-mod.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .credibility {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/credibility.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/3TnP4SM/credibility.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .k-nn {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/k-nn.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/hc3sxwF/k-nn.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .naive {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/naive.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/TYWPFCh/naive.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .feature {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/feat_selec.jpg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/dfK5h2K/feat-selec.jpg");
   background-size: cover;
   background-position: center;
 }
 .c-card .deshpande {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../../images/deshpande.jpeg);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("https://i.ibb.co/v1hjddH/deshpande.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -616,7 +623,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #1E1E1E;
-  background-image: radial-gradient(rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.9)), url(../../images/background.png);
+  background-image: radial-gradient(rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.9)), url("https://i.ibb.co/zG2rTBv/background.png");
   background-size: cover;
   background-position: bottom;
   letter-spacing: 1px;
@@ -636,7 +643,7 @@ body h2 {
 @media screen and (min-width: 992px) {
   body {
     justify-content: flex-start;
-    background-image: radial-gradient(closest-side at 50% 50%, rgba(7, 7, 7, 0.85), rgba(7, 7, 7, 0.85)), url(../../images/background_web.jpg);
+    background-image: radial-gradient(closest-side at 50% 50%, rgba(7, 7, 7, 0.85), rgba(7, 7, 7, 0.85)), url("https://i.ibb.co/YdWDK8r/background-web.jpg");
   }
   body .underline {
     border-bottom: none;

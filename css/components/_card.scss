@@ -1,6 +1,7 @@
 .c-card {
     min-height: 12rem;
     list-style-type: none;
+    position: relative;
 
     a {
         display: flex;
@@ -26,10 +27,22 @@
         }
     }
 
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 1);
+        border-radius: 0.7rem;
+        z-index: -1;
+    }
+
     .scikit {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/scikit.png);
+            url('https://i.ibb.co/M81J8Ds/scikit.png');
         background-size: cover;
         background-position: center;
     }
@@ -37,7 +50,7 @@
     .rapidminer {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/rapidminer.jpg);
+            url('https://i.ibb.co/1rBWYGP/rapidminer.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -45,15 +58,7 @@
     .pandas {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/pandas.jpg);
-        background-size: cover;
-        background-position: center;
-    }
-
-    .numpy {
-        background-image:
-            linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/numpy.png);
+            url('https://i.ibb.co/yBsPfz5/pandas.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -61,7 +66,7 @@
     .matplotlib {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/matplotlib.png);
+            url('https://i.ibb.co/T4YDqrc/matplotlib.png');
         background-size: cover;
         background-position: center;
     }
@@ -69,7 +74,7 @@
     .iris {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/iris.jpg);
+            url('https://i.ibb.co/4tGK9f1/iris.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -77,7 +82,7 @@
     .titanic {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images//titanic.jpg);
+            url('https://i.ibb.co/88x2V7B/titanic.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -85,7 +90,7 @@
     .wine {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/wine.jpg);
+            url('https://i.ibb.co/ZgdpvQ3/wine.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -93,7 +98,7 @@
     .heart {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/heart.jpg);
+            url('https://i.ibb.co/4fF4kJD/heart.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -101,7 +106,7 @@
     .sports {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/sports.jpg);
+            url('https://i.ibb.co/B4b61wv/sports.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -109,7 +114,7 @@
     .banking {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/banking.jpg);
+            url('https://i.ibb.co/F4KgRss/banking.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -117,7 +122,7 @@
     .gradient {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/gradient.jpg);
+            url('https://i.ibb.co/X4K1k3W/gradient.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -125,7 +130,7 @@
     .linear_reg {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/linear_reg.jpg);
+            url('https://i.ibb.co/PMHZSy2/linear-reg.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -133,7 +138,7 @@
     .logistic_reg {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/logistic_reg.jpg);
+            url('https://i.ibb.co/p0JPNRv/logistic-reg.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -141,7 +146,7 @@
     .lda {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/lda.jpg);
+            url('https://i.ibb.co/LChS8qS/lda.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -149,7 +154,7 @@
     .validate_mod {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/validate_mod.jpg);
+            url('https://i.ibb.co/HCW5db9/validate-mod.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -157,7 +162,7 @@
     .credibility {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/credibility.jpg);
+            url('https://i.ibb.co/3TnP4SM/credibility.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -165,7 +170,7 @@
     .k-nn {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/k-nn.jpg);
+            url('https://i.ibb.co/hc3sxwF/k-nn.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -173,7 +178,7 @@
     .naive {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/naive.jpg);
+            url('https://i.ibb.co/TYWPFCh/naive.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -181,7 +186,7 @@
     .feature {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/feat_selec.jpg);
+            url('https://i.ibb.co/dfK5h2K/feat-selec.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -189,7 +194,7 @@
     .deshpande {
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-            url(../../images/deshpande.jpeg);
+            url('https://i.ibb.co/v1hjddH/deshpande.jpg');
         background-size: cover;
         background-position: center;
     }

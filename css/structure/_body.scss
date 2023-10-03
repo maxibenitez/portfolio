@@ -5,7 +5,7 @@ body {
     background-color: #1E1E1E;
     background-image:
         radial-gradient(rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.9)),
-        url(../../images/background.png);
+        url('https://i.ibb.co/zG2rTBv/background.png');
     background-size: cover;
     background-position: bottom;
     letter-spacing: 1px;
@@ -29,7 +29,7 @@ body {
         justify-content: flex-start;
         background-image:
         radial-gradient(closest-side at 50% 50%, rgba(7, 7, 7, 0.85), rgba(7, 7, 7, 0.85)),
-        url(../../images/background_web.jpg);
+        url('https://i.ibb.co/YdWDK8r/background-web.jpg');
 
         .underline{
             border-bottom: none;

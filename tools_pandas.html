@@ -16,7 +16,9 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -68,10 +70,33 @@
     <section class="c-container">
       <h2 class="c-content_header">PANDAS</h2>
       <div class="c-content">
-        <div class="c-construction">
-            <i class="fa-solid fa-person-digging fa-2xl"></i>
-            <span>Página en construcción...</span>
-        </div>
+        <h4>Operaciones de datos</h4>
+        <ol>
+          <li><code>df.apply()</code>: Aplica una función a lo largo de un eje del DataFrame.
+            <ul class="c-bulleted">
+              <li><strong>func</strong>: Función a aplicar a lo largo del eje.</li>
+              <li><strong>axis</strong>: Indica si la función se aplica a lo largo de filas (axis=0) o columnas
+                (axis=1).</li>
+            </ul>
+          </li>
+          <li><code>df.fillna()</code>: Rellena valores nulos o faltantes con un valor específico.
+            <ul class="c-bulleted">
+              <li><strong>value</strong>: Valor para rellenar los valores nulos.</li>
+            </ul>
+          </li>
+          <li><code>df.drop_duplicates()</code>: Elimina filas duplicadas.</li>
+          <li><code>df.replace()</code>: Reemplaza valores en el DataFrame.
+            <ul class="c-bulleted">
+              <li><strong>to_replace</strong>: Valor o lista de valores que se reemplazarán.</li>
+              <li><strong>value</strong>: Valor de reemplazo.</li>
+            </ul>
+          </li>
+          <li><code>df.groupby().agg()</code>: Realiza agregaciones personalizadas en grupos de datos.
+            <ul class="c-bulleted">
+              <li><strong>aggfunc</strong>: Función de agregación personalizada a aplicar.</li>
+            </ul>
+          </li>
+        </ol>
       </div>
     </section>
   </main>
