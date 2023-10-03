@@ -70,6 +70,10 @@
             font-size: 0.85rem;
         }
 
+        h6{
+            font-size: 0.75rem;
+        }
+
         h5,
         h6 {
             margin-top: 1rem;
@@ -94,6 +98,15 @@
             }
         }
 
+        ol {
+            margin: 0 0 2rem 1rem;
+
+            li {
+                font-size: 0.7rem;
+                line-height: 2;
+            } 
+        }
+
         .c-code_list {
             list-style-type: disc;
             margin: 0 0 2rem 1rem;
@@ -109,18 +122,18 @@
                 font-weight: bold;
                 font-size: 0.8rem;
             }
+        }
 
-            .c-sublist {
-                list-style-type: none;
-                padding-left: 1rem;
-            }
+        .c-sublist {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
 
-            .c-sublist li::before {
-                content: "-";
-                margin-right: 5px;
-                color: white;
-                font-size: 0.85rem;
-            }
+        .c-sublist li::before {
+            content: "-";
+            margin-right: 5px;
+            color: white;
+            font-size: 0.85rem;
         }
 
         figure {

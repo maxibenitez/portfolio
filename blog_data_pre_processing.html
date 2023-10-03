@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Maximiliano Benítez">
+    <meta name="robots" content="noindex" />
+    <title>Portfolio</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+</head>
+
+<body>
+    <nav class="c-nav_web">
+        <a href="index.html">
+            <h1>MACHINE LEARNING PORTFOLIO</h1>
+        </a>
+        <ul class="c-navigation__list">
+            <li id="li-home" class="c-item">
+                <a href="index.html">INICIO</a>
+            </li>
+            <li id="li-blog" class="c-item is-active_web">
+                <a href="blog.html">BLOG</a>
+            </li>
+            <li id="li-case__studies" class="c-item">
+                <a href="case_studies.html">CASOS DE ESTUDIO</a>
+            </li>
+            <li id="li-tools" class="c-item">
+                <a href="tools.html">HERRAMIENTAS</a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="c-nav_mobile">
+        <ul class="c-navigation__list">
+            <li id="li-home" class="c-item" data-target-section="home">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-xl"></i></i>
+                    <span>INICIO</span>
+                </a>
+            </li>
+            <li id="li-blog" class="c-item is-active" data-target-section="blog">
+                <a href="blog.html">
+                    <i class="fa-solid fa-file fa-xl"></i>
+                    <span>BLOG</span>
+                </a>
+            </li>
+            <li id="li-case__studies" class="c-item" data-target-section="case__studies">
+                <a href="case_studies.html">
+                    <i class="fa-solid fa-book fa-xl"></i>
+                    <span>CASOS ESTUDIO</span>
+                </a>
+            </li>
+            <li id="li-tools" class="c-item" data-target-section="tools">
+                <a href="tools.html">
+                    <i class="fa-solid fa-wrench fa-xl"></i>
+                    <span>HERRAMIENTAS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="underline">DATA PRE-PROCESSING</header>
+
+    <main>
+        <section class="c-container">
+            <h2 class="c-content_header">DATA PRE-PROCESSING</h2>
+            <div class="c-content">
+                <p>En este blog, te presentaré un resumen conciso pero completo del capítulo 3
+                    "Data Pre-processing", del libro "Applied Predictive Modeling" de Max Kuhn y Kjell Johnson.
+                    Verás las estrategias esenciales de preprocesamiento de datos que son fundamentales para la
+                    creación de modelos predictivos precisos y efectivos. </p>
+
+                <h4>Transformaciones de datos para predictores individuales</h4>
+                <p>Las transformaciones son necesarias por varias razones, como la necesidad de una escala común para
+                    algunos modelos o la correlación de la asimetría en la distribución de datos.
+                </p>
+                <ul class="c-bulleted">
+                    <li><strong>Centrado y escala:</strong>
+                        <ul class="c-sublist">
+                            <li>Centrar significa restar el valor promedio de la variable predictora de todos los
+                                valores, lo que resulta en una media de cero para el predictor.</li>
+                            <li>Escalar consiste en dividir cada valor de la variable predictora por su desviación
+                                estándar, normalizando así la distribución y forzando una desviación estándar común de
+                                uno.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformaciones para corregir la asimetría:</strong>
+                        <ul class="c-sublist">
+                            <li>La asimetría de la distribución puede dificultar la construcción de un modelo eficaz.
+                                Una distribución simétrica es aquella donde la probabilidad de estar a cada lado de la
+                                media es similar.</li>
+                            <li>Una regla general es que los datos con una relación mayor a 20 entre el valor más alto y
+                                el más bajo tienen una asimetría significativa.</li>
+                            <li>Se propone el uso de transformaciones como el logaritmo, la raíz cuadrada o el inverso
+                                para mitigar la asimetría. También se introduce la familia de transformaciones propuesta
+                                por Box y Cox, que incluye transformaciones al cuadrado, raíz cuadrada, inversa y otras.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Transformaciones de datos para múltiples predictores</h4>
+                <p>Estas transformaciones actúan sobre grupos de predictores, generalmente sobre el conjunto completo
+                    bajo consideración.</p>
+                <h5>Transformaciones para resolver valores atípicos</h5>
+                <p>Los valores atípicos se definen generalmente como muestras que se encuentran lejos de la mayoría de
+                    los datos y pueden ser difíciles de definir formalmente. Es esencial asegurarse de que los valores
+                    atípicos sean válidos y no sean errores de registro de datos. Se debe tener precaución al eliminar o
+                    cambiar valores atípicos, especialmente con tamaños de muestra pequeños. Algunos modelos
+                    predictivos, como los basados en árboles y las máquinas de soporte vectorial, pueden ser resistentes
+                    a los valores atípicos debido a la forma en que crean divisiones o excluyen muestras del conjunto de
+                    entrenamiento. Si un modelo es sensible a los valores atípicos, una transformación útil es el "signo
+                    espacial".</p>
+                <h5>Transformación de “signo especial”</h5>
+                <p>El "signo espacial" es una técnica que normaliza los predictores al proyectarlos sobre una esfera
+                    multidimensional. Cada muestra se divide por su norma al cuadrado, lo que mide la distancia al
+                    centro de la distribución del predictor. Es importante centrar y escalar los datos de los
+                    predictores antes de aplicar esta transformación. Esta transformación puede dificultar la
+                    eliminación de predictores después de su aplicación.</p>
+
+                <h4>Reducción de datos y extracción de características</h4>
+                <p>Las técnicas de reducción de datos buscan generar un conjunto más pequeño de predictores que capturen
+                    la mayor parte de la información en las variables originales.</p>
+                <h5>Análisis de Componentes Principales (PCA)</h5>
+                <p>Es una técnica común de reducción de datos que busca encontrar combinaciones lineales de predictores
+                    que capturen la mayor variabilidad posible. El PCA busca crear componentes principales que capturen
+                    la variabilidad en los datos originales. Cada componente principal es una combinación lineal de los
+                    predictores originales, donde los coeficientes indican la importancia de cada predictor en el
+                    componente. El PCA es útil para reducir la dimensionalidad de los datos y crear predictores no
+                    correlacionados, lo que mejora la estabilidad numérica en algunos modelos predictivos.</p>
+                <h6>Consideraciones:</h6>
+                <ul class="c-bulleted">
+                    <li>El PCA no considera la escala, distribución ni el objetivo de modelado al resumir la
+                        variabilidad.</li>
+                    <li>El PCA no es supervisado, por lo que no tiene en cuenta la relación entre los predictores y la
+                        variable de respuesta.</li>
+                    <li>El PCA puede generar componentes que resumen características de los datos que son irrelevantes
+                        para la estructura subyacente de los datos y también para el objetivo final del modelado.</li>
+                    <li>No reemplaza la comprensión de dominio y la interpretación de los resultados.</li>
+                </ul>
+                <ol>
+                    <li><strong>Datos faltantes</strong>: los valores faltantes en los datos pueden ser estructurales
+                        (debido a la naturaleza del problema) o no estructurales (no se pudo determinar o registrar el
+                        valor).</li>
+                    <li><strong>Datos censurados</strong>: son aquellos en los que se conoce algo sobre el valor, pero
+                        no el valor exacto.</li>
+                    <li><strong>Imputación de datos faltantes</strong>: la imputación implica estimar valores faltantes
+                        utilizando información de otros predictores.
+                        <ul class="c-sublist">
+                            <li>Modelos de vecinos más cercanos: Imputa valores faltantes promediando los valores de las
+                                muestras más cercanas en el conjunto de entrenamiento.</li>
+                            <li>Imputación basada en regresión: Se utiliza un modelo de regresión simple para predecir
+                                valores faltantes basados en otros predictores.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eliminación de predictores</strong>: puede ser beneficioso eliminar predictores antes de
+                        construir un modelo, ya que reduce el tiempo computacional y la complejidad. La eliminación de
+                        predictores altamente correlacionados puede mejorar la interpretación del modelo. Predictores
+                        con distribuciones degeneradas o varianza cercana a cero pueden afectar negativamente el
+                        rendimiento del modelo y deben considerarse para su eliminación.</li>
+                </ol>
+                <h5>Correlación entre predictores</h5>
+                <p>Colinealidad se refiere a la correlación sustancial entre dos variables predictoras.
+                    <br>
+                    Multicolinealidad es la presencia de relaciones entre múltiples predictores al mismo tiempo.
+                </p>
+                <h5>Matriz de correlación</h5>
+                <p>Una matriz de correlación es una herramienta útil para visualizar estas relaciones. En esta matriz,
+                    las correlaciones entre pares se calculan a partir de los datos y se les asigna un color según su
+                    fuerza. El azul oscuro indica correlaciones positivas fuertes, el rojo oscuro indica correlaciones
+                    negativas fuertes y el blanco implica que no hay una relación significativa entre los predictores.
+                </p>
+                <h6>Problemas de predictores correlacionados:</h6>
+                <ul class="c-bulleted">
+                    <li>Pueden ser redundantes y agregar complejidad sin información adicional.</li>
+                    <li>En técnicas como regresión lineal, correlación entre predictores puede llevar a modelos
+                        inestables y reducir el rendimiento.</li>
+                </ul>
+                <p>Una forma de abordar la colinealidad es calcular el <strong>Factor de Inflación de la
+                        Varianza</strong>, que
+                    identifica los predictores afectados por la multicolinealidad. Este método es más adecuado para la
+                    regresión lineal.
+                    <br>
+                    Un enfoque alternativo es eliminar los predictores de a pares hasta que todas las correlaciones
+                    entre pares estén por debajo de un cierto umbral. Este método heurístico ayuda a reducir el impacto
+                    de la colinealidad. El algoritmo implica:
+                </p>
+                <ul class="c-bulleted">
+                    <li>Calcular la matriz de correlación.</li>
+                    <li>Identificar los predictores con la correlación en valor absoluto más alta entre pares (A y B).
+                    </li>
+                    <li>Calcular la correlación promedio entre A y las demás variables, y hacer lo mismo para B.</li>
+                    <li>Eliminar A si su correlación promedio es mayor, de lo contrario, eliminar B.</li>
+                    <li>Repetir los pasos 2 al 4 hasta que ninguna correlación en valor absoluto supere el umbral.</li>
+                </ul>
+                <h5>Añadiendo predictores</h5>
+                <p>Cuando se tiene un predictor categórico, como género o raza, es común descomponerlo en variables
+                    ficticias o variables dummies. Cada categoría tiene su propia variable dummy que es un indicador de
+                    cero/uno para ese grupo.</p>
+                <h5>Agrupación de predictores</h5>
+                <p>La agrupación manual de datos continuos implica pre-categorizar un predictor numérico en grupos antes
+                    del análisis. Ventajas percibidas de la categorización manual incluyen reglas de decisión simples y
+                    mayor tasa de respuesta en encuestas.
+                    <br>
+                    Problemas de la categorización manual:
+                </p>
+                <ul class="c-bulleted">
+                    <li>Pérdida de rendimiento en el modelo al limitar la capacidad de capturar relaciones complejas.
+                    </li>
+                    <li>Pérdida de precisión en las predicciones debido a la categorización.</li>
+                    <li>Mayor riesgo de falsos positivos (predictores ruidosos considerados informativos).</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
+    </footer>
+</body>
+
+</html>
