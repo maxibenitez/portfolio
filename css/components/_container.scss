@@ -66,6 +66,10 @@
             text-transform: uppercase;
         }
 
+        h5 {
+            font-size: 0.85rem;
+        }
+
         h5,
         h6 {
             margin-top: 1rem;
@@ -87,6 +91,35 @@
             li {
                 font-size: 0.7rem;
                 line-height: 2;
+            }
+        }
+
+        .c-code_list {
+            list-style-type: disc;
+            margin: 0 0 2rem 1rem;
+
+            li {
+                font-size: 0.7rem;
+                line-height: 2;
+            }
+
+            code {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: aqua;
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+
+            .c-sublist {
+                list-style-type: none;
+                padding-left: 1rem;
+            }
+
+            .c-sublist li::before {
+                content: "-";
+                margin-right: 5px;
+                color: white;
+                font-size: 0.85rem;
             }
         }
 

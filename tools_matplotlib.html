@@ -16,7 +16,9 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -68,10 +70,145 @@
     <section class="c-container">
       <h2 class="c-content_header">MATPLOTLIB</h2>
       <div class="c-content">
-        <div class="c-construction">
-            <i class="fa-solid fa-person-digging fa-2xl"></i>
-            <span>Página en construcción...</span>
-        </div>
+        <h4>Creación de gráficos</h4>
+        <ul class="c-code_list">
+          <li><code>plt.plot()</code>: Crea un gráfico de líneas.
+            <ul class="c-sublist">
+              <li><strong>x</strong> y <strong>y</strong>: Datos a graficar.</li>
+              <li><strong>label</strong>: Etiqueta para la serie de datos.</li>
+              <li><strong>color</strong>: Color de la línea.</li>
+              <li><strong>linestyle</strong>: Estilo de línea.</li>
+              <li><strong>marker</strong>: Marcador para puntos de datos.</li>
+            </ul>
+          </li>
+          <li><code>plt.scatter()</code>: Crea un gráfico de dispersión.
+            <ul class="c-sublist">
+              <li><strong>x</strong> y <strong>y</strong>: Datos a graficar.</li>
+              <li><strong>color</strong>: Color de los puntos.</li>
+              <li><strong>marker</strong>: Marcador para puntos de datos.</li>
+            </ul>
+          </li>
+          <li><code>plt.bar()</code>: Crea un gráfico de barras verticales.
+            <ul class="c-sublist">
+              <li><strong>x</strong> y <strong>height</strong> (o <strong>y</strong> y <strong>width</strong>): Datos de barras.</li>
+              <li><strong>color</strong>: Color de las barras.</li>
+              <li><strong>width</strong>: Ancho de las barras.</li>
+            </ul>
+          </li>
+          <li><code>plt.barh()</code>: Crea un gráfico de barras horizontales.
+            <ul class="c-sublist">
+              <li><strong>x</strong> y <strong>height</strong> (o <strong>y</strong> y <strong>width</strong>): Datos de barras.</li>
+              <li><strong>color</strong>: Color de las barras.</li>
+              <li><strong>width</strong>: Ancho de las barras (para <strong>plt.bar()</strong>).</li>
+            </ul>
+          </li>
+          <li><code>plt.hist()</code>: Crea un histograma.
+            <ul class="c-sublist">
+              <li><strong>x</strong>: Datos para el histograma.</li>
+              <li><strong>bins</strong>: Número de divisiones del histograma.</li>
+            </ul>
+          </li>
+          <li><code>plt.boxplot()</code>: Crea un gráfico de caja y bigotes.
+            <ul class="c-sublist">
+              <li><strong>x</strong>: Datos para el gráfico de caja y bigotes.</li>
+            </ul>
+          </li>
+          <li><code>plt.pie()</code>: Crea un gráfico circular de tarta.
+            <ul class="c-sublist">
+              <li><strong>x</strong>: Datos para el gráfico circular de tarta.</li>
+              <li><strong>labels</strong>: Etiquetas para cada sector.</li>
+              <li><strong>colors</strong>: Colores de los sectores.</li>
+            </ul>
+          </li>
+          <li><code>plt.imshow()</code>: Muestra una imagen en el gráfico.
+            <ul class="c-sublist">
+              <li><strong>X</strong>: Matriz de valores de píxeles para la imagen.</li>
+              <li><strong>cmap</strong>: Mapa de colores para la representación de la imagen.</li>
+            </ul>
+          </li>
+          <li><code>plt.contour()</code>: Crea un gráfico de contorno.
+            <ul class="c-sublist">
+              <li><strong>X</strong> y <strong>Y</strong>: Coordenadas para el gráfico de contorno.</li>
+              <li><strong>Z</strong>: Valores de contorno.</li>
+            </ul>
+          </li>
+          <li><code>plt.colorbar()</code>: Agrega una barra de colores a un gráfico.
+            <ul class="c-sublist">
+              <li><strong>mappable</strong>: Objeto de mapeo al que se asocia la barra de colores.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Configuración de gráficos</h4>
+        <ul class="c-code_list">
+          <li><code>plt.figure()</code>: Crea una nueva figura.
+            <ul class="c-sublist">
+              <li><strong>figsize</strong>: Tamaño de la figura en pulgadas.</li>
+            </ul>
+          </li>
+          <li><code>plt.xlabel()</code>, <code>plt.ylabel()</code>: Agrega etiquetas a los ejes x e y.
+            <ul class="c-sublist">
+              <li><strong>xlabel</strong>: Etiqueta del eje x.</li>
+              <li><strong>ylabel</strong>: Etiqueta del eje y.</li>
+            </ul>
+          </li>
+          <li><code>plt.title()</code>: Agrega un título al gráfico.
+            <ul class="c-sublist">
+              <li><strong>label</strong>: Título del gráfico.</li>
+            </ul>
+          </li>
+          <li><code>plt.legend()</code>: Agrega una leyenda al gráfico.
+            <ul class="c-sublist">
+              <li><strong>labels</strong>: Etiquetas de leyenda.</li>
+            </ul>
+          </li>
+          <li><code>plt.grid()</code>: Agrega una cuadrícula al gráfico.
+            <ul class="c-sublist">
+              <li><strong>which</strong>: Tipo de cuadrícula ('major' o 'minor').</li>
+            </ul>
+          </li>
+          <li><code>plt.xlim()</code>, <code>plt.ylim()</code>: Establece los límites de los ejes x e y.
+            <ul class="c-sublist">
+              <li><strong>left</strong>, <strong>right</strong>, <strong>bottom</strong>, <strong>top</strong>: Límites de los ejes x e
+                y.</li>
+            </ul>
+          </li>
+          <li><code>plt.xticks()</code>, <code>plt.yticks()</code>: Establece las marcas y etiquetas de los ejes.
+            <ul class="c-sublist">
+              <li><strong>ticks</strong>: Ubicaciones de las marcas en el eje.</li>
+              <li><strong>labels</strong>: Etiquetas de las marcas en el eje.</li>
+            </ul>
+          </li>
+          <li><code>plt.subplots()</code>: Crea subgráficos en una figura.
+            <ul class="c-sublist">
+              <li><strong>nrows</strong>: Número de filas de subgráficos.</li>
+              <li><strong>ncols</strong>: Número de columnas de subgráficos.</li>
+            </ul>
+          </li>
+          <li><code>plt.tight_layout()</code>: Ajusta automáticamente los espacios entre subgráficos.</li>
+        </ul>
+
+        <h4>Personalización de gráficos</h4>
+        <ul class="c-code_list">
+          <li><code>plt.text()</code>: Agrega texto personalizado al gráfico.
+            <ul class="c-sublist">
+              <li><strong>x</strong> y <strong>y</strong>: Posición del texto en el gráfico.</li>
+              <li><strong>s</strong>: Texto a mostrar.</li>
+            </ul>
+          </li>
+          <li><code>plt.annotate()</code>: Agrega una anotación con una flecha al gráfico.
+            <ul class="c-sublist">
+              <li><strong>s</strong>: Texto de la anotación.</li>
+              <li><strong>xy</strong> y <strong>xytext</strong>: Posiciones de la flecha y el texto.</li>
+            </ul>
+          </li>
+          <li><code>plt.savefig()</code>: Guarda el gráfico como un archivo de imagen.
+            <ul class="c-sublist">
+              <li><strong>fname</strong>: Nombre del archivo de imagen.</li>
+              <li><strong>format</strong>: Formato de la imagen (por ejemplo, 'png', 'jpg').</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </section>
   </main>

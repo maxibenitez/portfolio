@@ -70,120 +70,247 @@
     <section class="c-container">
       <h2 class="c-content_header">SCIKIT - LEARN</h2>
       <div class="c-content">
-        <p>En esta entrada, profundizaré en una de las librerías esenciales en machine learning: scikit-learn.
-          Podrás ver algunas de sus numerosas funciones y los parámetros que cada una ofrece.</p>
-        <h4>train_test_split</h4>
-        <p>La función se utiliza para dividir un conjunto de datos en conjuntos de entrenamiento y prueba de manera
-          aleatoria. Parámetros para esta función:</p>
-        <ul class="c-bulleted">
-          <li><strong>arrays (obligatorio):</strong> arrays o matrices que se dividen en conjuntos de entrenamiento y
+        <p>En esta entrada, profundizaré en una de las librerías esenciales en machine learning.
+          Podrás ver algunas de sus numerosas funciones y los parámetros que cada una ofrece.
+        </p>
+
+        <h4>Preprocesamiento de datos</h4>
+        <ul class="c-code_list">
+          <li><code>sklearn.preprocessing.StandardScaler()</code>: Estandariza las características escalando a una media
+            cero y una desviación estándar de uno.</li>
+          <li><code>sklearn.preprocessing.MinMaxScaler()</code>: Escala características a un rango específico (por
+            defecto, [0, 1]).
+            <ul class="c-sublist">
+              <li><strong>feature_range</strong>: Especifica el rango al que se escalan las características (por defecto es
+                [0, 1]).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.preprocessing.LabelEncoder()</code>: Codifica etiquetas de clases en valores numéricos.</li>
+          <li><code>sklearn.preprocessing.OneHotEncoder()</code>: Codifica características categóricas en vectores
+            binarios (one-hot encoding).
+            <ul class="c-sublist">
+              <li><strong>categories</strong>: Lista de listas que especifica las categorías para cada característica (por
+                defecto es 'auto').</li>
+            </ul>
+          </li>
+          <li><code>sklearn.preprocessing.Imputer()</code>: Rellena valores faltantes en los datos.
+            <ul class="c-sublist">
+              <li><strong>missing_values</strong>: Valor o lista de valores que se consideran faltantes (por defecto es
+                'NaN').</li>
+              <li><strong>strategy</strong>: Estrategia para llenar valores faltantes (por defecto es 'mean').</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Selección de características</h4>
+        <ul class="c-code_list">
+          <li><code>sklearn.feature_selection.SelectKBest()</code>: Selecciona las mejores características basadas en
+            pruebas estadísticas.
+            <ul class="c-sublist">
+              <li><strong>score_func</strong>: Función de puntuación para evaluar características (por defecto es
+                f_classif).</li>
+              <li><strong>k</strong>: Número de características a seleccionar.</li>
+            </ul>
+          </li>
+          <li><code>sklearn.feature_selection.RFE()</code>: Elimina recursivamente las características menos
+            importantes.
+            <ul class="c-sublist">
+              <li><strong>estimator</strong>: Estimador que se utiliza para calcular la importancia de las características.
+              </li>
+              <li><strong>n_features_to_select</strong>: Número de características a seleccionar (por defecto es None).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.feature_selection.VarianceThreshold()</code>: Elimina características con varianza por
+            debajo de un umbral dado.
+            <ul class="c-sublist">
+              <li><strong>threshold</strong>: Umbral de varianza por debajo del cual se eliminarán las características (por
+                defecto es 0).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Modelos de aprendizaje automático</h4>
+        <ul class="c-code_list">
+          <li><code>fit()</code>: La función se utiliza para entrenar un modelo utilizando datos de entrenamiento.
+            <ul class="c-sublist">
+              <li><strong>X</strong>: Matriz de características de entrenamiento.</li>
+              <li><strong>Y</strong>: Vector de etiquetas de clase de las muestras de entrenamiento.</li>
+              <li><strong>solver</strong>: Algoritmo de optimización.</li>
+            </ul>
+          </li>
+          <li><code>predict()</code>: La función se utiliza para realizar predicciones utilizando un modelo entrenado.
+            <ul class="c-sublist">
+              <li><strong>X</strong>: Matriz de características de prueba para la cual se desean realizar las predicciones.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h5>Clasificación</h5>
+        <ul class="c-code_list">
+          <li><code>sklearn.linear_model.LogisticRegression()</code>: Regresión logística para clasificación binaria o
+            multinomial.
+            <ul class="c-sublist">
+              <li><strong>penalty</strong>: Tipo de regularización (por defecto es 'l2').</li>
+              <li><strong>C</strong>: Inverso de la fuerza de regularización (por defecto es 1.0).</li>
+              <li><strong>solver</strong>: Algoritmo de optimización (por defecto es 'lbfgs').</li>
+              <li><strong>max_iter</strong>: Número máximo de iteraciones (por defecto es 100).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.svm.SVC()</code>: Máquinas de soporte vectorial para clasificación.
+            <ul class="c-sublist">
+              <li><strong>C</strong>: Parámetro de regularización.</li>
+              <li><strong>kernel</strong>: Función de kernel (por defecto es 'rbf').</li>
+              <li><strong>gamma</strong>: Coeficiente del kernel (por defecto es 'scale').</li>
+              <li><strong>degree</strong>: Grado del kernel polinómico (si se utiliza kernel polinómico).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.ensemble.RandomForestClassifier()</code>: Clasificador de bosques aleatorios.
+            <ul class="c-sublist">
+              <li><strong>n_estimators</strong>: Número de árboles en el bosque (por defecto es 100).</li>
+              <li><strong>max_depth</strong>: Profundidad máxima de los árboles (por defecto es None).</li>
+              <li><strong>min_samples_split</strong>: Número mínimo de muestras requeridas para dividir un nodo (por defecto
+                es 2).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.naive_bayes.GaussianNB()</code>: Clasificador Naïve Bayes Gaussiano.</li>
+          <li><code>sklearn.neighbors.KNeighborsClassifier()</code>: Clasificador k-Nearest Neighbors (k-NN).
+            <ul class="c-sublist">
+              <li><strong>n_neighbors</strong>: Número de vecinos a considerar (por defecto es 5).</li>
+              <li><strong>weights</strong>: Función de peso (por defecto es 'uniform').</li>
+              <li><strong>algorithm</strong>: Algoritmo utilizado para calcular vecinos (por defecto es 'auto').</li>
+            </ul>
+          </li>
+          <li><code>sklearn.discriminant_analysis.LinearDiscriminantAnalysis()</code>: Análisis discriminante lineal
+            (LDA) para clasificación.
+            <ul class="c-sublist">
+              <li><strong>solver</strong>: Algoritmo de solución (por defecto es 'svd').</li>
+              <li><strong>shrinkage</strong>: Método de reducción de dimensionalidad (por defecto es None).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h5>Regresión</h5>
+        <ul class="c-code_list">
+          <li><code>sklearn.linear_model.LinearRegression()</code>: Regresión lineal.</li>
+          <li><code>sklearn.tree.DecisionTreeRegressor()</code>: Regresor basado en árboles de decisión.
+            <ul class="c-sublist">
+              <li><strong>max_depth</strong>: Profundidad máxima del árbol (por defecto es None).</li>
+              <li><strong>min_samples_split</strong>: Número mínimo de muestras requeridas para dividir un nodo (por defecto
+                es 2).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.ensemble.RandomForestRegressor()</code>: Regresor de bosques aleatorios.
+            <ul class="c-sublist">
+              <li><strong>n_estimators</strong>: Número de árboles en el bosque (por defecto es 100).</li>
+              <li><strong>max_depth</strong>: Profundidad máxima de los árboles (por defecto es None).</li>
+              <li><strong>min_samples_split</strong>: Número mínimo de muestras requeridas para dividir un nodo (por defecto
+                es 2).</li>
+            </ul>
+          </li>
+          <li><code>sklearn.neighbors.KNeighborsRegressor()</code>: Regresor k-Nearest Neighbors (k-NN).
+            <ul class="c-sublist">
+              <li><strong>n_neighbors</strong>: Número de vecinos a considerar (por defecto es 5).</li>
+              <li><strong>weights</strong>: Función de peso (por defecto es 'uniform').</li>
+              <li><strong>algorithm</strong>: Algoritmo utilizado para calcular vecinos (por defecto es 'auto').</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h5>Clustering</h5>
+        <ul class="c-code_list">
+          <li><code>sklearn.cluster.KMeans()</code>: Realiza el algoritmo de K-Means para agrupación.
+            <ul class="c-sublist">
+              <li><strong>n_clusters</strong>: Número de clusters (grupos) a crear.</li>
+              <li><strong>init</strong>: Método de inicialización de centroides, como 'k-means++', 'random', o proporcionar
+                una matriz de centroides iniciales.</li>
+              <li><strong>n_init</strong>: Número de veces que se ejecutará el algoritmo con diferentes centroides
+                iniciales.</li>
+              <li><strong>max_iter</strong>: Número máximo de iteraciones para converger a una solución.</li>
+              <li><strong>tol</strong>: Tolerancia para la convergencia del algoritmo.</li>
+              <li><strong>algorithm</strong>: Algoritmo para calcular K-Means, como 'auto', 'full', 'elkan'.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Evaluación de modelos</h4>
+        <ul class="c-code_list">
+          <li><code>sklearn.model_selection.train_test_split()</code>: Divide los datos en conjuntos de entrenamiento y
             prueba.
+            <ul class="c-sublist">
+              <li><strong>arrays</strong>: Los datos a dividir (características y etiquetas).</li>
+              <li><strong>test_size</strong>: Tamaño del conjunto de prueba (fracción o número).</li>
+              <li><strong>train_size</strong>: Tamaño del conjunto de entrenamiento (fracción o se calcula automáticamente).
+              </li>
+              <li><strong>random_state</strong>: Semilla aleatoria.</li>
+              <li><strong>shuffle</strong>: Reorganiza los datos antes de la división (Verdadero/Falso).</li>
+              <li><strong>stratify</strong>: Mantiene la proporción de clases en la división (Verdadero/Falso).</li>
+            </ul>
           </li>
-          <li><strong>test_size (opcional):</strong> especifica la proporción del conjunto de datos que se asignará al
-            conjunto de prueba.
+          <li><code>sklearn.metrics.accuracy_score()</code>: Calcula la precisión de las predicciones.
+            <ul class="c-sublist">
+              <li><strong>y_true</strong>: Etiquetas verdaderas.</li>
+              <li><strong>y_pred</strong>: Etiquetas predichas.</li>
+            </ul>
           </li>
-          <li><strong>train_size (opcional):</strong> permite especificar la proporción del conjunto de datos que se
-            asignará al conjunto de entrenamiento.
+          <li><code>sklearn.metrics.confusion_matrix()</code>: Calcula la matriz de confusión.
+            <ul class="c-sublist">
+              <li><strong>y_true</strong>: Etiquetas verdaderas.</li>
+              <li><strong>y_pred</strong>: Etiquetas predichas.</li>
+              <li><strong>labels</strong>: Etiquetas de clases (opcional).</li>
+            </ul>
           </li>
-          <li><strong>random_state (opcional):</strong> indica la semilla utilizada por el generador de números
-            aleatorios para garantizar que la división de datos sea reproducible.
+          <li><code>sklearn.metrics.mean_squared_error()</code>: Calcula el error cuadrático medio.
+            <ul class="c-sublist">
+              <li><strong>y_true</strong>: Valores verdaderos.</li>
+              <li><strong>y_pred</strong>: Valores predichos.</li>
+            </ul>
           </li>
-          <li><strong>shuffle (opcional):</strong> indica si los datos deben mezclarse antes de realizar la división.
+          <li><code>sklearn.metrics.classification_report()</code>: Genera un informe de clasificación detallado.
+            <ul class="c-sublist">
+              <li><strong>y_true</strong>: Etiquetas verdaderas.</li>
+              <li><strong>y_pred</strong>: Etiquetas predichas.</li>
+              <li><strong>target_names</strong>: Nombres de las etiquetas de clases (opcional).</li>
+            </ul>
           </li>
-        </ul>
-        <h4>LinearDiscriminantAnalysis</h4>
-        <p>La función implementa el algoritmo de Análisis Discriminante Lineal (LDA). Parámetros para esta función:</p>
-        <ul class="c-bulleted">
-          <li><strong>solver (opcional):</strong> especifica el algoritmo utilizado para resolver el problema de
-            optimización. Puede ser “svd” (por defecto), “lsqr” o “eigen”.
-          </li>
-          <li><strong>shrikage (opcional):</strong> controla si se aplica la regularización de Ledoit-Wolf.
-          </li>
-          <li><strong>n_components (opcional):</strong> especifica el número de componentes (o discriminantes lineales)
-            a extraer.
-          </li>
-        </ul>
-        <h4>LogisticRegression</h4>
-        <p>La función se utiliza para crear un modelo de regresión logística. Parámetros para esta función:</p>
-        <ul class="c-bulleted">
-          <li><strong>penalty (opcional):</strong> especifica la norma de penalización utilizada en la regresión
-            logística. Los valores son: “l1”, “l2”, “elasticnet” o None (por defecto).
-          </li>
-          <li><strong>C (opcional):</strong> inverso de la fuerza de regularización. Valores bajos aumentan la
-            regularización, valores altos disminuyen la regularización.
-          </li>
-          <li><strong>solver (opcional):</strong> algoritmo de optimización a utilizar. Puede ser “newton-cg”, “lbfgs”,
-            “liblinear”, “sag”, o “saga”.
-          </li>
-          <li><strong>max_iter (opcional):</strong> número máximo de iteraciones para que el solucionador converja.
-          </li>
-          <li><strong>multi_class (opcional):</strong> controla cómo manejar problemas de clasificación multiclase.
-          </li>
-          <li><strong>random_state (opcional):</strong> semilla del generador de números aleatorios utilizado para la
-            inicialización del modelo.
-          </li>
-          <li><strong>class_weight (opcional):</strong> permite asignar pesos personalizados para las clases.
+          <li><code>sklearn.metrics.roc_curve()</code>: Calcula la curva ROC y el área bajo la curva ROC (AUC).
+            <ul class="c-sublist">
+              <li><strong>y_true</strong>: Etiquetas verdaderas.</li>
+              <li><strong>y_score</strong>: Puntajes o probabilidades de clase (en lugar de etiquetas predichas).</li>
+            </ul>
           </li>
         </ul>
-        <h4>fit</h4>
-        <p>La función se utiliza para entrenar un modelo utilizando datos de entrenamiento. Dependiendo si se utiliza
-          LDA o Regresión Logística, que parámetros adicionales se utiliza, hay algunos que tienen en común:</p>
-        <ul class="c-bulleted">
-          <li><strong>X (obligatorio):</strong> matriz de características de entrenamiento.
+
+        <h4>Validación cruzada</h4>
+        <ul class="c-code_list">
+          <li><code>sklearn.model_selection.cross_val_score()</code>: Realiza validación cruzada para estimar el
+            rendimiento del modelo.
+            <ul class="c-sublist">
+              <li><strong>estimator</strong>: Estimador para evaluar.</li>
+              <li><strong>X</strong>: Datos de entrenamiento.</li>
+              <li><strong>y</strong>: Etiquetas de entrenamiento.</li>
+              <li><strong>cv</strong>: Esquema de validación cruzada (por defecto es 5-fold).</li>
+              <li><strong>scoring</strong>: Métrica de evaluación a utilizar (por defecto es None).</li>
+            </ul>
           </li>
-          <li><strong>Y (obligatorio):</strong> vector de etiquetas de clase correspondiente a las muestras de
-            entrenamiento.
-          </li>
-          <li><strong>solver (opcional):</strong> el algoritmo a utilizar para resolver el problema de optimización
-            durante el ajuste.
-          </li>
-        </ul>
-        <h4>predict</h4>
-        <p>La función se utiliza para realizar predicciones utilizando un modelo entrenado. Esta función tiene un solo
-          parámetro:</p>
-        <ul class="c-bulleted">
-          <li><strong>X (obligatorio):</strong> matriz de características de prueba para la cual se desean realizar las
-            predicciones.
-          </li>
-        </ul>
-        <h4>classification_report</h4>
-        <p>La función se utiliza para generar un informe de clasificación que muestra varias métricas de evaluación del
-          rendimiento de un modelo de clasificación. Parámetros para esta función:</p>
-        <ul class="c-bulleted">
-          <li><strong>y_true (obligatorio):</strong> array que contiene las etiquetas reales de las muestras en el
-            conjunto de prueba.
-          </li>
-          <li><strong>y_pred (obligatorio):</strong> array que contiene las etiquetas predichas por el modelo para las
-            mismas muestras anteriores.
-          </li>
-          <li><strong>labels (opcional):</strong> lista de etiquetas de clase usadas para construir el informe de
-            clasificación.
-          </li>
-          <li><strong>target_names (opcional):</strong> lista de nombres de clases que se utilizarán para etiquetar las
-            filas del informe de clasificación.
-          </li>
-          <li><strong>sample_weight (opcional):</strong> permite asignar un peso específico a las muestras en la
-            evaluación de métricas.
-          </li>
-          <li><strong>digits (opcional):</strong> indica la cantidad de dígitos que se mostrarán después del punto
-            decimal en el informe.
+          <li><code>sklearn.model_selection.GridSearchCV()</code>: Realiza una búsqueda de hiperparámetros a través de
+            validación cruzada.
+            <ul class="c-sublist">
+              <li><strong>estimator</strong>: Estimador para ajustar.</li>
+              <li><strong>param_grid</strong>: Diccionario de hiperparámetros a buscar.</li>
+              <li><strong>cv</strong>: Esquema de validación cruzada (por defecto es 5-fold).</li>
+              <li><strong>scoring</strong>: Métrica de evaluación a utilizar (por defecto es None).</li>
+            </ul>
           </li>
         </ul>
-        <h4>confusion_matrix</h4>
-        <p>La función se utiliza para calcular y mostrar una matriz de confusión que resume el rendimiento de un modelo
-          de clasificación en un conjunto de datos. Parámetros para esta función:</p>
-        <ul class="c-bulleted">
-          <li><strong>y_true (obligatorio):</strong> array que contiene las etiquetas reales de las muestras en el
-            conjunto de prueba.
-          </li>
-          <li><strong>y_pred (obligatorio):</strong> array que contiene las etiquetas predichas por el modelo para las
-            mismas muestras anteriores.
-          </li>
-          <li><strong>labels (opcional):</strong> lista de etiquetas de clase usadas para construir la matriz de
-            confusión.
-          </li>
-          <li><strong>target_names (opcional):</strong> permite asignar un peso específico a las muestras al calcular la
-            matriz de confusión.
+
+        <h4>Reducción de dimensionalidad</h4>
+        <ul class="c-code_list">
+          <li><code>sklearn.decomposition.PCA()</code>: Realiza el análisis de componentes principales (PCA) para
+            reducción de dimensionalidad.
+            <ul class="c-sublist">
+              <li><strong>n_components</strong>: Número de componentes principales a retener.</li>
+            </ul>
           </li>
         </ul>
       </div>

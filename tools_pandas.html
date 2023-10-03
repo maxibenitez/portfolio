@@ -70,33 +70,157 @@
     <section class="c-container">
       <h2 class="c-content_header">PANDAS</h2>
       <div class="c-content">
+        <p>En esta entrada, podrás explorar una de las librerías más utilizadas en el análisis de
+          datos. Podrás visualizar una lista de sus funciones más importantes, junto con los parámetros
+          que puedes ajustar para optimizar las tareas de procesamiento y manipulación de datos.
+        </p>
+
+        <h4>Manipulación de datos</h4>
+        <ul class="c-code_list">
+          <li><code>pd.read_csv()</code>: Lee un archivo CSV y lo convierte en un DataFrame.
+            <ul class="c-sublist">
+              <li><strong>filepath_or_buffer</strong>: Ruta o URL del archivo CSV.</li>
+              <li><strong>sep</strong>: Separador de campos (por defecto es ",").</li>
+              <li><strong>header</strong>: Fila que contiene los nombres de las columnas (por defecto es 0).</li>
+              <li><strong>index_col</strong>: Columna que se utilizará como índice (por defecto es None).</li>
+            </ul>
+          </li>
+          <li><code>pd.read_excel()</code>: Lee un archivo de Excel y lo convierte en un DataFrame.
+            <ul class="c-sublist">
+              <li><strong>io</strong>: Ruta o URL del archivo Excel.</li>
+              <li><strong>sheet_name</strong>: Nombre de la hoja de Excel a leer.</li>
+              <li><strong>header</strong>: Fila que contiene los nombres de las columnas (por defecto es 0).</li>
+              <li><strong>index_col</strong>: Columna que se utilizará como índice (por defecto es None).</li>
+            </ul>
+          </li>
+          <li><code>df.head()</code>: Muestra las primeras filas del DataFrame.
+            <ul class="c-sublist">
+              <li><strong>n</strong>: Número de filas para mostrar (por defecto es 5).</li>
+            </ul>
+          </li>
+          <li><code>df.tail()</code>: Muestra las últimas filas del DataFrame.
+            <ul class="c-sublist">
+              <li><strong>n</strong>: Número de filas para mostrar (por defecto es 5).</li>
+            </ul>
+          </li>
+          <li><code>df.shape</code>: Devuelve las dimensiones (número de filas y columnas) del
+            DataFrame.</li>
+          <li><code>df.info()</code>: Proporciona información sobre el DataFrame, incluyendo tipos de
+            datos y valores no nulos.</li>
+          <li><code>df.describe()</code>: Calcula estadísticas descriptivas para columnas numéricas.
+            <ul class="c-sublist">
+              <li><strong>percentiles</strong>: Lista de percentiles a calcular (por defecto es [0.25, 0.50, 0.75]).
+              </li>
+            </ul>
+          </li>
+          <li><code>df.drop()</code>: Elimina filas o columnas del DataFrame.
+            <ul class="c-sublist">
+              <li><strong>labels</strong>: Nombre o lista de nombres de filas o columnas a eliminar.</li>
+              <li><strong>axis</strong>: Indica si se elimina una fila (axis=0) o una columna (axis=1).</li>
+            </ul>
+          </li>
+          <li><code>df.rename()</code>: Cambia los nombres de columnas.
+            <ul class="c-sublist">
+              <li><strong>mapper</strong>: Diccionario o función que especifica cómo se renombrarán las columnas.</li>
+            </ul>
+          </li>
+          <li><code>df.sort_values()</code>: Ordena el DataFrame por columnas específicas.
+            <ul class="c-sublist">
+              <li><strong>by</strong>: Nombre o lista de nombres de columnas por las que se ordenará.</li>
+              <li><strong>ascending</strong>: Indica si la clasificación es ascendente (True) o descendente (False).
+              </li>
+            </ul>
+          </li>
+          <li><code>df.groupby()</code>: Agrupa los datos por una o más columnas.
+            <ul class="c-sublist">
+              <li><strong>by</strong>: Nombre o lista de nombres de columnas por las que se agruparán los datos.</li>
+            </ul>
+          </li>
+          <li><code>df.pivot_table()</code>: Crea una tabla dinámica a partir de los datos.
+            <ul class="c-sublist">
+              <li><strong>values</strong>: Nombre o lista de nombres de columnas a agregar.</li>
+              <li><strong>index</strong>: Nombre o lista de nombres de columnas para los índices de la tabla dinámica.
+              </li>
+              <li><strong>columns</strong>: Nombre o lista de nombres de columnas para las columnas de la tabla
+                dinámica.</li>
+            </ul>
+          </li>
+          <li><code>df.merge()</code>: Combina dos DataFrames por columnas comunes.
+            <ul class="c-sublist">
+              <li><strong>right</strong>: DataFrame con el que se fusionará.</li>
+              <li><strong>how</strong>: Tipo de fusión (por defecto es 'inner').</li>
+              <li><strong>on</strong>: Nombre o lista de nombres de columnas comunes.</li>
+            </ul>
+          </li>
+          <li><code>df.concat()</code>: Concatena DataFrames vertical u horizontalmente.
+            <ul class="c-sublist">
+              <li><strong>objs</strong>: Lista de DataFrames a concatenar.</li>
+              <li><strong>axis</strong>: Indica si la concatenación es vertical (axis=0) u horizontal (axis=1).</li>
+            </ul>
+          </li>
+          <li><code>df.to_csv()</code>: Guarda el DataFrame en un archivo CSV.
+            <ul class="c-sublist">
+              <li><strong>path_or_buf</strong>: Ruta o objeto de archivo para guardar el CSV.</li>
+              <li><strong>sep</strong>: Separador de campos (por defecto es ",").</li>
+            </ul>
+          </li>
+          <li><code>df.to_excel()</code>: Guarda el DataFrame en un archivo de Excel.
+            <ul class="c-sublist">
+              <li><strong>excel_writer</strong>: Ruta o objeto de archivo para guardar el archivo de Excel.</li>
+            </ul>
+          </li>
+          <li><code>pd.to_datetime()</code>: Convierte una columna en tipo de datos datetime.
+            <ul class="c-sublist">
+              <li><strong>errors</strong>: Manejo de errores al convertir fechas (por defecto es 'raise').</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Selección y filtrado de datos</h4>
+        <ul class="c-code_list">
+          <li><code>df[column_name]</code>: Selecciona una columna específica.</li>
+          <li><code>df.loc[]</code>: Permite la selección de filas y columnas por etiquetas.</li>
+          <li><code>df.iloc[]</code>: Permite la selección de filas y columnas por índices numéricos.
+          </li>
+          <li><code>df[condition]</code>: Filtra filas basadas en una condición.</li>
+          <li><code>df.query()</code>: Filtra filas usando una expresión de consulta.</li>
+        </ul>
+
         <h4>Operaciones de datos</h4>
-        <ol>
+        <ul class="c-code_list">
           <li><code>df.apply()</code>: Aplica una función a lo largo de un eje del DataFrame.
-            <ul class="c-bulleted">
+            <ul class="c-sublist">
               <li><strong>func</strong>: Función a aplicar a lo largo del eje.</li>
-              <li><strong>axis</strong>: Indica si la función se aplica a lo largo de filas (axis=0) o columnas
+              <li><strong>axis</strong>: Indica si la función se aplica a lo largo de filas (axis=0) o culumnas
                 (axis=1).</li>
             </ul>
           </li>
           <li><code>df.fillna()</code>: Rellena valores nulos o faltantes con un valor específico.
-            <ul class="c-bulleted">
+            <ul class="c-sublist">
               <li><strong>value</strong>: Valor para rellenar los valores nulos.</li>
             </ul>
           </li>
           <li><code>df.drop_duplicates()</code>: Elimina filas duplicadas.</li>
           <li><code>df.replace()</code>: Reemplaza valores en el DataFrame.
-            <ul class="c-bulleted">
+            <ul class="c-sublist">
               <li><strong>to_replace</strong>: Valor o lista de valores que se reemplazarán.</li>
               <li><strong>value</strong>: Valor de reemplazo.</li>
             </ul>
           </li>
           <li><code>df.groupby().agg()</code>: Realiza agregaciones personalizadas en grupos de datos.
-            <ul class="c-bulleted">
+            <ul class="c-sublist">
               <li><strong>aggfunc</strong>: Función de agregación personalizada a aplicar.</li>
             </ul>
           </li>
-        </ol>
+        </ul>
+
+        <h4>Operaciones estadísticas</h4>
+        <ul class="c-code_list">
+          <li><code>df.mean()</code>: Calcula la media de las columnas numéricas.</li>
+          <li><code>df.median()</code>: Calcula la mediana de las columnas numéricas.</li>
+          <li><code>df.std()</code>: Calcula la desviación estándar de las columnas numéricas.</li>
+          <li><code>df.corr()</code>: Calcula la matriz de correlación entre columnas numéricas.</li>
+        </ul>
       </div>
     </section>
   </main>

@@ -180,6 +180,8 @@ body {
   min-height: 12rem;
   list-style-type: none;
   position: relative;
+  background-color: black;
+  border-radius: 0.7rem;
 }
 .c-card a {
   display: flex;
@@ -377,6 +379,9 @@ body {
   line-height: 1.5;
   text-transform: uppercase;
 }
+.c-container .c-content h5 {
+  font-size: 0.85rem;
+}
 .c-container .c-content h5,
 .c-container .c-content h6 {
   margin-top: 1rem;
@@ -396,6 +401,30 @@ body {
 .c-container .c-content .c-bulleted li {
   font-size: 0.7rem;
   line-height: 2;
+}
+.c-container .c-content .c-code_list {
+  list-style-type: disc;
+  margin: 0 0 2rem 1rem;
+}
+.c-container .c-content .c-code_list li {
+  font-size: 0.7rem;
+  line-height: 2;
+}
+.c-container .c-content .c-code_list code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: aqua;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.c-container .c-content .c-code_list .c-sublist {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+.c-container .c-content .c-code_list .c-sublist li::before {
+  content: "-";
+  margin-right: 5px;
+  color: white;
+  font-size: 0.85rem;
 }
 .c-container .c-content figure {
   margin: 0 auto;
