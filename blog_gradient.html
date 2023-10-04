@@ -19,7 +19,9 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -71,9 +73,12 @@
     <section class="c-container">
       <h2 class="c-content_header">DESCENSO DE GRADIENTE</h2>
       <div class="c-content">
-        <p>El descenso de gradiente es un algoritmo fundamental en el aprendizaje automático y la optimización de
-          funciones. Se utiliza para encontrar los valores de los parámetros que minimizan una función de costo.</p>
-        <h4>Descenso de Gradiente</h4>
+        <p>En este blog, te presentaré un resumen capítulo 9 "Descenso de Gradiente" del libro "Master Machine
+          Learning Algorithms", escrito por Jason Brownlee. Aquí podrás entender los conceptos fundamentales de esta
+          técnica escencial de optimización de los modelos de machine learning.
+        </p>
+
+        <h3>Descenso de Gradiente</h3>
         <p>Es un algoritmo de optimización para encontrar los parámetros que minimizan una función de costo. Es
           especialmente útil cuando no se pueden calcular los parámetros de manera analítica y se requiere un enfoque de
           optimización.</p>
@@ -104,6 +109,7 @@
           Este proceso se repite hasta que el costo de los coeficientes (costo) sea 0.0 o no se puedan lograr más
           mejoras en el costo.
         </p>
+
         <h4>Descenso de Gradiente por Lotes</h4>
         <p>En algoritmos supervisados, se busca ajustar una función objetivo. La función de costo se calcula para todo
           el conjunto de entrenamiento, y los coeficientes se actualizan al final de cada lote de datos (lote se le
@@ -116,6 +122,7 @@
           <br>
           $$prediction = \frac {1}{1+e^-(B0+B1\times X1+B2\times X2)}$$
         </p>
+
         <h4>Consejos para el Descenso del Gradiente</h4>
         <ul class="c-bulleted">
           <li>Graficar costo frente al tiempo</li>
