@@ -11,12 +11,16 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -68,10 +72,183 @@
     <section class="c-container">
       <h2 class="c-content_header">WINE CLASSIFICATION</h2>
       <div class="c-content">
-        <div class="c-construction">
-          <i class="fa-solid fa-person-digging fa-2xl"></i>
-          <span>Página en construcción...</span>
-        </div>
+        <p>Durante el curso de Machine Learning, trabajé con el conjunto de datos Wine como parte de la Unidad Temática
+          2: "Tratamiento Previo de Datos". Este conjunto de datos, me dio la oportunidad de aplicar técnicas de
+          preprocesamiento de datos. </p>
+        <h4>Análisis del Dataset</h4>
+        <p>El conjunto de datos Wine se compone de ejemplos de tres clases diferentes de vinos, cada uno caracterizado
+          por 13 atributos relacionados con sus características químicas. Estos atributos abarcan desde el contenido de
+          alcohol hasta la concentración de flavonoides.
+          <br>
+          El objetivo principal de este conjunto de datos es clasificar cada vino en su respectiva variedad utilizando
+          estos 13 atributos. Para este dataset no se encuentran valores faltantes ni datos incompletos en ninguna de
+          las observaciones.</p>
+
+        <h4>Ejercicio de procesamiento y análisis estadístico</h4>
+        <p>En este ejercicio, podrás ver el preprocesamiento y el análisis estadístico para el conjunto de datos. Para
+          llevar a cabo esta tarea, se nos proporcionó un conjunto de funciones predefinidas que facilitaron el proceso
+          de manipulación de los datos. En este ejercicio se plantearon diversas tareas, como descargar, cargar y
+          transformar datos, así como a obtener estadísticas, normalizar y estandarizar datos, y finalmente, dividir el
+          conjunto de datos en conjuntos de entrenamiento y prueba.
+        </p>
+        <h5>Funciones predefinidas</h5>
+        <p>Cargue un archivo CSV:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def load_csv(filename):
+  dataset = list()
+  with open(filename, 'r') as file:
+      csv_reader = reader(file)
+      for row in csv_reader:
+          if not row:
+              continue
+          dataset.append(row)
+  return dataset
+          </code>
+        </pre>
+        <p>Convertir columna de string a float:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def str_column_to_float(dataset, column):
+  for row in dataset:
+      row[column] = float(row[column].strip())
+          </code>
+        </pre>
+        <p>Encontrar los valores mínimo y máximo para cada columna:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def dataset_minmax(dataset):
+  minmax = list()
+  for i in range(len(dataset[0])):
+      col_values = [row[i] for row in dataset]
+      value_min = min(col_values)
+      value_max = max(col_values)
+      minmax.append([value_min, value_max])
+  return minmax
+          </code>
+        </pre>
+        <p>Reescalar las columnas del dataset al rango 0-1:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def normalize_dataset(dataset, minmax):
+  for row in dataset:
+      for i in range(len(row)):
+          row[i] = (row[i] - minmax[i][0]) / (minmax[i][1] - minmax[i][0])
+          </code>
+        </pre>
+        <p>Calcular la media de las columnas:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def column_means(dataset):
+  means = [0 for i in range(len(dataset[0]))]
+  for i in range(len(dataset[0])):
+      col_values = [row[i] for row in dataset]
+      means[i] = round(sum(col_values) / float(len(dataset)), 2)
+  return means
+          </code>
+        </pre>
+        </pre>
+        <p>Calcular las desviaciones estándar de las columnas:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def column_stdevs(dataset, means):
+  stdevs = [0 for i in range(len(dataset[0]))]
+  for i in range(len(dataset[0])):
+      variance = [pow(row[i]-means[i], 2) for row in dataset]
+      stdevs[i] = sum(variance)
+      stdevs = [round(sqrt(x/(float(len(dataset)-1))), 2) for x in stdevs]
+  return stdevs
+          </code>
+        </pre>
+        </pre>
+        <p>Estandarizar el dataset:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def standardize_dataset(dataset, means, stdevs):
+  for row in dataset:
+      for i in range(len(row)):
+          row[i] = (row[i] - means[i]) / stdevs[i]
+          </code>
+        </pre>
+        </pre>
+        <p>Dividir el dataset en conjuntos de prueba y entrenamiento:</p>
+        <pre class="c-code">
+          <code class="language-python">
+def train_test_split(dataset, split=0.60):
+  train = list()
+  train_size = split * len(dataset)
+  dataset_copy = list(dataset)
+  while len(train) < train_size:
+      index = randrange(len(dataset_copy))
+      train.append(dataset_copy.pop(index))
+  return train, dataset_copy
+          </code>
+        </pre>
+
+        <h5>Ejercicios</h5>
+        <p>Descargar el dataset “wine” del repositorio UCI y cargar el dataset en formato CSV:</p>
+        <pre class="c-code">
+          <code class="language-python">
+dataset = load_csv("wine.csv")
+          </code>
+        </pre>
+        <p>Imprimir todas las columnas de las primeras 10 filas:</p>
+        <pre class="c-code">
+          <code class="language-python">
+print("Primeras 10 filas del dataset:\n", tabulate(dataset[:10]))
+          </code>
+        </pre>
+        <p>Convertir los valores numéricos en string a float, en caso de ser necesario:</p>
+        <pre class="c-code">
+          <code class="language-python">
+for i in range(len(dataset[0])):
+  str_column_to_float(dataset, i)
+          </code>
+        </pre>
+        <p>Obtener los valores mínimos y máximos correspondientes a cada columna:</p>
+        <pre class="c-code">
+          <code class="language-python">
+minmax = dataset_minmax(dataset)
+print("\nMáximos y mínimos de cada columna:\n", minmax)
+          </code>
+        </pre>
+        <p>Obtener la media de los valores de cada columna:</p>
+        <pre class="c-code">
+          <code class="language-python">
+means = column_means(dataset)
+print("\nMedia de cada columna:\n", means)
+          </code>
+        </pre>
+        <p>Obtener la desviación estándar de los valores de cada columna:</p>
+        <pre class="c-code">
+          <code class="language-python">
+stdevs = column_stdevs(dataset, means)
+print("\nDesviación estándar de cada columna:\n", stdevs)
+          </code>
+        </pre>
+        <p>Normalizar los valores el dataset original:</p>
+        <pre class="c-code">
+          <code class="language-python">
+normalize_dataset(dataset, minmax)
+          </code>
+        </pre>
+        <p>Estandarizar los valores del dataset original:</p>
+        <pre class="c-code">
+          <code class="language-python">
+standardize_dataset(dataset, means, stdevs)
+          </code>
+        </pre>
+        <p>Dividir el dataset en conjuntos de entrenamiento y testing:</p>
+        <pre class="c-code">
+          <code class="language-python">
+train_data, test_data = train_test_split(dataset, 0.70)
+          </code>
+        </pre>
+
+        <h5>Resultados</h5>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/gRm0Pqj/wine-results.jpg" alt="Wine Python results">
+        </figure>
       </div>
     </section>
   </main>
@@ -79,6 +256,8 @@
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>

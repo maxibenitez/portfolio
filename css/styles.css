@@ -376,7 +376,8 @@ body {
   width: 100%;
   height: 100%;
 }
-.c-container .c-content h3, .c-container .c-content h4 {
+.c-container .c-content h3,
+.c-container .c-content h4 {
   font-weight: bold;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -446,6 +447,18 @@ body {
   margin-right: 5px;
   color: white;
   font-size: 0.85rem;
+}
+.c-container .c-content .c-code {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+.c-container .c-content .c-code .hljs {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 .c-container .c-content figure {
   margin: 0 auto;
