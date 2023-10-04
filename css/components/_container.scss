@@ -158,8 +158,21 @@
                 background-color: rgba(30, 30, 30, 0.5);
             }
 
+            .hljs,
+            .hljs-subst {
+                color: #95d8f3;
+            }
+
+            .hljs-title, .hljs-built_in {
+                color: #e0e096;
+            }
+
             .hljs-string {
-                color: peru;
+                color: #ce9178;
+            }
+
+            .hljs-keyword {
+                color: #cc7cb3;
             }
         }
 

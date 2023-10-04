@@ -460,8 +460,18 @@ body {
   border-radius: 0.5rem;
   background-color: rgba(30, 30, 30, 0.5);
 }
+.c-container .c-content .c-code .hljs,
+.c-container .c-content .c-code .hljs-subst {
+  color: #95d8f3;
+}
+.c-container .c-content .c-code .hljs-title, .c-container .c-content .c-code .hljs-built_in {
+  color: #e0e096;
+}
 .c-container .c-content .c-code .hljs-string {
-  color: peru;
+  color: #ce9178;
+}
+.c-container .c-content .c-code .hljs-keyword {
+  color: #cc7cb3;
 }
 .c-container .c-content figure {
   margin: 0 auto;
