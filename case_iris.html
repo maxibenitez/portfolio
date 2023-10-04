@@ -16,7 +16,9 @@
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
       <li id="li-home" class="c-item">
         <a href="index.html">INICIO</a>
@@ -68,10 +70,40 @@
     <section class="c-container">
       <h2 class="c-content_header">IRIS CLASSIFICATION</h2>
       <div class="c-content">
-        <div class="c-construction">
-          <i class="fa-solid fa-person-digging fa-2xl"></i>
-          <span>Página en construcción...</span>
-        </div>
+        <h4>Análisis del Dataset</h4>
+        <p>El conjunto de datos Iris incluye 150 ejemplos pertenecientes a tres especies de iris distintas: setosa,
+          versicolor y virginica. Cada ejemplo se caracteriza por cuatro atributos numéricos: longitud del sépalo, ancho
+          del sépalo, longitud del pétalo y ancho del pétalo.
+          <br>
+          El objetivo fundamental del conjunto de datos Iris es clasificar las muestras de iris según estos cuatro
+          atributos. Es importante destacar que este dataset no contiene valores faltantes ni datos incompletos.
+          <br>
+          Se han realizado operaciones estadísticas para comprender mejor la distribución de estos datos. Estas
+          operaciones proporcionan información esencial sobre la variabilidad y las tendencias presentes en cada especie
+          de iris en función de sus atributos.
+          <br>
+          Los resultados de este análisis se presentan a continuación:
+          <br>
+          Resultados obtenidos mediante el estudio del dataset en Excel:
+        </p>
+        <figure>
+          <img src="https://i.ibb.co/6wgQYtk/iris-stats-excel.jpg" alt="Iris Statistics - Excel">
+        </figure>
+        <figure>
+          <img src="https://i.ibb.co/N1HvcPW/iris-charts-excel.jpg" alt="Iris Chart - Excel">
+        </figure>
+        <p>Resultados obtenidos mediante el estudio del dataset en RapidMiner:</p>
+        <figure>
+          <img src="https://i.ibb.co/TYFKKXJ/iris-stats-rm.jpg" alt="Iris Statistics - RapidMiner">
+        </figure>
+        <p>Al comparar los datos estadísticos obtenidos en este ejercicio con los del ejercicio anterior, se observa
+          que, para cada atributo, las medidas estadísticas, como la media, la desviación estándar y la varianza, son
+          idénticas en ambos casos. Además, al observar los gráficos, se nota que los atributos muestran cierto sesgo,
+          principalmente hacia la derecha, lo que sugiere la necesidad de normalizar los datos.
+          <br>
+          Este análisis preliminar proporciona una base para continuar con el proceso de clasificación y modelado de las
+          especies de iris utilizando algoritmos de machine learning.
+        </p>
       </div>
     </section>
   </main>
