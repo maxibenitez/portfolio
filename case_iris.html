@@ -11,6 +11,8 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -103,7 +105,59 @@
           <br>
           Este análisis preliminar proporciona una base para continuar con el proceso de clasificación y modelado de las
           especies de iris utilizando algoritmos de machine learning.
+          <br>
+          <br>
+          A modo de ejercicio se realizaron las operaciones estadísticas utilizando Google Colaboratory, obteniendo los
+          mismos resultados que en los dos ejercicios anteriores.
         </p>
+
+        <p>Importación de librería:</p>
+        <pre class="c-code">
+          <code class="language-python">
+import pandas as pd
+          </code>
+        </pre>
+        <p>Carga y lectura del dataset:</p>
+        <pre class="c-code">
+          <code class="language-python">
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names = ['sepal-length in cm', 'sepal-width in cm', 'petal-length in cm', 'petal-width in cm', 'class']
+iris = pd.read_csv(url, names=names)
+
+iris.head(10)
+          </code>
+        </pre>
+        <p>Media:</p>
+        <pre class="c-code">
+          <code class="language-python">
+mean_sepal_length = iris["sepal-length in cm"].mean()
+mean_sepal_width = iris["sepal-width in cm"].mean()
+mean_petal_length = iris["petal-length in cm"].mean()
+mean_petal_width = iris["petal-width in cm"].mean()
+          </code>
+        </pre>
+        <p>Varianza:</p>
+        <pre class="c-code">
+          <code class="language-python">
+var_sepal_length = iris["sepal-length in cm"].var()
+var_sepal_width = iris["sepal-width in cm"].var()
+var_petal_length = iris["petal-length in cm"].var()
+var_petal_width = iris["petal-width in cm"].var()
+          </code>
+        </pre>
+        <p>Desviación estándar:</p>
+        <pre class="c-code">
+          <code class="language-python">
+std_sepal_length = iris["sepal-length in cm"].std()
+std_sepal_width = iris["sepal-width in cm"].std()
+std_petal_length = iris["petal-length in cm"].std()
+std_petal_width = iris["petal-width in cm"].std()
+          </code>
+        </pre>
+        <p>Resultados obtenidos mediante el estudio del dataset en Google Colaboratory:</p>
+        <figure style="width: 40%;">
+          <img src="https://i.ibb.co/5WscFnZ/iris-stats-colab.jpg" alt="Iris Statistics - Google Colaboratory">
+        </figure>
       </div>
     </section>
   </main>
@@ -111,6 +165,8 @@
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>
