@@ -470,6 +470,9 @@ body {
 .c-container .c-content .c-code .hljs-string {
   color: #ce9178;
 }
+.c-container .c-content .c-code .hljs-number {
+  color: #b4cba2;
+}
 .c-container .c-content .c-code .hljs-keyword {
   color: #cc7cb3;
 }
