@@ -11,23 +11,27 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="c-nav_web">
-    <a href="index.html"><h1>MACHINE LEARNING PORTFOLIO</h1></a>
+    <a href="index.html">
+      <h1>MACHINE LEARNING PORTFOLIO</h1>
+    </a>
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item">
+      <li class="c-item">
         <a href="index.html">INICIO</a>
       </li>
-      <li id="li-blog" class="c-item">
+      <li class="c-item">
         <a href="blog.html">BLOG</a>
       </li>
-      <li id="li-case__studies" class="c-item is-active_web">
+      <li class="c-item is-active_web">
         <a href="case_studies.html">CASOS DE ESTUDIO</a>
       </li>
-      <li id="li-tools" class="c-item">
+      <li class="c-item">
         <a href="tools.html">HERRAMIENTAS</a>
       </li>
     </ul>
@@ -35,25 +39,25 @@
 
   <nav class="c-nav_mobile">
     <ul class="c-navigation__list">
-      <li id="li-home" class="c-item" data-target-section="home">
+      <li class="c-item">
         <a href="index.html">
           <i class="fa-solid fa-house fa-xl"></i></i>
           <span>INICIO</span>
         </a>
       </li>
-      <li id="li-blog" class="c-item" data-target-section="blog">
+      <li class="c-item">
         <a href="blog.html">
           <i class="fa-regular fa-file fa-xl"></i>
           <span>BLOG</span>
         </a>
       </li>
-      <li id="li-case__studies" class="c-item is-active" data-target-section="case__studies">
+      <li class="c-item is-active">
         <a href="case_studies.html">
           <i class="fa-solid fa-book fa-xl"></i>
           <span>CASOS ESTUDIO</span>
         </a>
       </li>
-      <li id="li-tools" class="c-item" data-target-section="tools">
+      <li class="c-item">
         <a href="tools.html">
           <i class="fa-solid fa-wrench fa-xl"></i>
           <span>HERRAMIENTAS</span>
@@ -68,10 +72,142 @@
     <section class="c-container">
       <h2 class="c-content_header">HEART DISEASE</h2>
       <div class="c-content">
-        <div class="c-construction">
-          <i class="fa-solid fa-person-digging fa-2xl"></i>
-          <span>Página en construcción...</span>
-        </div>
+        <p>Durante la Unidad Temática 3 del curso de Machine Learning, profundizamos sobre
+          los algoritmos lineales. En este contexto, trabajamos con el conjunto de datos 'cardiac-training'. A lo
+          largo de esta unidad, nuestra tarea ha sido cargar y preparar los datos, llevar a cabo el
+          proceso de entrenamiento de modelos y realizar pruebas. Además, hemos evaluado los resultados
+          obtenidos utilizando tanto RapidMiner como Python.
+        </p>
+        <h4>Análisis del Dataset</h4>
+        <p>El conjunto de datos "cardiac-training" contiene información relacionada con la salud de pacientes,
+          incluyendo atributos como la edad, estado civil, sexo, categoría de peso, nivel de colesterol, manejo del
+          estrés, tratamiento de ansiedad y la etiqueta objetivo "2do_Ataque_Corazón". El objetivo principal de este
+          dataset es predecir si un paciente experimentará un segundo ataque al corazón basándose en estas
+          características.
+          <br>
+          Este conjunto de datos no presenta valores faltantes ni datos incompletos, lo que facilita su uso para el
+          desarrollo de modelos de machine learning. El problema a abordar es de clasificación binaria,
+          donde el objetivo es asignar una de las dos etiquetas posibles, "Si" o "No", para indicar si un paciente
+          tendrá un segundo ataque al corazón en función de las características proporcionadas.
+          <br>
+          Para realizar un análisis rápido de la distribución de los datos y obtener información al respecto, utilicé
+          RapidMiner. Utilizando esta herramienta, pude visualizar las estadísticas que ofrecen una visión
+          general de las características del conjunto de datos.
+          <br>
+          Resultados obtenidos mediante el estudio del dataset en RapidMiner:
+        </p>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/3ywxV0K/heart-stats-rm.jpg" alt="Cardiac Statistics - RapidMiner">
+        </figure>
+
+        <h5>Implementación en RapidMiner</h5>
+        <p>Inicié el proceso de implementación en RapidMiner importando el conjunto de datos de entrenamiento.
+          Utilizando el operador "Set Role", configuré la etiqueta "2do_Ataque_Corazon" como objetivo de
+          predicción. Luego, procedí a normalizar los datos aplicando el operador "Normalize" con la técnica de
+          "z-transformation" para garantizar una distribución estándar de las variables.
+          <br>
+          Para evaluar el rendimiento del modelo, dividí el conjunto de datos en dos: una destinada al
+          entrenamiento y otra al testing. Esto fue mediante el operador "Split Data", asignando una proporción del
+          70% para el conjunto de entrenamiento y el 30% restante para el conjunto de testing.
+          <br>
+          A continuación, elegí el algoritmo de regresión logística como método de clasificación. Utilicé este algoritmo
+          para entrenar un modelo que pudiera predecir con precisión si un paciente experimentaría un segundo ataque al
+          corazón. Para evaluar la calidad de las predicciones, utilicé el operador "Performance", que proporcionó
+          métricas sobre la precisión del modelo.
+          <br>
+          Una vez que obtuve un rendimiento satisfactorio del modelo en el conjunto de prueba, pasé a la
+          evaluación. Importé los datos de evaluación y apliqué el modelo previamente entrenado para realizar
+          predicciones en estos datos no etiquetados.
+        </p>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/SB28WBg/heart-rm.jpg" alt="Cardiac Model - RapidMiner">
+        </figure>
+        <p>Resultados obtenidos de precisión del modelo para el conjunto de datos de entrenamiento:</p>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/DbB36kK/heart-performance-rm.jpg" alt="Cardiac Model Performance - RapidMiner">
+        </figure>
+        <p>Resultados obtenidos para la predicción del conjunto de datos de evaluación:</p>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/KmRGmD5/heart-pred-rm.jpg" alt="Cardiac Prediction - RapidMiner">
+        </figure>
+
+        <h5>Implementación en Python</h5>
+        <p>Importación de librerías:</p>
+        <pre class="c-code">
+          <code class="language-python">
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.model_selection import cross_val_score, train_test_split
+          </code>
+        </pre>
+        <p>Luego cargamos y leemos el dataset, creamos dos variables con las etiquetas y la variable objetivo, por
+          último dividimos el conjunto de datos en entrenamiento y testing:</p>
+        <pre class="c-code">
+          <code class="language-python">
+input_file = "cardiac-training.csv"
+df = pd.read_csv(input_file, header=0)
+
+X = df.loc[:, df.columns != '2do_Ataque_Corazon']
+y = df['2do_Ataque_Corazon'].values
+
+train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.30, random_state=0, shuffle=True)
+          </code>
+        </pre>
+        <p>Se crea el modelo de Regresión Logística, indicándole un máximo de 1000 iteraciones por si no converge.
+          Utilizamos validación cruzada con 5 pliegues para evaluar el modelo e imprimimos los resultados en consola:
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+lr = LogisticRegression(max_iter=1000)
+
+scores = cross_val_score(lr, X, y, cv=5)
+print("\nPuntuaciones de la validación cruzada:", scores)
+print("\nPuntuación media de la validación cruzada: {:.3f}".format(scores.mean()))
+          </code>
+        </pre>
+        <p>Resultados obtenidos de la validación cruzada:</p>
+        <figure style="width: 90%;">
+          <img src="https://i.ibb.co/9VwKMvV/heart-cross-py.jpg" alt="Cross Validation results - Python">
+        </figure>
+        <p>Posteriormente entrenamos el modelo utilizando el conjunto de entrenamiento y las etiquetas. Luego procedemos
+          a realizar las predicciones con el conjunto de prueba y obtenemos métricas para evaluar el rendimiento del
+          modelo, imprimiendo los resultados en consola:
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+lr = lr.fit(train_X, train_y)
+y_pred = lr.predict(test_X)
+print("\nPredicted vs Expected")
+print(y_pred)
+print(test_y)
+print(classification_report(test_y, y_pred, digits=3))
+print(confusion_matrix(test_y, y_pred))
+          </code>
+        </pre>
+        <p>Resultados obtenidos de la precisión del modelo:</p>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/M9MNBQg/heart-perf-py.jpg" alt="Cardiac model performance - Python">
+        </figure>
+        <p>En última instancia, procedemos a cargar el conjunto de datos a evaluar y utilizando el modelo previamente
+          entrenado realizamos las predicciones, imprimiendo los resultados en consola:
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+input_file_scoring = "cardiac-scoring.csv"
+df_scoring = pd.read_csv(input_file_scoring, header=0)
+
+y_pred_scoring = lr.predict(df_scoring)
+print("Predictions cardiac-scoring")
+print(y_pred_scoring)
+print("Positive predictions:", sum(y_pred_scoring == 'Si'))
+print("Negative predictions:", sum(y_pred_scoring == 'No'))
+          </code>
+        </pre>
+        <p>Resultados obtenidos de la predicción:</p>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/56MJ7H7/heart-pred-py.jpg" alt="Cardiac predictions - Python">
+        </figure>
       </div>
     </section>
   </main>
@@ -79,6 +215,8 @@
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>
