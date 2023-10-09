@@ -72,12 +72,6 @@
     <section class="c-container">
       <h2 class="c-content_header">HEART DISEASE</h2>
       <div class="c-content">
-        <p>Durante la Unidad Temática 3 del curso de Machine Learning, profundizamos sobre
-          los algoritmos lineales. En este contexto, trabajamos con el conjunto de datos 'cardiac-training'. A lo
-          largo de esta unidad, nuestra tarea ha sido cargar y preparar los datos, llevar a cabo el
-          proceso de entrenamiento de modelos y realizar pruebas. Además, hemos evaluado los resultados
-          obtenidos utilizando tanto RapidMiner como Python.
-        </p>
         <h4>Análisis del Dataset</h4>
         <p>El conjunto de datos "cardiac-training" contiene información relacionada con la salud de pacientes,
           incluyendo atributos como la edad, estado civil, sexo, categoría de peso, nivel de colesterol, manejo del
@@ -162,14 +156,16 @@ train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.30, random
 lr = LogisticRegression(max_iter=1000)
 
 scores = cross_val_score(lr, X, y, cv=5)
-print("\nPuntuaciones de la validación cruzada:", scores)
+print("\nPuntuaciones de la validación cruzada:\n", scores)
 print("\nPuntuación media de la validación cruzada: {:.3f}".format(scores.mean()))
           </code>
         </pre>
-        <p>Resultados obtenidos de la validación cruzada:</p>
-        <figure style="width: 90%;">
-          <img src="https://i.ibb.co/9VwKMvV/heart-cross-py.jpg" alt="Cross Validation results - Python">
-        </figure>
+        <pre class="c-console">
+Puntuaciones de la validación cruzada:
+[0.82142857 0.96428571 0.92857143 0.85185185 0.88888889]
+
+Puntuación media de la validación cruzada: 0.891
+        </pre>
         <p>Posteriormente entrenamos el modelo utilizando el conjunto de entrenamiento y las etiquetas. Luego procedemos
           a realizar las predicciones con el conjunto de prueba y obtenemos métricas para evaluar el rendimiento del
           modelo, imprimiendo los resultados en consola:
@@ -181,14 +177,46 @@ y_pred = lr.predict(test_X)
 print("\nPredicted vs Expected")
 print(y_pred)
 print(test_y)
-print(classification_report(test_y, y_pred, digits=3))
-print(confusion_matrix(test_y, y_pred))
           </code>
         </pre>
-        <p>Resultados obtenidos de la precisión del modelo:</p>
-        <figure style="width: 60%;">
-          <img src="https://i.ibb.co/M9MNBQg/heart-perf-py.jpg" alt="Cardiac model performance - Python">
-        </figure>
+        <pre class="c-console">
+Predicted vs Expected
+
+['No' 'Si' 'No' 'No' 'Si' 'No' 'Si' 'Si' 'Si' 'No' 'Si' 'Si' 'Si' 'No'
+'No' 'Si' 'Si' 'Si' 'Si' 'Si' 'Si' 'No' 'No' 'Si' 'Si' 'Si' 'Si' 'No'
+'No' 'Si' 'No' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'Si' 'Si' 'No' 'Si' 'No']
+['No' 'Si' 'No' 'No' 'Si' 'No' 'Si' 'Si' 'Si' 'No' 'Si' 'Si' 'Si' 'No'
+'No' 'Si' 'Si' 'Si' 'No' 'Si' 'Si' 'No' 'No' 'No' 'Si' 'Si' 'Si' 'Si'
+'No' 'Si' 'No' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'No']
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+print("\nClassification report:\n", classification_report(test_y, y_pred, digits=3))
+print("\nConfusion matrix:\n", confusion_matrix(test_y, y_pred))
+          </code>
+        </pre>
+        <pre class="c-console">
+Classification report:
+               precision    recall  f1-score   support
+
+          No      0.941     0.842     0.889        19
+          Si      0.880     0.957     0.917        23
+
+    accuracy                          0.905        42
+   macro avg      0.911     0.899     0.903        42
+weighted avg      0.908     0.905     0.904        42
+
+Confusion matrix:
+ [[16  3]
+ [ 1 22]]
+[[ 61   0   1 ... 139   1  50]
+ [ 55   2   1 ... 163   0  40]
+ [ 53   1   1 ... 172   0  55]
+ ...
+ [ 59   1   1 ... 169   1  50]
+ [ 63   0   0 ... 139   1  50]
+ [ 70   3   1 ... 174   0  55]]
+        </pre>
         <p>En última instancia, procedemos a cargar el conjunto de datos a evaluar y utilizando el modelo previamente
           entrenado realizamos las predicciones, imprimiendo los resultados en consola:
         </p>
@@ -200,14 +228,32 @@ df_scoring = pd.read_csv(input_file_scoring, header=0)
 y_pred_scoring = lr.predict(df_scoring)
 print("Predictions cardiac-scoring")
 print(y_pred_scoring)
+          </code>
+        </pre>
+        <pre class="c-console">
+Predictions cardiac-scoring
+
+['No' 'Si' 'No' 'Si' 'No' 'No' 'No' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'Si'
+ 'Si' 'Si' 'Si' 'No' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'Si' 'Si'
+ 'Si' 'No' 'Si' 'No' 'No' 'No' 'No' 'Si' 'Si' 'No' 'Si' 'No' 'No' 'No'
+ 'No' 'Si' 'No' 'No' 'No' 'Si' 'Si' 'No' 'No' 'No' 'No' 'Si' 'Si' 'Si'
+  ...
+ 'Si' 'No' 'Si' 'No' 'Si' 'No' 'Si' 'Si' 'No' 'No' 'No' 'Si' 'Si' 'No'
+ 'Si' 'Si' 'No' 'No' 'No' 'Si' 'No' 'No' 'No' 'No' 'No' 'No' 'No' 'No'
+ 'Si' 'Si' 'Si' 'No' 'No' 'No' 'Si' 'No' 'No' 'Si' 'Si' 'Si' 'Si' 'No'
+ 'No' 'Si' 'Si' 'Si' 'Si' 'No' 'No' 'No' 'Si' 'No' 'Si' 'No' 'No' 'Si'
+ 'Si' 'No' 'No' 'Si']
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
 print("Positive predictions:", sum(y_pred_scoring == 'Si'))
 print("Negative predictions:", sum(y_pred_scoring == 'No'))
           </code>
         </pre>
-        <p>Resultados obtenidos de la predicción:</p>
-        <figure style="width: 60%;">
-          <img src="https://i.ibb.co/56MJ7H7/heart-pred-py.jpg" alt="Cardiac predictions - Python">
-        </figure>
+        <pre class="c-console">
+Positive predictions: 342
+Negative predictions: 348
+        </pre>
       </div>
     </section>
   </main>

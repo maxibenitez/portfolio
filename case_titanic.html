@@ -11,6 +11,8 @@
   <title>Portfolio</title>
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -70,17 +72,949 @@
     <section class="c-container">
       <h2 class="c-content_header">TITANIC SURVIVORS</h2>
       <div class="c-content">
-        <div class="c-construction">
-          <i class="fa-solid fa-person-digging fa-2xl"></i>
-          <span>Página en construcción...</span>
-        </div>
-      </div>
+        <!-- <h4>Análisis del Dataset</h4>
+        <p>El conjunto de datos "cardiac-training" contiene información relacionada con la salud de pacientes,
+          incluyendo atributos como la edad, estado civil, sexo, categoría de peso, nivel de colesterol, manejo del
+          estrés, tratamiento de ansiedad y la etiqueta objetivo "2do_Ataque_Corazón". El objetivo principal de este
+          dataset es predecir si un paciente experimentará un segundo ataque al corazón basándose en estas
+          características.
+          <br>
+          Este conjunto de datos no presenta valores faltantes ni datos incompletos, lo que facilita su uso para el
+          desarrollo de modelos de machine learning. El problema a abordar es de clasificación binaria,
+          donde el objetivo es asignar una de las dos etiquetas posibles, "Si" o "No", para indicar si un paciente
+          tendrá un segundo ataque al corazón en función de las características proporcionadas.
+          <br>
+          Para realizar un análisis rápido de la distribución de los datos y obtener información al respecto, utilicé
+          RapidMiner. Utilizando esta herramienta, pude visualizar las estadísticas que ofrecen una visión
+          general de las características del conjunto de datos.
+        </p> -->
+
+        <h4>Implementación en Python</h4>
+        <h5>Importación de librerías:</h5>
+        <p>En esta primera sección se importan las bibliotecas y paquetes necesarios para el análisis de los datos, su
+          visualización y el procesamiento de los mismos.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+import numpy as np 
+import pandas as pd 
+
+import seaborn as sns
+from matplotlib import pyplot as plt
+sns.set_style("whitegrid")
+
+import warnings
+warnings.filterwarnings("ignore")
+
+import os 
+
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+
+from sklearn.svm import SVC, LinearSVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+
+from sklearn.metrics import make_scorer, accuracy_score 
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
+
+from xgboost import XGBClassifier
+          </code>
+        </pre>
+
+        <h5>Carga de dataset y visualización:</h5>
+        <p>En este paso, utilizando la librería Pandas, se carga el conjunto de datos de entrenamiento y de prueba desde
+          sus respectivos archivos CSV.</p>
+        <pre class="c-code">
+          <code class="language-python">
+training = pd.read_csv("./train.csv")
+testing = pd.read_csv("./test.csv")            
+          </code>
+        </pre>
+        <p>Luego, se utiliza el método head() y keys() para mostrar las primeras filas del conjunto de datos y observar
+          los nombres de las columnas del DataFrame.</p>
+        <pre class="c-code">
+          <code class="language-python">
+training.head()   
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Survived  Pclass                                               Name     Sex   Age  SibSp  Parch            Ticket 
+0            1         0       3                            Braund, Mr. Owen Harris    male  22.0      1      0         A/5 21171 
+1            2         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1      0          PC 17599 
+2            3         1       3                             Heikkinen, Miss. Laina  female  26.0      0      0  STON/O2. 3101282 
+3            4         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1      0            113803 
+4            5         0       3                           Allen, Mr. William Henry    male  35.0      0      0            373450 
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.head()   
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Pclass                                          Name     Sex   Age  SibSp  Parch   Ticket     Fare Cabin Embarked
+0          892       3                              Kelly, Mr. James    male  34.5      0      0   330911   7.8292   NaN        Q
+1          893       3              Wilkes, Mrs. James (Ellen Needs)  female  47.0      1      0   363272   7.0000   NaN        S
+2          894       2                     Myles, Mr. Thomas Francis    male  62.0      0      0   240276   9.6875   NaN        Q
+3          895       3                              Wirz, Mr. Albert    male  27.0      0      0   315154   8.6625   NaN        S
+4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female  22.0      1      1  3101298  12.2875   NaN        S
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+training.keys()  
+          </code>
+        </pre>
+        <pre class="c-console">
+Index(['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 
+  'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], 
+  dtype='object')
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.keys()
+          </code>
+        </pre>
+        <pre class="c-console">
+Index(['PassengerId', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 
+  'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'], 
+  dtype='object')
+        </pre>
+        <p>Ahora se identifican los atributos numéricos en el dataset, para luego mediante la función describe() se
+          generan estadísticas descriptivas sobre el DataFrame, obteniendo así datos como la media, la mediana, el valor
+          mínimo y máximo, la desviación estándar y los percentiles de cada columna</p>
+        <pre class="c-code">
+          <code class="language-python">
+types_train = training.dtypes
+num_values = types_train[(types_train == float)]
+
+print("These are the numerical features:")
+print(num_values)        
+          </code>
+        </pre>
+        <pre class="c-console">
+These are the numerical features:
+Age float64
+Fare float64
+dtype: object
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+training_describe = training.describe()
+print(training_describe)         
+          </code>
+        </pre>
+        <pre class="c-console">
+       PassengerId    Survived      Pclass         Age       SibSp       Parch        Fare
+count   891.000000  891.000000  891.000000  714.000000  891.000000  891.000000  891.000000
+mean    446.000000    0.383838    2.308642   29.699118    0.523008    0.381594   32.204208
+std     257.353842    0.486592    0.836071   14.526497    1.102743    0.806057   49.693429
+min       1.000000    0.000000    1.000000    0.420000    0.000000    0.000000    0.000000
+25%     223.500000    0.000000    2.000000   20.125000    0.000000    0.000000    7.910400
+50%     446.000000    0.000000    3.000000   28.000000    0.000000    0.000000   14.454200
+75%     668.500000    1.000000    3.000000   38.000000    1.000000    0.000000   31.000000
+max     891.000000    1.000000    3.000000   80.000000    8.000000    6.000000  512.329200
+        </pre>
+
+        <h5>Gestión los valores faltantes:</h5>
+        <p>En esta sección se manejarán los valores faltantes en los dos conjuntos de datos. Se define la función
+          null_table() para poder visualizar los valores nulos en los conjuntos de entrenamiento y prueba, mediante el
+          uso
+          de la función isnull() de la biblioteca Pandas.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+def null_table(training, testing):
+  print("Training Data Frame")
+  print(pd.isnull(training).sum()) 
+  print(" ")
+  print("Testing Data Frame")
+  print(pd.isnull(testing).sum())
+
+null_table(training, testing)
+          </code>
+        </pre>
+        <pre class="c-console">
+Training Data Frame   Testing Data Frame
+PassengerId    0      PassengerId    0
+Survived       0      Pclass         0
+Pclass         0      Name           0
+Name           0      Sex            0
+Sex            0      Age            86
+Age            177    SibSp          0
+SibSp          0      Parch          0
+Parch          0      Ticket         0
+Ticket         0      Fare           1
+Fare           0      Cabin          327
+Cabin          687    Embarked       0
+Embarked       2      dtype: int64
+dtype: int64		
+        </pre>
+        <p>Se puede observar que los dos conjuntos de datos cuentan con valores faltantes, por lo que a continuación se
+          manejarán de manera correspondiente.
+          <br>
+          En primer lugar, se puede deducir que para la predicción el atributo “Cabin”, atributo con más valores
+          faltantes, no es relevante, lo mismo sucede con el atributo “Ticket”, por lo que se pueden eliminar. Para eso
+          se utiliza el método drop(), indicándole en los parámetros las etiquetas correspondientes, en el parámetro
+          “axis” se le indica 1, valor que indica eliminar columnas, y en el parámetro “inplace” se le indica “True”
+          para que la eliminación sea en el DataFrame original.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+training.drop(labels = ["Cabin", "Ticket"], axis = 1, inplace = True)
+testing.drop(labels = ["Cabin", "Ticket"], axis = 1, inplace = True)
+
+null_table(training, testing)
+          </code>
+        </pre>
+        <pre class="c-console">
+Training Data Frame   Testing Data Frame
+PassengerId    0      PassengerId    0
+Survived       0      Pclass         0
+Pclass         0      Name           0
+Name           0      Sex            0
+Sex            0      Age            86
+Age            177    SibSp          0
+SibSp          0      Parch          0
+Parch          0      Fare           1
+Fare           0      Embarked       0
+Embarked       2      dtype: int64
+dtype: int64	
+        </pre>
+        <p>Se realiza una copia de los datos de entrenamiento para trabajar de forma aislada, para trabajar con los
+          datos “Age”. Utilizando la función dropna() se eliminan los valores nulos de este atributo, así luego se puede
+          visualizar un gráfico de distribución mediante la función distplot() de la librería Seaborn.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+copy = training.copy()
+copy.dropna(inplace = True)
+sns.distplot(copy["Age"])
+plt.savefig("distribution_age.png")
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/G0S16Mb/distribution-age-titanic.jpg" alt="Titanic distribution age">
+        </figure>
+        <p>En el gráfico devuelto se puede observar que está levemente sesgado. Por eso se reemplazarán los valores
+          nulos con la mediana. Para esto se utiliza la función fillna(), también se reemplazan los valores nulos de los
+          atributos “Embarked” y “Fare”.</p>
+        <pre class="c-code">
+          <code class="language-python">
+training["Age"].fillna(training["Age"].median(), inplace = True)
+testing["Age"].fillna(testing["Age"].median(), inplace = True)
+training["Embarked"].fillna("S", inplace = True)
+testing["Fare"].fillna(testing["Fare"].median(), inplace = True)
+
+null_table(training, testing)         
+          </code>
+        </pre>
+        <p>Ahora si ambos datasets quedaron sin valores faltantes y ya están prontos para ser procesados.</p>
+        <pre class="c-console">
+Training Data Frame   Testing Data Frame
+PassengerId    0      PassengerId    0
+Survived       0      Pclass         0
+Pclass         0      Name           0
+Name           0      Sex            0
+Sex            0      Age            0
+Age            0      SibSp          0
+SibSp          0      Parch          0
+Parch          0      Fare           0
+Fare           0      Embarked       0
+Embarked       0      dtype: int64
+dtype: int64
+        </pre>
+        </figure>
+        <pre class="c-code">
+          <code class="language-python">
+training.head()        
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Survived  Pclass                                               Name     Sex   Age  SibSp  Parch     Fare Embarked
+0            1         0       3                            Braund, Mr. Owen Harris    male  22.0      1      0   7.2500        S
+1            2         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1      0  71.2833        C
+2            3         1       3                             Heikkinen, Miss. Laina  female  26.0      0      0   7.9250        S
+3            4         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1      0  53.1000        S
+4            5         0       3                           Allen, Mr. William Henry    male  35.0      0      0   8.0500        S
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.head()          
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Pclass                                          Name     Sex   Age  SibSp  Parch     Fare Embarked
+0          892       3                              Kelly, Mr. James    male  34.5      0      0   7.8292        Q
+1          893       3              Wilkes, Mrs. James (Ellen Needs)  female  47.0      1      0   7.0000        S
+2          894       2                     Myles, Mr. Thomas Francis    male  62.0      0      0   9.6875        Q
+3          895       3                              Wirz, Mr. Albert    male  27.0      0      0   8.6625        S
+4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female  22.0      1      1  12.2875        S
+        </pre>
+
+        <h5>Visualización de los datos:</h5>
+        <p>En esta sección se generan gráficos para visualizar la distribución de los datos y las relaciones entre los
+          distintos atributos. Con estos gráficos se podrá observar los supervivientes en función de las distintas
+          variables.
+          <br>
+          Primero se genera un gráfico de barras para poder visualizar la cantidad de supervivientes en función del
+          género.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.barplot(x="Sex", y="Survived", data=training)
+plt.title("Distribution of Survival based on Gender")
+plt.show()
+
+total_survived_females = training[training.Sex == "female"]["Survived"].sum()
+total_survived_males = training[training.Sex == "male"]["Survived"].sum()
+print("Total people survived is: " + str((total_survived_females + total_survived_males)))
+
+print("Proportion of Females who survived:")
+print(total_survived_females/(total_survived_females + total_survived_males))
+print("Proportion of Males who survived:")
+print(total_survived_males/(total_survived_females + total_survived_males))            
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/bFYrzdc/distribution-based-gender.jpg"
+            alt="Distribution of Survival Based on Gender">
+        </figure>
+        <pre class="c-console">
+Total people survived is: 342
+Proportion of Females who survived:
+0.6812865497076024
+Proportion of Males who survived:
+0.31871345029239767
+        </pre>
+        <p>Luego, se genera un gráfico para observar la proporción de supervivientes, pero en este caso en función de la
+          clase en la que viajó el pasajero.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.barplot(x="Pclass", y="Survived", data=training)
+plt.ylabel("Survival Rate")
+plt.title("Distribution of Survival Based on Class")
+plt.show()
+
+total_survived_one = training[training.Pclass == 1]["Survived"].sum()
+total_survived_two = training[training.Pclass == 2]["Survived"].sum()
+total_survived_three = training[training.Pclass == 3]["Survived"].sum()
+total_survived_class = total_survived_one + total_survived_two + total_survived_three
+
+print("Total people survived is: " + str(total_survived_class))
+print("Proportion of Class 1 Passengers who survived:")
+print(total_survived_one/total_survived_class) 
+print("Proportion of Class 2 Passengers who survived:")
+print(total_survived_two/total_survived_class)
+print("Proportion of Class 3 Passengers who survived:")
+print(total_survived_three/total_survived_class)           
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/Tc6jR2w/distribution-based-class.jpg"
+            alt="Distribution of Survival Based on Class">
+        </figure>
+        <pre class="c-console">
+Total people survived is: 342
+Proportion of Class 1 Passengers who survived:
+0.39766081871345027
+Proportion of Class 2 Passengers who survived:
+0.2543859649122807
+Proportion of Class 3 Passengers who survived:
+0.347953216374269
+        </pre>
+        <p>Ahora, para una mejor visualización se generan dos gráficos que muestran la proporción de supervivientes, uno
+          en función de la clase del pasajero, pero con una división adicional por género, y otro en función del género,
+          pero con una división adicional por clase.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.barplot(x="Pclass", y="Survived", hue="Sex", data=training)
+plt.ylabel("Survival Rate")
+plt.title("Survival Rates Based on Gender and Class")
+plt.show()          
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/ZYHf68K/rates-based-sex.jpg" alt="Survival Rates Based on Gender and Class">
+        </figure>
+        <pre class="c-code">
+          <code class="language-python">
+sns.barplot(x="Sex", y="Survived", hue="Pclass", data=training)
+plt.ylabel("Survival Rate")
+plt.title("Survival Rates Based on Gender and Class")  
+plt.show()          
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/Mnzh56H/rates-based-class.jpg" alt="Survival Rates Based on Gender and Class">
+        </figure>
+        <p>Posteriormente, generamos un gráfico para ver la proporción de supervivientes y no supervivientes en función
+          de la edad.</p>
+        <pre class="c-code">
+          <code class="language-python">
+survived_ages = training[training.Survived == 1]["Age"]
+not_survived_ages = training[training.Survived == 0]["Age"]
+plt.subplot(1, 2, 1)
+sns.distplot(survived_ages, kde=False)
+plt.axis([0, 100, 0, 100])
+plt.title("Survived")
+plt.ylabel("Proportion")
+plt.subplot(1, 2, 2)
+sns.distplot(not_survived_ages, kde=False)
+plt.axis([0, 100, 0, 100])
+plt.title("Didn't Survive")
+plt.subplots_adjust(right=1.7)
+plt.show()           
+          </code>
+        </pre>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/CvV0jc2/survivor-age-proportion.jpg" alt="Survival Age Proportion">
+        </figure>
+        <pre class="c-code">
+          <code class="language-python">
+sns.stripplot(x="Survived", y="Age", data=training, jitter=True)
+plt.show()          
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/cwHMymZ/survived-age.jpg" alt="Survival Age Proportion">
+        </figure>
+        <p>Por último, generamos un gráfico final, un diagrama de pares en donde se puede visualizar las relaciones
+          entre todos los atributos.</p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.pairplot(training)  
+plt.show()          
+          </code>
+        </pre>
+        <figure style="width: 100%;">
+          <img src="https://i.ibb.co/pJQgFdx/survived-stats.jpg" alt="Survived statistics">
+        </figure>
+
+        <h5>Ingeniería de características:</h5>
+        <p>En este paso se convierten las variables categóricas en numéricas para mejorar el rendimiento de los modelos
+          de machine learning. En este caso se convertirán los atributos “Sex” y “Embarked”.
+          <br>
+          Utilizando una instancia de LabelEncoder() se puede cambiar las etiquetas a valores numéricos, se realiza la
+          transformación tanto para los datos de entrenamiento como para los datos de prueba.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+training.sample(5)
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Survived  Pclass                               Name   Sex   Age  SibSp  Parch     Fare Embarked
+169          170         0       3                      Ling, Mr. Lee  male  28.0      0      0  56.4958        S
+553          554         1       3  Leeni, Mr. Fahim ("Philip Zenni")  male  22.0      0      0   7.2250        C
+583          584         0       1                Ross, Mr. John Hugo  male  36.0      0      0  40.1250        C
+64            65         0       1              Stewart, Mr. Albert A  male  28.0      0      0  27.7208        C
+298          299         1       1              Saalfeld, Mr. Adolphe  male  28.0      0      0  30.5000        S
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.sample(5)  
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Pclass                             Name     Sex   Age  SibSp  Parch     Fare Embarked
+360         1252       3      Sage, Master. William Henry    male  14.5      8      2  69.5500        S
+68           960       1  Tucker, Mr. Gilbert Milligan Jr    male  31.0      0      0  28.5375        C
+78           970       2   Aldworth, Mr. Charles Augustus    male  30.0      0      0  13.0000        S
+236         1128       1         Warren, Mr. Frank Manley    male  64.0      1      0  75.2500        C
+52           944       2    Hocking, Miss. Ellen Nellie""  female  20.0      2      1  23.0000        S
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+set(training["Embarked"])
+
+le_sex = LabelEncoder()
+le_sex.fit(training["Sex"])
+
+encoded_sex_training = le_sex.transform(training["Sex"])
+training["Sex"] = encoded_sex_training
+encoded_sex_testing = le_sex.transform(testing["Sex"])
+testing["Sex"] = encoded_sex_testing
+
+le_embarked = LabelEncoder()
+le_embarked.fit(training["Embarked"])
+
+encoded_embarked_training = le_embarked.transform(training["Embarked"])
+training["Embarked"] = encoded_embarked_training
+encoded_embarked_testing = le_embarked.transform(testing["Embarked"])
+testing["Embarked"] = encoded_embarked_testing 
+          </code>
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+training.sample(5)
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Survived  Pclass                              Name  Sex   Age  SibSp  Parch    Fare  Embarked
+468          469         0       3                Scanlan, Mr. James    1  28.0      0      0   7.725         1
+147          148         0       3  Ford, Miss. Robina Maggie "Ruby"    0   9.0      2      2  34.375         2
+353          354         0       3         Arnold-Franchi, Mr. Josef    1  25.0      1      0  17.800         2
+238          239         0       2   Pengelly, Mr. Frederick William    1  19.0      0      0  10.500         2
+79            80         1       3          Dowdell, Miss. Elizabeth    0  30.0      0      0  12.475         2
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.sample(5)  
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Pclass                                              Name  Sex    Age  SibSp  Parch     Fare  Embarked
+178         1070       2  Becker, Mrs. Allen Oliver (Nellie E Baumgardner)    0  36.00      0      3  39.0000         2
+266         1158       1             Chisholm, Mr. Roderick Robert Crispin    1  27.00      0      0   0.0000         2
+321         1213       3                             Krekorian, Mr. Neshan    1  25.00      0      0   7.2292         0
+411         1303       1   Minahan, Mrs. William Edward (Lillian E Thorpe)    0  37.00      1      0  90.0000         1
+281         1173       3                    Peacock, Master. Alfred Edward    1   0.75      1      1  13.7750         2
+        </pre>
+
+        <h6>Creando características sintéticas:</h6>
+        <p>Para ayudarnos a predecir el valor objetivo, a veces puede ser útil combinar dos atributos relacionados. En
+          este caso se crea un nuevo atributo “FamSize” que combina los atributos “SibSp” y ”Parch”, además se le
+          adiciona uno que es el propio pasajero, obteniendo de esa forma el tamaño total de la familia. Además se crea
+          un atributo “IsAlone” que se obtiene a partir del atributo anteriormente creado.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+training["FamSize"] = training["SibSp"] + training["Parch"] + 1
+testing["FamSize"] = testing["SibSp"] + testing["Parch"] + 1
+training["IsAlone"] = training.FamSize.apply(lambda x: 1 if x == 1 else 0)
+testing["IsAlone"] = testing.FamSize.apply(lambda x: 1 if x == 1 else 0)
+          </code>
+        </pre>
+        <p>Si bien en un principio se pensó que el atributo “Name” no tendría aporte para predecir la variable objetivo,
+          analizándolo detenidamente se podría obtener información útil. Por eso se crea un nuevo atributo llamado
+          “Title” que se obtiene a partir del nombre, en el que a partir del título del pasajero podría ayudar a
+          predecir si sobrevivió o no.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+for name in training["Name"]:
+  training["Title"] = training["Name"].str.extract("([A-Za-z]+)\.",expand=True)
+
+for name in testing["Name"]:
+  testing["Title"] = testing["Name"].str.extract("([A-Za-z]+)\.",expand=True)
+
+training.head()
+
+titles = set(training["Title"])
+print(titles)
+
+title_list = list(training["Title"])
+frequency_titles = []
+
+for i in titles:
+  frequency_titles.append(title_list.count(i))
+
+print(frequency_titles)
+
+titles = list(titles)
+
+title_dataframe = pd.DataFrame({
+  "Titles" : titles,
+  "Frequency" : frequency_titles
+})
+
+print(title_dataframe)
+          </code>
+        </pre>
+        <pre class="c-console">
+      Titles  Frequency
+0        Mme          1
+1       Capt          1
+2       Mlle          2
+3         Dr          7
+4        Sir          1
+5        Mrs        125
+6   Countess          1
+7        Don          1
+8         Mr        517
+9        Rev          6
+10  Jonkheer          1
+11       Col          2
+12    Master         40
+13      Lady          1
+14      Miss        182
+15        Ms          1
+16     Major          2
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+            <pre class="c-code">
+              <code class="language-python">
+title_replacements = {"Mlle": "Other", "Major": "Other", "Col": "Other", "Sir": "Other", "Don": "Other", "Mme": "Other",
+"Jonkheer": "Other", "Lady": "Other", "Capt": "Other", "Countess": "Other", "Ms": "Other", "Dona": "Other"}
+
+training.replace({"Title": title_replacements}, inplace=True)
+testing.replace({"Title": title_replacements}, inplace=True)
+
+le_title = LabelEncoder()
+le_title.fit(training["Title"])
+
+encoded_title_training = le_title.transform(training["Title"])
+training["Title"] = encoded_title_training
+encoded_title_testing = le_title.transform(testing["Title"])
+testing["Title"] = encoded_title_testing
+
+training.drop("Name", axis = 1, inplace = True)
+testing.drop("Name", axis = 1, inplace = True)
+              </code>
+            </pre>
+        </code>
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+training.sample(5)
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Survived  Pclass  Sex   Age  SibSp  Parch      Fare  Embarked  FamSize  IsAlone  Title
+700          701         1       1    0  18.0      1      0  227.5250         0        2        0      4
+30            31         0       1    1  40.0      0      0   27.7208         0        1        1      5
+338          339         1       3    1  45.0      0      0    8.0500         2        1        1      3
+587          588         1       1    1  60.0      1      1   79.2000         0        3        0      3
+405          406         0       2    1  34.0      1      0   21.0000         2        2        0      3
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.sample(5)
+          </code>
+        </pre>
+        <pre class="c-console">
+     PassengerId  Pclass  Sex   Age  SibSp  Parch      Fare  Embarked  FamSize  IsAlone  Title
+184         1076       1    0  27.0      1      1  247.5208         0        3        0      4
+379         1271       3    1   5.0      4      2   31.3875         2        7        0      1
+188         1080       3    0  27.0      8      2   69.5500         2       11        0      2
+187         1079       3    1  17.0      2      0    8.0500         2        3        0      3
+77           969       1    0  55.0      2      0   25.7000         2        3        0      4
+        </pre>
+
+        <h5>Normalización:</h5>
+        <p>Observando los gráficos anteriormente realizados, se puede observar que los atributos “Age” y “Fare”
+          presentan sesgo, por lo que podría no ser beneficioso para el modelo. Para eso sería bueno normalizarlos, para
+          eso utilizaremos el “StandardScaler” de Scikit-learn.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+scaler = StandardScaler()
+
+ages_train = np.array(training["Age"]).reshape(-1, 1)
+fares_train = np.array(training["Fare"]).reshape(-1, 1)
+ages_test = np.array(testing["Age"]).reshape(-1, 1)
+fares_test = np.array(testing["Fare"]).reshape(-1, 1)
+
+training["Age"] = scaler.fit_transform(ages_train)
+training["Fare"] = scaler.fit_transform(fares_train)
+testing["Age"] = scaler.fit_transform(ages_test)
+testing["Fare"] = scaler.fit_transform(fares_test)
+          </code>
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+training.head()
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Survived  Pclass  Sex       Age  SibSp  Parch      Fare  Embarked  FamSize  IsAlone  Title
+0            1         0       3    1 -0.565736      1      0 -0.502445         2        2        0      3
+1            2         1       1    0  0.663861      1      0  0.786845         0        2        0      4
+2            3         1       3    0 -0.258337      0      0 -0.488854         2        1        1      2
+3            4         1       1    0  0.433312      1      0  0.420730         2        2        0      4
+4            5         0       3    1  0.433312      0      0 -0.486337         2        1        1      3
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+testing.head()
+          </code>
+        </pre>
+        <pre class="c-console">
+   PassengerId  Pclass  Sex       Age  SibSp  Parch      Fare  Embarked  FamSize  IsAlone  Title
+0          892       3    1  0.386231      0      0 -0.497413         1        1        1      3
+1          893       3    0  1.371370      1      0 -0.512278         2        2        0      4
+2          894       2    1  2.553537      0      0 -0.464100         1        1        1      3
+3          895       3    1 -0.204852      0      0 -0.482475         2        1        1      3
+4          896       3    0 -0.598908      1      1 -0.417492         2        3        0      4
+        </pre>
+
+        <h5>Ajuste, optimización y predicción de modelos:</h5>
+        <p>En primer lugar, definimos las características tanto en el conjunto de entrenamiento como de prueba.</p>
+        <pre class="c-code">
+          <code class="language-python">
+X_train = training.drop(labels=["PassengerId", "Survived"], axis=1)
+y_train = training["Survived"]
+X_test = testing.drop("PassengerId", axis=1)
+          </code>
+        </pre>
+        <pre class="c-code">
+          <code class="language-python">
+X_train.head()
+          </code>
+        </pre>
+        <pre class="c-console">
+   Pclass  Sex       Age  SibSp  Parch      Fare  Embarked  FamSize  IsAlone  Title
+0       3    1 -0.565736      1      0 -0.502445         2        2        0      3
+1       1    0  0.663861      1      0  0.786845         0        2        0      4
+2       3    0 -0.258337      0      0 -0.488854         2        1        1      2
+3       1    0  0.433312      1      0  0.420730         2        2        0      4
+4       3    1  0.433312      0      0 -0.486337         2        1        1      3
+        </pre>
+        <h6>Conjunto de datos de validación</h6>
+        <p>Aunque ya contamos con un conjunto de datos de prueba, siempre resulta beneficioso contar con un tercer
+          conjunto de datos, este conjunto se conoce como conjunto de datos de validación. Este conjunto nos ayudará a
+          asegurarnos que nuestro modelo no sobreajuste los datos. Para crear este conjunto utilizaremos la función
+          train_test_split() de la biblioteca Scikit-learn.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+X_training, X_valid, y_training, y_valid = train_test_split(X_train, y_train, test_size=0.2, random_state=0)
+          </code>
+        </pre>
+        <h6>SVC</h6>
+        <pre class="c-code">
+          <code class="language-python">
+svc_clf = SVC() 
+
+parameters_svc = {"kernel": ["rbf", "linear"], "probability": [True, False], "verbose": [True, False]}
+
+grid_svc = GridSearchCV(svc_clf, parameters_svc, scoring=make_scorer(accuracy_score))
+grid_svc.fit(X_training, y_training)
+
+svc_clf = grid_svc.best_estimator_
+
+svc_clf.fit(X_training, y_training)
+pred_svc = svc_clf.predict(X_valid)
+acc_svc = accuracy_score(y_valid, pred_svc)
+
+print("The Score for SVC is: " + str(acc_svc))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for SVC is: 0.8212290502793296
+        </pre>
+        <h6>Linear SVC</h6>
+        <pre class="c-code">
+          <code class="language-python">
+linsvc_clf = LinearSVC()
+
+parameters_linsvc = {"multi_class": ["ovr", "crammer_singer"], "fit_intercept": [True, False], "max_iter": [100, 500, 1000, 1500]}
+
+grid_linsvc = GridSearchCV(linsvc_clf, parameters_linsvc, scoring=make_scorer(accuracy_score))
+grid_linsvc.fit(X_training, y_training)
+
+linsvc_clf = grid_linsvc.best_estimator_
+
+linsvc_clf.fit(X_training, y_training)
+pred_linsvc = linsvc_clf.predict(X_valid)
+acc_linsvc = accuracy_score(y_valid, pred_linsvc)
+
+print("The Score for LinearSVC is: " + str(acc_linsvc))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for LinearSVC is: 0.7932960893854749
+        </pre>
+        <h6>Random Forest</h6>
+        <pre class="c-code">
+          <code class="language-python">
+rf_clf = RandomForestClassifier()
+
+parameters_rf = {"n_estimators": [4, 5, 6, 7, 8, 9, 10, 15], "criterion": ["gini", "entropy"], "max_features": ["auto", "sqrt", "log2"], 
+                  "max_depth": [2, 3, 5, 10], "min_samples_split": [2, 3, 5, 10]}
+
+grid_rf = GridSearchCV(rf_clf, parameters_rf, scoring=make_scorer(accuracy_score))
+grid_rf.fit(X_training, y_training)
+
+rf_clf = grid_rf.best_estimator_
+
+rf_clf.fit(X_training, y_training)
+pred_rf = rf_clf.predict(X_valid)
+acc_rf = accuracy_score(y_valid, pred_rf)
+
+print("The Score for Random Forest is: " + str(acc_rf))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for Random Forest is: 0.8268156424581006
+        </pre>
+        <h6>Regresión Logística</h6>
+        <pre class="c-code">
+          <code class="language-python">
+logreg_clf = LogisticRegression()
+
+parameters_logreg = {"penalty": ["l2"], "fit_intercept": [True, False], "solver": ["newton-cg", "lbfgs", "liblinear", "sag", "saga"],
+                    "max_iter": [50, 100, 200], "warm_start": [True, False]}
+
+grid_logreg = GridSearchCV(logreg_clf, parameters_logreg, scoring=make_scorer(accuracy_score))
+grid_logreg.fit(X_training, y_training)
+
+logreg_clf = grid_logreg.best_estimator_
+
+logreg_clf.fit(X_training, y_training)
+pred_logreg = logreg_clf.predict(X_valid)
+acc_logreg = accuracy_score(y_valid, pred_logreg)
+
+print("The Score for Logistic Regression is: " + str(acc_logreg))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for Logistic Regression is: 0.8044692737430168
+        </pre>
+        <h6>k-Nearest Neighbors</h6>
+        <pre class="c-code">
+          <code class="language-python">
+knn_clf = KNeighborsClassifier()
+
+parameters_knn = {"n_neighbors": [3, 5, 10, 15], "weights": ["uniform", "distance"], "algorithm": ["auto", "ball_tree", "kd_tree"],
+                "leaf_size": [20, 30, 50]}
+
+grid_knn = GridSearchCV(knn_clf, parameters_knn, scoring=make_scorer(accuracy_score))
+grid_knn.fit(X_training, y_training)
+
+knn_clf = grid_knn.best_estimator_
+
+knn_clf.fit(X_training, y_training)
+pred_knn = knn_clf.predict(X_valid)
+acc_knn = accuracy_score(y_valid, pred_knn)
+
+print("The Score for KNeighbors is: " + str(acc_knn))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for KNeighbors is: 0.7653631284916201
+        </pre>
+        <h6>Naïve Bayes</h6>
+        <pre class="c-code">
+          <code class="language-python">
+gnb_clf = GaussianNB()
+
+parameters_gnb = {}
+
+grid_gnb = GridSearchCV(gnb_clf, parameters_gnb, scoring=make_scorer(accuracy_score))
+grid_gnb.fit(X_training, y_training)
+
+gnb_clf = grid_gnb.best_estimator_
+
+gnb_clf.fit(X_training, y_training)
+pred_gnb = gnb_clf.predict(X_valid)
+acc_gnb = accuracy_score(y_valid, pred_gnb)
+
+print("The Score for Gaussian NB is: " + str(acc_gnb))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for Gaussian NB is: 0.776536312849162
+        </pre>
+        <h6>Decision Tree</h6>
+        <pre class="c-code">
+          <code class="language-python">
+dt_clf = DecisionTreeClassifier()
+
+parameters_dt = {"criterion": ["gini", "entropy"], "splitter": ["best", "random"], "max_features": ["auto", "sqrt", "log2"]}
+
+grid_dt = GridSearchCV(dt_clf, parameters_dt, scoring=make_scorer(accuracy_score))
+grid_dt.fit(X_training, y_training)
+
+dt_clf = grid_dt.best_estimator_
+
+dt_clf.fit(X_training, y_training)
+pred_dt = dt_clf.predict(X_valid)
+acc_dt = accuracy_score(y_valid, pred_dt)
+
+print("The Score for Decision Tree is: " + str(acc_dt))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for Decision Tree is: 0.7877094972067039
+        </pre>
+        <h6>XGBoost</h6>
+        <pre class="c-code">
+          <code class="language-python">
+xg_clf = XGBClassifier()
+
+parameters_xg = {"objective" : ["reg:linear"], "n_estimators" : [5, 10, 15, 20]}
+
+grid_xg = GridSearchCV(xg_clf, parameters_xg, scoring=make_scorer(accuracy_score))
+grid_xg.fit(X_training, y_training)
+
+xg_clf = grid_xg.best_estimator_
+
+xg_clf.fit(X_training, y_training)
+pred_xg = xg_clf.predict(X_valid)
+acc_xg = accuracy_score(y_valid, pred_xg)
+
+print("The Score for XGBoost is: " + str(acc_xg))
+          </code>
+        </pre>
+        <pre class="c-console">
+The Score for XGBoost is: 0.8435754189944135
+        </pre>
+
+        <h5>Evaluación de la precisión de los modelos</h5>
+        <p>Una vez hechas las predicciones en varios modelos, ahora vamos a evaluar la precisión de cada uno y así
+          comparar cuál funcionó mejor.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+model_performance = pd.DataFrame({
+  "Model": ["SVC", "Linear SVC", "Random Forest", 
+            "Logistic Regression", "K Nearest Neighbors", "Gaussian Naive Bayes",  
+            "Decision Tree", "XGBClassifier"],
+  "Accuracy": [acc_svc, acc_linsvc, acc_rf, 
+            acc_logreg, acc_knn, acc_gnb, acc_dt, acc_xg]
+})
+
+model_performance.sort_values(by="Accuracy", ascending=False)
+          </code>
+        </pre>
+        <pre class="c-console">
+                  Model  Accuracy
+2         Random Forest  0.849162
+7         XGBClassifier  0.843575
+0                   SVC  0.821229
+1            Linear SVC  0.804469
+3   Logistic Regression  0.798883
+5  Gaussian Naive Bayes  0.776536
+6         Decision Tree  0.770950
+4   K Nearest Neighbors  0.765363
+        </pre>
+
+        <h5>Exportación de predicción</h5>
+        <pre class="c-code">
+          <code class="language-python">
+svc_clf.fit(X_train, y_train)
+
+submission_predictions = svc_clf.predict(X_test)
+
+submission = pd.DataFrame({
+        "PassengerId": testing["PassengerId"],
+        "Survived": submission_predictions
+    })
+
+submission.to_csv("titanic.csv", index=False)
+print(submission.shape)
+          </code>
+        </pre>
+        <pre class="c-console">
+(418, 2)
+        </pre>
+
     </section>
   </main>
 
   <footer>
     <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
   </footer>
+
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>

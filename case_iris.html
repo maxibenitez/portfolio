@@ -86,6 +86,7 @@
           <br>
           Los resultados de este análisis se presentan a continuación:
           <br>
+          <br>
           Resultados obtenidos mediante el estudio del dataset en Excel:
         </p>
         <figure style="width: 70%;">
@@ -108,55 +109,125 @@
           <br>
           <br>
           A modo de ejercicio se realizaron las operaciones estadísticas utilizando Google Colaboratory, obteniendo los
-          mismos resultados que en los dos ejercicios anteriores.
+          mismos resultados que en los dos ejercicios anteriores, además de generar algunos gráficos extras.
+          <br>
+          <br>
+          Importación de librería:
         </p>
-
-        <p>Importación de librería:</p>
         <pre class="c-code">
           <code class="language-python">
 import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
+sns.set_style("whitegrid")
           </code>
         </pre>
         <p>Carga y lectura del dataset:</p>
         <pre class="c-code">
           <code class="language-python">
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-names = ['sepal-length in cm', 'sepal-width in cm', 'petal-length in cm', 'petal-width in cm', 'class']
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 iris = pd.read_csv(url, names=names)
 
-iris.head(10)
+iris.head()
           </code>
+        </pre>
+        <pre class="c-console">
+    sepal-len sepal-wid petal-len petal-wid    class
+0	5.1	   3.5	      1.4	 0.2	  Iris-setosa
+1	4.9	   3.0	      1.4	 0.2	  Iris-setosa
+2	4.7	   3.2	      1.3	 0.2	  Iris-setosa
+3	4.6	   3.1	      1.5	 0.2	  Iris-setosa
+4	5.0	   3.6	      1.4	 0.2	  Iris-setosa       
         </pre>
         <p>Media:</p>
         <pre class="c-code">
           <code class="language-python">
-mean_sepal_length = iris["sepal-length in cm"].mean()
-mean_sepal_width = iris["sepal-width in cm"].mean()
-mean_petal_length = iris["petal-length in cm"].mean()
-mean_petal_width = iris["petal-width in cm"].mean()
+mean_sepal_length = iris["sepal-length"].mean()
+mean_sepal_width = iris["sepal-width"].mean()
+mean_petal_length = iris["petal-length"].mean()
+mean_petal_width = iris["petal-width"].mean()
           </code>
+        </pre>
+        <pre class="c-console">
+Media largo sépalo = 5.843333333333334 
+Media ancho sépalo = 3.0540000000000003 
+Media largo pétalo = 3.758666666666666 
+Media ancho pétalo = 1.1986666666666668
         </pre>
         <p>Varianza:</p>
         <pre class="c-code">
           <code class="language-python">
-var_sepal_length = iris["sepal-length in cm"].var()
-var_sepal_width = iris["sepal-width in cm"].var()
-var_petal_length = iris["petal-length in cm"].var()
-var_petal_width = iris["petal-width in cm"].var()
+var_sepal_length = iris["sepal-length"].var()
+var_sepal_width = iris["sepal-width"].var()
+var_petal_length = iris["petal-length"].var()
+var_petal_width = iris["petal-width"].var()
           </code>
+        </pre>
+        <pre class="c-console">
+Varianza largo sépalo = 0.6856935123042507 
+Varianza ancho sépalo = 0.1880040268456376 
+Varianza largo pétalo = 3.113179418344519 
+Varianza ancho pétalo = 0.582414317673378
         </pre>
         <p>Desviación estándar:</p>
         <pre class="c-code">
           <code class="language-python">
-std_sepal_length = iris["sepal-length in cm"].std()
-std_sepal_width = iris["sepal-width in cm"].std()
-std_petal_length = iris["petal-length in cm"].std()
-std_petal_width = iris["petal-width in cm"].std()
+std_sepal_length = iris["sepal-length"].std()
+std_sepal_width = iris["sepal-width"].std()
+std_petal_length = iris["petal-length"].std()
+std_petal_width = iris["petal-width"].std()
           </code>
         </pre>
-        <p>Resultados obtenidos mediante el estudio del dataset en Google Colaboratory:</p>
-        <figure style="width: 40%;">
-          <img src="https://i.ibb.co/5WscFnZ/iris-stats-colab.jpg" alt="Iris Statistics - Google Colaboratory">
+        <pre class="c-console">
+Desviación largo sépalo = 0.828066127977863 
+Desviación ancho sépalo = 0.4335943113621737 
+Desviación largo pétalo = 1.7644204199522626 
+Desviación ancho pétalo = 0.7631607417008411
+        </pre>
+        <p>Generamos un gráfico que muestre la relación entre el largo y el ancho del sépalo, diferenciado por clase.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.stripplot(x="sepal-length", y="sepal-width", data=iris, hue="class", jitter=True)
+plt.show()
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/5snYZX7/iris-stripplot-sepal.png" alt="Strip plot Based on Sepal">
+        </figure>
+        <p>Generamos un gráfico que muestre la relación entre el largo y el ancho del pétalo, diferenciado por clase.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.stripplot(x="petal-length", y="petal-width", data=iris, hue="class", jitter=True)
+plt.show()
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/5YJLKN7/iris-stripplot-petal.png" alt="Strip plot Based on Petal">
+        </figure>
+        <p>Generamos un gráfico que muestre la relación del ancho entre el pétalo y el sépalo, diferenciado por clase.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.stripplot(x="sepal-width", y="petal-width", data=iris, hue="class", jitter=True)
+plt.show()
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/9WswnCY/iris-stripplot-wid.png" alt="Strip plot Based on Width">
+        </figure>
+        <p>Generamos un gráfico que muestre la relación del largo entre el pétalo y el sépalo, diferenciado por clase.
+        </p>
+        <pre class="c-code">
+          <code class="language-python">
+sns.stripplot(x="sepal-length", y="petal-length", data=iris, hue="class", jitter=True)
+plt.show()
+          </code>
+        </pre>
+        <figure style="width: 60%;">
+          <img src="https://i.ibb.co/Nywjrw9/iris-stripplot-len.png" alt="Strip plot Based on Length">
         </figure>
       </div>
     </section>

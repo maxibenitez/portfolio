@@ -464,7 +464,8 @@ body {
 .c-container .c-content .c-code .hljs-subst {
   color: #95d8f3;
 }
-.c-container .c-content .c-code .hljs-title, .c-container .c-content .c-code .hljs-built_in {
+.c-container .c-content .c-code .hljs-title,
+.c-container .c-content .c-code .hljs-built_in {
   color: #e0e096;
 }
 .c-container .c-content .c-code .hljs-string {
@@ -479,6 +480,44 @@ body {
 .c-container .c-content figure {
   margin: 0 auto;
   width: 90%;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+}
+.c-container .c-content figure img {
+  border-radius: 0.5rem;
+}
+.c-container .c-content .c-table {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.c-container .c-content .c-table table {
+  overflow-x: auto;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+.c-container .c-content .c-table table th,
+.c-container .c-content .c-table table td {
+  padding: 0.15rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.c-container .c-content .c-table table tbody tr:nth-child(odd) {
+  background-color: rgba(30, 30, 30, 0.5);
+}
+.c-container .c-content .c-table table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.c-container .c-content .c-console {
+  overflow-x: auto;
+  font-size: 0.8rem;
+  font-family: "Courier New", Courier, monospace;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(30, 30, 30, 0.15);
   margin-bottom: 1.5rem;
 }
 .c-container .c-content .c-construction {

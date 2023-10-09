@@ -163,7 +163,8 @@
                 color: #95d8f3;
             }
 
-            .hljs-title, .hljs-built_in {
+            .hljs-title,
+            .hljs-built_in {
                 color: #e0e096;
             }
 
@@ -183,6 +184,54 @@
         figure {
             margin: 0 auto;
             width: 90%;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+
+            img {
+                border-radius: 0.5rem;
+            }
+        }
+
+        .c-table {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            table {
+                overflow-x: auto;
+                width: 100%;
+                font-size: 0.7rem;
+                margin-bottom: 1.5rem;
+                border-collapse: collapse;
+    
+                th,
+                td {
+                    padding: 0.15rem 1rem;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+    
+                tbody {
+    
+                    tr:nth-child(odd) {
+                        background-color: rgba(30, 30, 30, 0.5);
+                    }
+                }
+    
+                tr {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+
+        .c-console {
+            overflow-x: auto;
+            font-size: 0.8rem;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 1rem;
+            padding-top: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: rgba(30, 30, 30, 0.15);
             margin-bottom: 1.5rem;
         }
 
