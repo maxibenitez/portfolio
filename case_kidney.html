@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Maximiliano Benítez">
+    <meta name="robots" content="noindex" />
+    <title>Portfolio</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://kit.fontawesome.com/47dfdf5ad4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="c-nav_web">
+        <a href="index.html">
+            <h1>MACHINE LEARNING PORTFOLIO</h1>
+        </a>
+        <ul class="c-navigation__list">
+            <li class="c-item">
+                <a href="index.html">INICIO</a>
+            </li>
+            <li class="c-item">
+                <a href="blog.html">BLOG</a>
+            </li>
+            <li class="c-item is-active_web">
+                <a href="case_studies.html">CASOS DE ESTUDIO</a>
+            </li>
+            <li class="c-item">
+                <a href="tools.html">HERRAMIENTAS</a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="c-nav_mobile">
+        <ul class="c-navigation__list">
+            <li class="c-item">
+                <a href="index.html">
+                    <i class="fa-solid fa-house fa-xl"></i></i>
+                    <span>INICIO</span>
+                </a>
+            </li>
+            <li class="c-item">
+                <a href="blog.html">
+                    <i class="fa-regular fa-file fa-xl"></i>
+                    <span>BLOG</span>
+                </a>
+            </li>
+            <li class="c-item is-active">
+                <a href="case_studies.html">
+                    <i class="fa-solid fa-book fa-xl"></i>
+                    <span>CASOS ESTUDIO</span>
+                </a>
+            </li>
+            <li class="c-item">
+                <a href="tools.html">
+                    <i class="fa-solid fa-wrench fa-xl"></i>
+                    <span>HERRAMIENTAS</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="underline">CHRONIC KIDNEY DISEASE</header>
+
+    <main>
+        <section class="c-container">
+            <h2 class="c-content_header">CHRONIC KIDNEY DISEASE</h2>
+            <div class="c-content">
+                <h4>Contexto</h4>
+                <p>La Enfermedad Renal Crónica (ERC) es una afección de salud que se caracteriza por la pérdida gradual
+                    de la función renal a lo largo del tiempo, y puede avanzar a insuficiencia renal si no se controla
+                    adecuadamente. La detección temprana de la ERC es esencial para prevenir complicaciones graves.
+                    <br>
+                    La prevalencia de la ERC varía en todo el mundo, pero en general, se estima que afecta al 10% de la
+                    población global. Las tasas de ERC son más altas en países de ingresos bajos y medianos, donde la
+                    falta de acceso a la atención médica y factores de riesgo como la diabetes, hipertensión y obesidad
+                    contribuyen a su propagación.
+                    <br>
+                    La ERC ejerce una carga económica y social significativa en las sociedades. Los costos de
+                    tratamiento de pacientes con ERC son elevados, y la enfermedad puede afectar la calidad de vida de
+                    los pacientes al requerir un tratamiento continuo y restricciones dietéticas. Además, la enfermedad
+                    impacta la productividad laboral, ya que los pacientes a menudo deben reducir su jornada de trabajo
+                    o dejar de trabajar por completo.
+                    <br>
+                    La ERC está estrechamente vinculada a factores de riesgo como la diabetes, la hipertensión, la
+                    obesidad y el tabaquismo. Además, la enfermedad puede desencadenar complicaciones graves, como
+                    enfermedad cardiovascular y daño a otros órganos. La detección temprana, el manejo de los factores
+                    de riesgo y la investigación constante son esenciales para abordar este problema de salud global.
+                </p>
+
+                <h4>Objetivo</h4>
+                <p>El objetivo del dataset es proporcionar una herramienta fundamental para la detección temprana de la
+                    Enfermedad Renal Crónica (ERC) mediante la recopilación de datos clínicos y de laboratorio de
+                    pacientes. Este conjunto de datos tiene como finalidad principal servir como base para el desarrollo
+                    de modelos de clasificación binaria que permitan predecir precozmente si un paciente es propenso a
+                    sufrir una enfermedad crónica del riñón o si no presenta riesgos significativos.
+                    <br>
+                    Dado que la ERC es una afección que a menudo no presenta síntomas evidentes en sus etapas iniciales,
+                    el dataset se utiliza para entrenar y evaluar algoritmos de aprendizaje automático que puedan
+                    identificar patrones y relaciones en los datos que indiquen la probabilidad de que un individuo
+                    desarrolle una enfermedad renal crónica. Esta clasificación binaria es de gran importancia para la
+                    prevención y el tratamiento temprano de la ERC, ya que puede marcar la diferencia en la calidad de
+                    vida de los pacientes y reducir los costos asociados con el tratamiento de enfermedades renales en
+                    etapas avanzadas.
+                </p>
+
+                <h4>Datos</h4>
+                <h5>Fuente de Datos</h5>
+                <p>Para llevar a cabo este estudio de caso, se empleó el conjunto de datos "Chronic_Kidney_Disease"
+                    (Enfermedad Renal Crónica). Este conjunto de datos está públicamente disponible y ofrece una valiosa
+                    recopilación de información relacionada con la enfermedad renal crónica, centrándose específicamente
+                    en sus etapas iniciales en pacientes de origen indio.
+                </p>
+                <h6>Detalles del Conjunto de Datos:</h6>
+                <ul class="c-bulleted">
+                    <li><strong>Nombre</strong>: Chronic_Kidney_Disease (Enfermedad Renal Crónica)</li>
+                    <li><strong>Fuente</strong>: Repositorio de Machine Learning UC Irvine</li>
+                    <li><strong>Enlace de Acceso</strong>: <a
+                            href="https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease">Chronic_Kidney_Disease
+                            en el Repositorio UCI</a></li>
+                    <li><strong>Fecha de Recopilación</strong>: Julio de 2015</li>
+                    <li><strong>Número de Instancias</strong>: 400</li>
+                    <li><strong>Número de Atributos</strong>: 25 (11 atributos numéricos, 14 atributos nominales)</li>
+                    <li><strong>Distribución de Clases</strong>: El conjunto de datos consta de dos clases:
+                        <ul class="c-sublist">
+                            <li>ckd: 250 instancias.</li>
+                            <li>notckd: 150 instancias.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h5>Análisis Exploratorio de Datos</h5>
+                <p>Esta sección proporciona una descripción detallada de cada uno de los 24 atributos en el conjunto de
+                    datos, elucidando su importancia, tipo y posible impacto en el diagnóstico y la progresión de la
+                    enfermedad:
+                </p>
+                <ul class="c-bulleted">
+                    <li><strong>Edad (numérico, en años)</strong>: La edad es un factor significativo en muchas
+                        condiciones médicas. A medida que uno envejece, aumenta el riesgo de desarrollar ERC, a menudo
+                        debido a otras afecciones de salud asociadas con la edad, como la diabetes o la presión arterial
+                        alta.</li>
+                    <li><strong>Presión Arterial (numérico, en mm/Hg)</strong>: La presión arterial elevada puede dañar
+                        los riñones con el tiempo. Controlar la presión arterial es crucial, ya que controlar la
+                        hipertensión puede prevenir o retrasar la progresión de la ERC.</li>
+                    <li><strong>Gravedad Específica (nominal)</strong>: La gravedad específica mide la concentración de
+                        la orina. Niveles anormales podrían indicar que los riñones no están filtrando adecuadamente.
+                    </li>
+                    <li><strong>Albúmina (nominal)</strong>: La albúmina es una proteína. Si los riñones están dañados,
+                        podrían permitir que la albúmina pase a la orina, lo que no es normal. Los valores representan
+                        el nivel de albuminuria.</li>
+                    <li><strong>Azúcar (nominal)</strong>: El azúcar en la orina puede indicar diabetes, una de las
+                        principales causas de la ERC.</li>
+                    <li><strong>Glóbulos Rojos (nominal)</strong>: "Normal" y "anormal" se refieren a la presencia de
+                        glóbulos rojos en la orina. Los glóbulos anormales pueden indicar enfermedad renal u otras
+                        afecciones.</li>
+                    <li><strong>Células de Pus (nominal)</strong>: La presencia de células de pus en la orina puede
+                        sugerir una infección del tracto urinario o inflamación.</li>
+                    <li><strong>Agrupamiento de Células de Pus (nominal)</strong>: Grupos de células de pus en la orina
+                        pueden ser indicativos de infección o inflamación.</li>
+                    <li><strong>Bacterias (nominal)</strong>: La presencia de bacterias en la orina generalmente indica
+                        una infección del tracto urinario.</li>
+                    <li><strong>Glucosa en Sangre Aleatoria (numérico, en mg/dL)</strong>: Niveles elevados de glucosa
+                        en sangre pueden indicar diabetes. La diabetes mal controlada es un factor de riesgo para la
+                        ERC.</li>
+                    <li><strong>Urea en Sangre (numérico, en mg/dL)</strong>: La urea es un producto de desecho. Niveles
+                        elevados pueden sugerir que los riñones no eliminan eficazmente los desechos de la sangre.</li>
+                    <li><strong>Creatinina en Suero (numérico, en mg/dL)</strong>: La creatinina es un producto de
+                        desecho del metabolismo muscular. Los niveles elevados de creatinina en suero son un marcador
+                        principal utilizado para diagnosticar la ERC.</li>
+                    <li><strong>Sodio (numérico, en mEq/L)</strong>: Niveles anormales de sodio pueden indicar una
+                        variedad de afecciones, incluidos problemas relacionados con la función renal.</li>
+                    <li><strong>Potasio (numérico, en mEq/L)</strong>: Niveles elevados de potasio (hiperpotasemia)
+                        pueden ser peligrosos y podrían indicar que los riñones no están filtrando adecuadamente el
+                        potasio.</li>
+                    <li><strong>Hemoglobina (numérico, en gms)</strong>: La hemoglobina transporta oxígeno en la sangre.
+                        Los niveles bajos (anemia) son comunes en personas con ERC.</li>
+                    <li><strong>Volumen de Células Empacadas (numérico)</strong>: También conocido como hematocrito,
+                        esto mide el porcentaje de sangre que está compuesto por glóbulos rojos. Niveles bajos o altos
+                        pueden tener diversas implicaciones, como la deshidratación o la anemia.</li>
+                    <li><strong>Recuento de Glóbulos Blancos (numérico, en células/cm)</strong>: Los recuentos elevados
+                        de glóbulos blancos pueden indicar infección o inflamación.</li>
+                    <li><strong>Recuento de Glóbulos Rojos (numérico)</strong>: Un recuento de la cantidad de glóbulos
+                        rojos. Los recuentos bajos pueden indicar anemia, que es común en la ERC.</li>
+                    <li><strong>Hipertensión (nominal)</strong>: Indica si una persona tiene presión arterial alta, un
+                        factor de riesgo importante para la ERC.</li>
+                    <li><strong>Diabetes Mellitus (nominal)</strong>: Indica si una persona tiene diabetes, otro factor
+                        de riesgo importante para la ERC.</li>
+                    <li><strong>Enfermedad de las Arterias Coronarias (nominal)</strong>: Indica si una persona tiene
+                        enfermedad cardíaca. Existe una estrecha relación entre la enfermedad renal y la salud
+                        cardiovascular.</li>
+                    <li><strong>Apetito (nominal)</strong>: La pérdida de apetito puede ser un síntoma de ERC avanzada u
+                        otras afecciones relacionadas.</li>
+                    <li><strong>Edema de Pies (nominal)</strong>: El edema (hinchazón) de los pies y tobillos puede ser
+                        un síntoma de la ERC, indicando retención de líquidos.</li>
+                    <li><strong>Anemia (nominal)</strong>: Indica si una persona tiene un número de glóbulos rojos
+                        inferior al normal. La anemia es común en la ERC porque los riñones producen eritropoyetina, una
+                        hormona que estimula la producción de glóbulos rojos.</li>
+                    <li><strong>Clase (nominal)</strong>: Esta es la variable objetivo. Indica si una persona tiene ERC
+                        o no.</li>
+                </ul>
+
+                <h5>Preprocesamiento de Datos</h5>
+                <p>Antes de adentrarnos en las complejidades del preprocesamiento de datos, es fundamental realizar una
+                    revisión integral de todos los atributos. Este paso es esencial, ya que sienta las bases para las
+                    etapas posteriores del proceso de preparación de datos.
+                </p>
+                <h6>Importación de librerías</h6>
+                <p>En esta primera sección, importamos las bibliotecas y paquetes necesarios para el análisis de los
+                    datos, su visualización y el procesamiento de los mismos.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+import numpy as np 
+import pandas as pd 
+
+import seaborn as sns
+from matplotlib import pyplot as plt
+sns.set_style('whitegrid')
+
+import warnings
+warnings.filterwarnings('ignore')
+
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, roc_curve 
+from sklearn.model_selection import train_test_split
+                    </code>
+                  </pre>
+
+                <h6>Carga de dataset y preprocesamiento</h6>
+                <p>En este paso, utilizando la librería Pandas, se carga el conjunto de datos de entrenamiento y de
+                    prueba desde sus respectivos archivos CSV.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+input_file = 'chronic_kidney_disease.csv'
+df = pd.read_csv(input_file, header=0)
+                    </code>
+                </pre>
+                <p>Luego, se utiliza el método head() y keys() para mostrar las primeras filas del conjunto de datos y
+                    observar los nombres de las columnas del DataFrame.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+df.head()
+                    </code>
+                </pre>
+                <pre class="c-console">
+    age    bp     sg   al   su     rbc        pc         pcc          ba  ...    wbcc  rbcc  htn   dm  cad  appet   pe  ane  class
+0  48.0  80.0  1.020  1.0  0.0     NaN    normal  notpresent  notpresent  ...  7800.0   5.2  yes  yes   no   good   no   no    ckd
+1   7.0  50.0  1.020  4.0  0.0     NaN    normal  notpresent  notpresent  ...  6000.0   NaN   no   no   no   good   no   no    ckd
+2  62.0  80.0  1.010  2.0  3.0  normal    normal  notpresent  notpresent  ...  7500.0   NaN   no  yes   no   poor   no  yes    ckd
+3  48.0  70.0  1.005  4.0  0.0  normal  abnormal     present  notpresent  ...  6700.0   3.9  yes   no   no   poor  yes  yes    ckd
+4  51.0  80.0  1.010  2.0  0.0  normal    normal  notpresent  notpresent  ...  7300.0   4.6   no   no   no   good   no   no    ckd
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+df.keys()
+                    </code>
+                </pre>
+                <pre class="c-console">
+Index(['age', 'bp', 'sg', 'al', 'su', 'rbc', 'pc', 'pcc', 'ba', 'bgr', 'bu', 
+       'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc', 'htn', 'dm', 'cad',
+       'appet', 'pe', 'ane', 'class'],
+      dtype='object')
+                </pre>
+                <p>Ahora se identifican los atributos numéricos en el dataset, para luego mediante la función describe()
+                    generar estadísticas descriptivas sobre el DataFrame, obteniendo así datos como la media, la
+                    mediana, el valor mínimo y máximo, la desviación estándar y los percentiles de cada columna.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+types_data = df.dtypes
+num_values = types_data[(types_data == float)]
+
+print('These are the numerical features:')
+print(num_values)
+                    </code>
+                </pre>
+                <pre class="c-console">
+These are the numerical features:
+age     float64
+bp      float64
+sg      float64
+al      float64
+su      float64
+bgr     float64
+bu      float64
+sc      float64
+sod     float64
+pot     float64
+hemo    float64
+pcv     float64
+wbcc    float64
+rbcc    float64
+dtype: object
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+data_describe = df.describe()
+print(data_describe)
+                    </code>
+                </pre>
+                <pre class="c-console">
+              age          bp          sg          al          su  ...         pot        hemo         pcv          wbcc        rbcc
+count  391.000000  388.000000  353.000000  354.000000  351.000000  ...  312.000000  348.000000  329.000000    294.000000  269.000000
+mean    51.483376   76.469072    1.017408    1.016949    0.450142  ...    4.627244   12.526437   38.884498   8406.122449    4.707435
+std     17.169714   13.683637    0.005717    1.352679    1.099191  ...    3.193904    2.912587    8.990105   2944.474190    1.025323
+min      2.000000   50.000000    1.005000    0.000000    0.000000  ...    2.500000    3.100000    9.000000   2200.000000    2.100000
+25%     42.000000   70.000000    1.010000    0.000000    0.000000  ...    3.800000   10.300000   32.000000   6500.000000    3.900000
+50%     55.000000   80.000000    1.020000    0.000000    0.000000  ...    4.400000   12.650000   40.000000   8000.000000    4.800000
+75%     64.500000   80.000000    1.020000    2.000000    0.000000  ...    4.900000   15.000000   45.000000   9800.000000    5.400000
+max     90.000000  180.000000    1.025000    5.000000    5.000000  ...   47.000000   17.800000   54.000000  26400.000000    8.000000
+                </pre>
+                <p>Ahora realizamos un gráfico con el conteo de las clases de la variable objetivo.</p>
+                <pre class="c-code">
+                    <code class="language-python">
+sns.countplot(x='class', data=df)
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 60%;">
+                    <img src="https://i.ibb.co/80s7JxT/ckd-class-count.jpg" alt="CDK class count">
+                </figure>
+
+                <h6>Manejo de valores correlacionados</h6>
+                <p>Para comprender mejor las relaciones entre los atributos numéricos dentro del conjunto de datos, se
+                    realizó un análisis de correlación. Empleando una matriz de correlación, fue posible cuantificar el
+                    grado en que pares de atributos están relacionados linealmente.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+numeric_data = df.select_dtypes(include='number')
+correlation_matrix = numeric_data.corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/RCbcz1w/ckd-corr-matrix.jpg" alt="Correlation Matrix">
+                </figure>
+                <p>Además se decidió definir la función null_table() para poder visualizar los valores nulos en el
+                    conjunto de datos, mediante el uso de la función isnull() de la biblioteca Pandas.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+def null_table(dataset):
+print('Data Frame')
+print(pd.isnull(dataset).sum()) 
+
+null_table(df)
+                    </code>
+                </pre>
+                <pre class="c-console">
+Data Frame
+age        9
+bp        12
+sg        47
+al        46
+su        49
+rbc      152
+pc        65
+pcc        4
+ba         4
+bgr       44
+bu        19
+sc        17
+sod       87
+pot       88
+hemo      52
+pcv       71
+wbcc     106
+rbcc     131
+htn        2
+dm         2
+cad        2
+appet      1
+pe         1
+ane        1
+class      0
+dtype: int64
+                </pre>
+                <p>En el análisis inicial, quedó claro que ciertos atributos podrían no contribuir significativamente al
+                    poder predictivo del modelo final. Algunos atributos tienen un alto porcentaje de valores faltantes,
+                    lo que los hace menos confiables. Al mismo tiempo, ciertos atributos muestran fuertes correlaciones
+                    con otros, lo que implicaba preocupaciones de redundancia y posibles problemas de multicolinealidad.
+                    Incluir tales atributos puede complicar el modelo sin agregar un valor sustantivo y, en algunos
+                    casos, incluso disminuir su capacidad de generalización. Para los fines de este estudio de caso, se
+                    considera que una correlación de mayores a 0.6 es fuerte y, por lo tanto, debe manejarse
+                    adecuadamente.
+                    <br>
+                    Por lo tanto, como parte de este análisis preliminar de atributos y selección, se identificó un
+                    subconjunto de los atributos que posteriormente se eliminarán del conjunto de datos. Cada
+                    eliminación se fundamentó en justificaciones, asegurando que la integridad y el potencial de los
+                    datos permanecieran intactos, al tiempo que se eliminaba el ruido o la redundancia potencial. A
+                    continuación, se presenta una justificación detallada para la eliminación de cada atributo:
+                </p>
+                <ul class="c-bulleted">
+                    <li><strong>rbc</strong>: Este atributo contiene 152 entradas faltantes, lo que representa
+                        aproximadamente el 38% de todo el conjunto de datos. La prueba de sangre en la orina (RBC)
+                        cuantifica el número de glóbulos rojos presentes en una muestra de orina. Un recuento elevado de
+                        RBC en la orina puede ser el resultado de afecciones como infecciones del tracto urinario,
+                        enfermedad renal o enfermedad hepática. Si bien los recuentos elevados de RBC en la orina pueden
+                        sugerir CKD, esta prueba no es típicamente la herramienta de diagnóstico principal. Con un 38%
+                        sustancial de los datos para este atributo faltantes, hay un vacío significativo de información.
+                        La imputación de estos valores conlleva el peligro de introducir sesgo o contaminar el conjunto
+                        de datos con ruido. Debido a estas consideraciones, se decidió excluir este atributo del
+                        conjunto de datos.</li>
+                    <li><strong>rbcc y wbcc</strong>: Estos atributos tienen 131 y 105 entradas faltantes, que
+                        representan el 32,75% y el 26,5% del conjunto de datos total. En el diagnóstico de la CKD, los
+                        médicos a menudo priorizan pruebas como la creatinina sérica, los exámenes de orina y estudios
+                        de imágenes de los riñones en lugar de los recuentos de glóbulos rojos y blancos. Estas pruebas
+                        ofrecen una visión más directa de la función renal y el daño potencial. En resumen, aunque los
+                        recuentos de RBC y WBC pueden ofrecer un contexto valioso y ayudar a identificar complicaciones
+                        secundarias o afecciones coexistentes, no son indicadores principales ni específicos de la CKD.
+                        Teniendo en cuenta estos factores y la cantidad significativa de valores faltantes, se tomó la
+                        decisión de eliminar estos dos atributos del conjunto de datos.</li>
+                    <li><strong>sod</strong>: Este atributo tiene 87 entradas faltantes, que representan el 21,75% del
+                        conjunto de datos total. La hipernatremia suele ser indicativa de deshidratación, disfunción
+                        renal o un desequilibrio entre el agua y la sal en el cuerpo. Condiciones como la diabetes
+                        insípida, la pérdida excesiva de agua o el alto consumo de sal pueden llevar a la hipernatremia.
+                        También es importante destacar que los niveles de sodio y potasio en la sangre están
+                        relacionados entre sí. Teniendo en cuenta la cantidad significativa de entradas faltantes para
+                        este atributo y su relación con otros atributos, se tomó la decisión de eliminarlo del conjunto
+                        de datos.</li>
+                    <li><strong>pcv y hemo</strong>: Estos atributos tienen 71 y 52 valores faltantes, respectivamente.
+                        Si bien ofrecen algunas ideas, no son indicadores principales de la CKD. Además, su alta
+                        correlación con otros atributos plantea un riesgo de multicolinealidad que podría comprometer la
+                        integridad de los modelos posteriores. Dadas estas consideraciones, ambos atributos se
+                        excluyeron del conjunto de datos.</li>
+                    <li><strong>pc</strong>: El atributo contiene 65 valores faltantes. Además, la distribución de esta
+                        variable está notablemente sesgada, con una cantidad predominante de valores "normales" en
+                        comparación con "anormales". Este atributo se refiere a la presencia de glóbulos blancos en la
+                        orina, un indicador potencial de infecciones, inflamación u otras afecciones renales. Sin
+                        embargo, esta prueba no es típicamente la medida de diagnóstico principal para la CKD. Dadas
+                        estas consideraciones, el atributo se excluyó del conjunto de datos.</li>
+                    <li><strong>bgr</strong>: Este atributo tiene 44 valores faltantes. Si bien está relacionado con la
+                        diabetes mellitus, una de las causas principales de la CKD, el conjunto de datos ya ofrece un
+                        indicador directo de si un paciente tiene diabetes. Este indicador proporciona una medida más
+                        concisa relacionada con el riesgo de CKD. Teniendo en cuenta estos factores, el atributo "bgr"
+                        se excluyó del conjunto de datos.</li>
+                    <li><strong>su</strong>: Este atributo contiene 49 valores faltantes. Indica la presencia de azúcar
+                        en la orina, a menudo un marcador de diabetes. Sin embargo, el atributo "Diabetes mellitus"
+                        sirve como un indicador más directo y definitivo. Dada esta redundancia, se omitió el atributo
+                        del conjunto de datos.</li>
+                    <li><strong>bu</strong>: Este atributo está altamente correlacionado con el atributo "sc"
+                        (creatinina sérica). Sin embargo, aunque puede ser indicativo de problemas renales, la urea en
+                        sangre no es específica para la CKD, ya que sus niveles pueden estar influenciados por otros
+                        factores, como la ingesta de proteínas, la deshidratación y ciertos medicamentos. A la luz de
+                        estos hallazgos, se eliminó este atributo del conjunto de datos.</li>
+                </ul>
+                <p>Para eso se utiliza el método drop(), indicándole en los parámetros las etiquetas correspondientes,
+                    en el parámetro “axis” se le indica 1, valor que indica eliminar columnas, y en el parámetro
+                    “inplace” se le indica “True” para que la eliminación sea en el DataFrame original.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+df.drop(labels = ['rbc', 'rbcc', 'wbcc', 'sod', 'pcv', 'hemo', 'pc', 'bgr', 'su', 'bu'], axis = 1, inplace = True)
+
+null_table(df)
+                    </code>
+                </pre>
+                <pre class="c-console">
+Data Frame
+age       9
+bp       12
+sg       47
+al       46
+pcc       4
+ba        4
+sc       17
+pot      88
+htn       2
+dm        2
+cad       2
+appet     1
+pe        1
+ane       1
+class     0
+dtype: int64
+                </pre>
+
+                <h6>Manejo de valores atípicos</h6>
+                <p>Habiendo completado una limpieza inicial de los datos, ahora estamos trabajando con un conjunto de 14
+                    atributos refinados, además de nuestra clase objetivo. A medida que avanzamos en nuestro análisis de
+                    datos, es hora de abordar la presencia de valores atípicos. Los valores atípicos son puntos de datos
+                    que se desvían significativamente del resto, y su existencia puede sesgar los análisis estadísticos
+                    y los modelos, lo que potencialmente lleva a resultados engañosos. Descuidar el manejo de los
+                    valores atípicos puede comprometer la precisión de los modelos predictivos, afectar las suposiciones
+                    de las pruebas estadísticas y, en algunos casos, llevar a conclusiones incorrectas. En esta sección,
+                    profundizaremos en los métodos empleados para detectar y manejar los valores atípicos, asegurando la
+                    integridad y confiabilidad de nuestros análisis posteriores.
+                    <br>
+                    Con el propósito de detectar posibles valores atípicos en nuestro conjunto de datos, hemos optado
+                    por crear un diagrama de pares. Este enfoque gráfico nos brinda la capacidad de explorar de manera
+                    integral las interacciones y relaciones existentes entre todos los atributos.
+                </p>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/56bfSP8/ckd-pairplot.jpg" alt="Pairplot">
+                </figure>
+                <p>Al realizar una observación inicial en el diagrama de pares, se destacan indicios de valores atípicos
+                    en tres atributos particulares. Para una evaluación más detallada y precisa de estos posibles
+                    valores atípicos, se opta por crear gráficos de dispersión individuales para cada uno de estos
+                    atributos.
+                </p>
+                <ul class="c-bulleted">
+                    <li><strong>Potasio (pot)</strong>:
+                        <pre class="c-code">
+                            <code class="language-python">
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+ax1.scatter(x='pot', y='pot', data=df)
+ax1.set_title('Potasium Scatter')
+ax1.set_xlabel('pot')
+ax1.set_ylabel('pot')
+ax2.hist(df['pot'], bins=20)
+ax2.set_xlabel('pot')
+ax2.set_ylabel('Frequency')
+ax2.set_title('Potasium Histogram')
+plt.show()
+                            </code>
+                        </pre>
+                        <figure style="width: 100%;">
+                            <img src="https://i.ibb.co/0ZHxWjK/ckd-pot-chart.jpg" alt="Potasium Charts">
+                        </figure>
+                        se observan valores atípicos en los gráficos. Según la bibliografía, lo normal está entre 3.5 y
+                        5.2 mEq/L, por lo que se considera hipercalemia todo valor considerado superior a eso. Se
+                        filtraron todos los valores mayores a 10.
+                    </li>
+                    <li><strong>Presión Arterial (bp)</strong>:
+                        <pre class="c-code">
+                            <code class="language-python">
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+ax1.scatter(x='bp', y='bp', data=df)
+ax1.set_title('Blood Pressure Scatter')
+ax1.set_xlabel('bp')
+ax1.set_ylabel('bp')
+ax2.hist(df['bp'], bins=20)
+ax2.set_xlabel('bp')
+ax2.set_ylabel('Frequency')
+ax2.set_title('Blood Pressure Histogram')
+plt.show()
+                            </code>
+                        </pre>
+                        <figure style="width: 100%;">
+                            <img src="https://i.ibb.co/DVQxfFq/ckd-bp-chart.jpg" alt="Blood Pressure Charts">
+                        </figure>
+                        se identifican dos valores muy altos de presión. Si bien estos pueden ser valores reales y no
+                        necesariamente un error de medición, se decide quitar estos dos registros para evitar que
+                        afecten el rendimiento del modelo.
+                    </li>
+                    <li><strong>Creatinina Sérica (sc)</strong>:
+                        <pre class="c-code">
+                            <code class="language-python">
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+ax1.scatter(x='sc', y='sc', data=df)
+ax1.set_title('Serum Creatinine Scatter')
+ax1.set_xlabel('sc')
+ax1.set_ylabel('sc')
+ax2.hist(df['sc'], bins=20)
+ax2.set_xlabel('sc')
+ax2.set_ylabel('Frequency')
+ax2.set_title('Serum Creatinine Histogram')
+plt.show()
+                            </code>
+                        </pre>
+                        <figure style="width: 100%;">
+                            <img src="https://i.ibb.co/YW1nH0F/ckd-sc-chart.jpg" alt="Serum Creatinine Charts">
+                        </figure>
+                        se identifican dos valores muy altos de presión. Si bien estos pueden ser valores reales y no
+                        necesariamente un error de medición, se decide quitar estos dos registros para evitar que
+                        afecten el rendimiento del modelo.
+                    </li>
+                </ul>
+                <p>Luego de la evaluación aplicamos los filtros correspondientes obteniendo un nuevo conjunto de datos,
+                    posteriormente obtenemos los mismos gráficos para visualizar que efectivamente se hayan quitado.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+data = df[(df['pot'] < 10) & (df['bp'] < 130) & (df['sc'] < 4)]
+                    </code>
+                </pre>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/M227k9k/ckd-pot-chart-after.jpg" alt="Potasium Charts">
+                </figure>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/H4RrhPy/ckd-bp-chart-after.jpg" alt="Blood Pressure Charts">
+                </figure>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/bbp3Ln3/ckd-sc-chart-after.jpg" alt="Serum Creatinine Charts">
+                </figure>
+
+                <h6>Manejo de valores duplicados</h6>
+                <p>En el aprendizaje automático, la presencia de entradas duplicadas puede distorsionar
+                    significativamente los resultados y dificultar el entrenamiento preciso de modelos. Los valores
+                    duplicados pueden conducir al sobreajuste, donde el modelo se adapta excesivamente a los datos de
+                    entrenamiento y tiene un mal rendimiento en datos no vistos. Esto se debe a que el modelo trata las
+                    instancias repetidas como únicas.
+                    <br>
+                    Para abordar este problema procedemos a chequear si existen valores duplicados.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+print(data.duplicated().any())
+                    </code>
+                </pre>
+                <pre class="c-console">
+False
+                </pre>
+
+                <h6>Manejo valores atípicos</h6>
+                <pre class="c-console">
+Data Frame
+age       9
+bp       12
+sg       47
+al       46
+pcc       4
+ba        4
+sc       17
+pot      88
+htn       2
+dm        2
+cad       2
+appet     1
+pe        1
+ane       1
+class     0
+dtype: int64
+                </pre>
+                <p>Abordar los valores faltantes es un paso fundamental en el proceso de preprocesamiento de datos para
+                    el aprendizaje automático. Descuidar la gestión de los valores faltantes puede introducir un sesgo
+                    significativo, lo que lleva a conclusiones erróneas y a un rendimiento poco fiable del modelo. Un
+                    modelo entrenado en un conjunto de datos con valores faltantes podría no capturar patrones críticos
+                    o, peor aún, inferir patrones que no están realmente presentes.
+                    <br>
+                    Existen diversas técnicas para manejar los datos faltantes, que incluyen:
+                </p>
+                <ul class="c-bulleted">
+                    <li><strong>Eliminar entradas</strong>: Esto implica descartar cualquier fila que contenga uno o más
+                        valores faltantes. Si bien asegura la integridad completa de los datos, podría llevar a una
+                        reducción significativa de los datos, especialmente en conjuntos de datos donde los valores
+                        faltantes son frecuentes.</li>
+                    <li><strong>Imputación</strong>: La imputación implica llenar los valores faltantes en función de
+                        otros datos disponibles. Existen diferentes estrategias de imputación, como:
+                        <ul class="c-sublist">
+                            <li>Sustituir con un valor constante.</li>
+                            <li>Usar la media (para atributos numéricos) o la moda (para atributos categóricos) de la
+                                columna.</li>
+                            <li>Utilizar modelos predictivos para estimar el valor faltante.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Dado el tamaño moderado del conjunto de datos en este estudio de caso, fue fundamental retener el
+                    mayor número de entradas posible para mantener su riqueza. Para maximizar la retención de datos y
+                    minimizar el sesgo potencial, se decidió que la mejor estrategia era imputar los valores faltantes.
+                    Específicamente, los atributos numéricos con valores faltantes se imputaron con la media de la
+                    columna respectiva, y los atributos nominales se reemplazaron con la moda.
+                    <br>
+                    La decisión de abordar el manejo de valores faltantes después de eliminar los valores atípicos se
+                    basa en una estrategia que busca optimizar la integridad y la calidad de los datos en el
+                    preprocesamiento. Abordar primero la eliminación de valores atípicos permite una depuración inicial
+                    del conjunto de datos, eliminando observaciones que se desvían significativamente del conjunto y
+                    podrían tener un impacto negativo en los análisis posteriores.
+                    <br>
+                    Para lograr esto se utiliza la función fillna(), reemplazando los valores nulos de los atributos
+                    correspondientes.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+data['age'].fillna(data['age'].mean(), inplace = True)
+data['al'].fillna(data['al'].mean(), inplace = True)
+data['ane'].fillna(data['ane'].mode().values[0], inplace = True)
+data['appet'].fillna(data['appet'].mode().values[0], inplace = True)
+data['ba'].fillna(data['ba'].mode().values[0], inplace = True)
+data['bp'].fillna(data['bp'].mean(), inplace = True)
+data['cad'].fillna(data['cad'].mode().values[0], inplace = True)
+data['dm'].fillna(data['dm'].mode().values[0], inplace = True)
+data['htn'].fillna(data['htn'].mode().values[0], inplace = True)
+data['pcc'].fillna(data['pcc'].mode().values[0], inplace = True)
+data['pe'].fillna(data['pe'].mode().values[0], inplace = True)
+data['pot'].fillna(data['pot'].mean(), inplace = True)
+data['sc'].fillna(data['sc'].mean(), inplace = True)
+data['sg'].fillna(data['sg'].mean(), inplace = True)
+
+null_table(data)
+                    </code>
+                </pre>
+                <pre class="c-console">
+Data Frame
+age      0
+bp       0
+sg       0
+al       0
+pcc      0
+ba       0
+sc       0
+pot      0
+htn      0
+dm       0
+cad      0
+appet    0
+pe       0
+ane      0
+class    0
+dtype: int64
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+data.head()
+                    </code>
+                </pre>
+                <pre class="c-console">
+     age    bp     sg   al         pcc          ba   sc  pot  htn   dm  cad appet   pe  ane class
+3   48.0  70.0  1.005  4.0     present  notpresent  3.8  2.5  yes   no   no  poor  yes  yes   ckd
+5   60.0  90.0  1.015  3.0  notpresent  notpresent  1.1  3.2  yes  yes   no  good  yes   no   ckd
+11  63.0  70.0  1.010  3.0     present  notpresent  2.7  4.2  yes  yes   no  poor  yes   no   ckd
+12  68.0  70.0  1.015  3.0     present  notpresent  2.1  5.8  yes  yes  yes  poor  yes   no   ckd
+16  47.0  70.0  1.015  2.0  notpresent  notpresent  2.2  4.1   no   no   no  good   no   no   ckd
+                </pre>
+                <p>Al abordar minuciosamente los valores faltantes, se ha mejorado la robustez de nuestro conjunto de
+                    datos, asegurando que las operaciones de modelado posteriores estén fundamentadas en información
+                    completa e imparcial.
+                </p>
+
+                <h6>Normalización</h6>
+                <p>La normalización es un paso fundamental en el preprocesamiento de datos. Consiste en transformar los
+                    datos para que estén en una escala común, lo que facilita la comparación y el procesamiento de las
+                    características. La normalización es particularmente importante cuando las variables en un conjunto
+                    de datos tienen escalas muy diferentes, ya que algunas características pueden dominar sobre otras
+                    durante el entrenamiento del modelo.
+                    <br>
+                    Para esto generamos gráficos para los atributos numéricos y poder observar sus distribuciones.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+fig, axes = plt.subplots(3, 2, figsize=(12, 12))
+
+for i, columna in enumerate(data.select_dtypes(include='number').columns):
+    row, col = divmod(i, 2)
+    sns.distplot(data[columna], kde=True, ax=axes[row, col])
+    axes[row, col].set_xlabel(columna)
+    axes[row, col].set_ylabel('Density')
+
+plt.tight_layout()
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 100%;">
+                    <img src="https://i.ibb.co/1dR58Qy/ckd-distplots.jpg" alt="Distribution Charts">
+                </figure>
+                <p>Observando los gráficos, se puede observar que los atributos presentan sesgo, por lo que podría no
+                    ser beneficioso para el modelo. Para eso sería bueno normalizarlos, para eso utilizaremos el
+                    “StandardScaler” de Scikit-learn.
+                    <br>
+                    Estos atributos se organizaron en arreglos numpy y se reformatearon utilizando el método "reshape"
+                    con el argumento (-1, 1). Esta operación de reformateo es esencial para asegurar que los datos
+                    tengan la estructura adecuada para el escalado.
+                    <br>
+                    Luego, se aplicó “fit_transform” a cada atributo por separado y reemplazando estos valores
+                    normalizados en las respectivas columnas del conjunto de datos original.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+scaler = StandardScaler()
+
+age = np.array(data['age']).reshape(-1, 1)
+bp = np.array(data['bp']).reshape(-1, 1)
+sg = np.array(data['sg']).reshape(-1, 1)
+al = np.array(data['al']).reshape(-1, 1)
+sc = np.array(data['sc']).reshape(-1, 1)
+pot = np.array(data['pot']).reshape(-1, 1)
+
+data['age'] = scaler.fit_transform(age)
+data['bp'] = scaler.fit_transform(bp)
+data['sg'] = scaler.fit_transform(sg)
+data['al'] = scaler.fit_transform(al)
+data['sc'] = scaler.fit_transform(sc)
+data['pot'] = scaler.fit_transform(pot)
+                    </code>
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+data.head()
+                    </code>
+                </pre>
+                <pre class="c-console">
+         age        bp        sg        al         pcc          ba        sc       pot  htn   dm  cad appet   pe  ane class
+3  -0.185650 -0.351552 -2.883160  3.113728     present  notpresent  2.875412 -2.767358  yes   no   no  poor  yes  yes   ckd
+5   0.552794  1.455350 -0.894774  2.193002  notpresent  notpresent -0.329534 -1.694902  yes  yes   no  good  yes   no   ckd
+11  0.737405 -0.351552 -1.888967  2.193002     present  notpresent  1.569693 -0.162823  yes  yes   no  poor  yes   no   ckd
+12  1.045090 -0.351552 -0.894774  2.193002     present  notpresent  0.857483  2.288503  yes  yes  yes  poor  yes   no   ckd
+16 -0.247187 -0.351552 -0.894774  1.272276  notpresent  notpresent  0.976185 -0.316031   no   no   no  good   no   no   ckd
+                </pre>
+
+                <h6>Creación variables ficticias</h6>
+                <p>La creación de variables ficticias, también conocidas como variables dummy, es una técnica esencial
+                    en el procesamiento de datos categóricos, ya que permite que los algoritmos manejen de manera
+                    efectiva esta información y generen modelos más precisos y significativos.
+                    <br>
+                    Primero, se procede a dividir el conjunto de datos en dos partes: una que contiene las
+                    características o atributos del conjunto y otra que almacena la etiqueta o clase
+                    objetivo.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+X = data.loc[:, data.columns != 'class']
+y = data['class'].values
+                    </code>
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+X.head()
+                    </code>
+                </pre>
+                <pre class="c-console">
+         age        bp        sg        al         pcc          ba        sc       pot  htn   dm  cad appet   pe  ane
+3  -0.185650 -0.351552 -2.883160  3.113728     present  notpresent  2.875412 -2.767358  yes   no   no  poor  yes  yes
+5   0.552794  1.455350 -0.894774  2.193002  notpresent  notpresent -0.329534 -1.694902  yes  yes   no  good  yes   no
+11  0.737405 -0.351552 -1.888967  2.193002     present  notpresent  1.569693 -0.162823  yes  yes   no  poor  yes   no
+12  1.045090 -0.351552 -0.894774  2.193002     present  notpresent  0.857483  2.288503  yes  yes  yes  poor  yes   no
+16 -0.247187 -0.351552 -0.894774  1.272276  notpresent  notpresent  0.976185 -0.316031   no   no   no  good   no   no
+                </pre>
+                <p>Luego, se realiza la codificación de las variables categóricas utilizando el “LabelEncoder” de
+                    Scikit-learn.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+le = LabelEncoder()
+
+y_encoded = le.fit_transform(y)
+encoded_ane = le.fit_transform(data['ane'])
+encoded_appet = le.fit_transform(data['appet'])
+encoded_ba = le.fit_transform(data['ba'])
+encoded_cad = le.fit_transform(data['cad'])
+encoded_dm = le.fit_transform(data['dm'])
+encoded_htn = le.fit_transform(data['htn'])
+encoded_pcc = le.fit_transform(data['pcc'])
+encoded_pe = le.fit_transform(data['pe'])
+                    </code>
+                </pre>
+                <p>Después de codificar las variables categóricas, se agregan de nuevo al conjunto de características
+                    “X”. Esto se hace para poder utilizar todas las características, incluidas las categóricas
+                    codificadas, en el entrenamiento del modelo.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+X['ane'] = encoded_ane
+X['appet'] = encoded_appet
+X['ba'] = encoded_ba
+X['cad'] = encoded_cad
+X['dm'] = encoded_dm
+X['htn'] = encoded_htn
+X['pcc'] = encoded_pcc
+X['pe'] = encoded_pe
+                    </code>
+                </pre>
+                <pre class="c-code">
+                    <code class="language-python">
+X.head()
+                    </code>
+                </pre>
+                <pre class="c-console">
+         age        bp        sg        al  pcc  ba        sc       pot  htn  dm  cad  appet  pe  ane
+3  -0.185650 -0.351552 -2.883160  3.113728    1   0  2.875412 -2.767358    1   0    0      1   1    1
+5   0.552794  1.455350 -0.894774  2.193002    0   0 -0.329534 -1.694902    1   1    0      0   1    0
+11  0.737405 -0.351552 -1.888967  2.193002    1   0  1.569693 -0.162823    1   1    0      1   1    0
+12  1.045090 -0.351552 -0.894774  2.193002    1   0  0.857483  2.288503    1   1    1      1   1    0
+16 -0.247187 -0.351552 -0.894774  1.272276    0   0  0.976185 -0.316031    0   0    0      0   0    0
+                </pre>
+                <p>El siguiente paso consiste en dividir el conjunto de datos en dos subconjuntos esenciales: uno de
+                    entrenamiento y otro de prueba.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+train_X, test_X, train_y, test_y = train_test_split(X, y_encoded, test_size=0.30, random_state=0, shuffle=True)
+                    </code>
+                </pre>
+
+                <h5>Modelos aplicados y predicción</h5>
+                <p>En el proceso de desarrollo de un sistema de aprendizaje automático, se exploraron y aplicaron varios
+                    modelos para abordar la tarea de clasificación. Cada uno de estos modelos tiene sus propias
+                    características y suposiciones fundamentales. A continuación, se describen los modelos aplicados en
+                    este caso de estudio:
+                </p>
+
+                <h6>Regresión Logística</h6>
+                <p>La regresión logística es un modelo de clasificación ampliamente utilizado que se adapta a problemas
+                    de clasificación binaria. Este modelo se basa en la función logística para estimar la probabilidad
+                    de pertenencia a una de las dos clases.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+logreg_clf = LogisticRegression(max_iter=1000)
+
+logreg_clf.fit(train_X, train_y)
+pred_logreg = logreg_clf.predict(test_X)
+acc_logreg = accuracy_score(test_y, pred_logreg)
+
+print('The Score for Logistic Regression is: ' + str(acc_logreg))
+                    </code>
+                </pre>
+                <pre class="c-console">
+The Score for Logistic Regression is: 0.9305555555555556
+                </pre>
+
+                <h6>k-Nearest Neighbors</h6>
+                <p>El algoritmo k-NN es un enfoque de aprendizaje supervisado que se basa en la idea de que las
+                    instancias similares tienden a pertenecer a la misma clase. En este método, un punto se clasifica
+                    según la mayoría de votos de sus "k" vecinos más cercanos. El valor de "k" se elige de acuerdo con
+                    la naturaleza del problema y puede variar. El k-NN es una opción versátil y eficaz para tareas de
+                    clasificación.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+knn_clf = KNeighborsClassifier()
+
+knn_clf.fit(train_X, train_y)
+pred_knn = knn_clf.predict(test_X)
+acc_knn = accuracy_score(test_y, pred_knn)
+
+print('The Score for KNeighbors is: ' + str(acc_knn))
+                    </code>
+                </pre>
+                <pre class="c-console">
+The Score for KNeighbors is: 0.9027777777777778
+                </pre>
+
+                <h6>Naïve Bayes</h6>
+                <p>El clasificador Naïve Bayes se basa en el teorema de Bayes y asume independencia condicional entre
+                    las características. Calcula la probabilidad de pertenencia a una clase dada para un conjunto de
+                    características observadas.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+gnb_clf = GaussianNB()
+
+gnb_clf.fit(train_X, train_y)
+pred_gnb = gnb_clf.predict(test_X)
+acc_gnb = accuracy_score(test_y, pred_gnb)
+
+print('The Score for Gaussian NB is: ' + str(acc_gnb))
+                    </code>
+                </pre>
+                <pre class="c-console">
+The Score for KNeighbors is: 0.9027777777777778
+                </pre>
+
+                <h5>Análisis de rendimiento</h5>
+                <p>En la evaluación de los modelos de aprendizaje automático, es crucial realizar un análisis de
+                    rendimiento para comprender cómo se desempeñan en la tarea de clasificación. Esto implica medir su
+                    capacidad para hacer predicciones precisas y evaluar su eficacia en la resolución del problema en
+                    cuestión. A continuación, se detalla el análisis de rendimiento realizado en este caso de estudio:
+                </p>
+
+                <h6>Rendimiento</h6>
+                <p>Una vez hechas las predicciones en varios modelos, ahora vamos a evaluar la precisión de cada uno y
+                    así comparar cuál funcionó mejor.
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+model_performance = pd.DataFrame({
+    'Model': ['Logistic Regression', 'K-Nearest Neighbors', 'Gaussian Naïve Bayes'],
+    'Accuracy': [acc_logreg, acc_knn, acc_gnb]
+})
+
+model_performance.sort_values(by='Accuracy', ascending=False)
+                    </code>
+                </pre>
+                <pre class="c-console">
+                  Model  Accuracy
+2  Gaussian Naïve Bayes  0.972222
+0   Logistic Regression  0.930556
+1   K-Nearest Neighbors  0.902778
+                </pre>
+
+                <h6>Curvas ROC</h6>
+                <p>La curva ROC (Receiver Operating Characteristic) es una herramienta esencial para evaluar el
+                    rendimiento de modelos de clasificación binaria. Muestra la relación entre la tasa de verdaderos
+                    positivos y la tasa de falsos positivos a medida que varía el umbral de decisión del modelo.
+                    <br>
+                    Para eso generamos los gráficos correspondientes a cada modelo.
+                    <br>
+                    <br>
+                    <strong>Regresión Logística</strong>
+                </p>
+                <pre class="c-code">
+                    <code class="language-python">
+fpr_logreg_clf, tpr_logreg_clf, thresholds_logreg_clf = roc_curve(test_y, logreg_clf.predict_proba(test_X)[:, 1])
+
+plt.figure(figsize=(8, 6))
+plt.plot(fpr_logreg_clf, tpr_logreg_clf, label='ROC Curve (Logistic Regression)')
+plt.xlabel('False Positives Rate (FPR)')
+plt.ylabel('True Positives Rate (TPR)')
+plt.legend()
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 70%;">
+                    <img src="https://i.ibb.co/R4VRxPg/ckd-roc-logreg.jpg" alt="Logistic Regression ROC">
+                </figure>
+                <p><strong>k-Nearest Neighbors</strong></p>
+                <pre class="c-code">
+                    <code class="language-python">
+fpr_knn_clf, tpr_knn_clf, thresholds_knn_clf = roc_curve(test_y, knn_clf.predict_proba(test_X)[:, 1])
+
+plt.figure(figsize=(8, 6))
+plt.plot(fpr_knn_clf, tpr_knn_clf, label='ROC Curve (K-Nearest Neighbors)')
+plt.xlabel('False Positives Rate (FPR)')
+plt.ylabel('True Positives Rate (TPR)')
+plt.legend()
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 70%;">
+                    <img src="https://i.ibb.co/wgprR2m/ckd-roc-knn.jpg" alt="k-Nearest Neighbors ROC">
+                </figure>
+                <p><strong>Naïve Bayes</strong></p>
+                <pre class="c-code">
+                    <code class="language-python">
+fpr_gnb_clf, tpr_gnb_clf, thresholds_gnb_clf = roc_curve(test_y, gnb_clf.predict_proba(test_X)[:, 1])
+
+plt.figure(figsize=(8, 6))
+plt.plot(fpr_gnb_clf, tpr_gnb_clf, label='ROC Curve (Gaussian Naïve Bayes)')
+plt.xlabel('False Positives Rate (FPR)')
+plt.ylabel('True Positives Rate (TPR)')
+plt.legend()
+plt.show()
+                    </code>
+                </pre>
+                <figure style="width: 70%;">
+                    <img src="https://i.ibb.co/VB4BS7c/ckd-roc-gnb.jpg" alt="Naïve Bayes ROC">
+                </figure>
+                <p>El análisis de rendimiento y las curvas ROC son componentes esenciales para comprender cómo se
+                    comportan los modelos de clasificación en términos de sus tasas de aciertos y errores. Estas
+                    métricas y gráficos proporcionan información valiosa para tomar decisiones informadas sobre la
+                    selección y ajuste de modelos y para evaluar su idoneidad para la tarea de clasificación en
+                    cuestión.
+                </p>
+        </section>
+    </main>
+
+    <footer>
+        <span>©2023 por Maximiliano Benítez. Creado en Github Pages</span>
+    </footer>
+
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
